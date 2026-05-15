@@ -1,0 +1,18 @@
+# Jobs Data Directory
+
+Store raw job listings here.
+
+Structure:
+```
+data/jobs/
+├── 2025-01/
+│   ├── 2025-01-15.json      # Daily batch
+│   ├── 2025-01-16.json
+│   └── ...
+├── 2025-02/
+│   └── ...
+└── archive/                  # > 90 days old
+    └── ...
+```
+
+Each JSON file contains an array of Job objects validated against `../schema/job.json`.

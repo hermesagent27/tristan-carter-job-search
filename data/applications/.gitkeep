@@ -1,0 +1,19 @@
+# Applications Directory
+
+Track job applications here.
+
+Structure:
+```
+data/applications/
+├── 2025/
+│   ├── active.json           # Currently applying/interviewing
+│   ├── completed.json        # Final outcomes (offer/rejected/ghosted)
+│   └── january-archive.json  # Monthly archive
+└── templates/
+    └── cover-letters/
+```
+
+Status flow:
+`new → applied → phone_screen → interview → offer → hired`
+`new → applied → rejected`
+`new → applied → ghosted` (no response > 30 days)

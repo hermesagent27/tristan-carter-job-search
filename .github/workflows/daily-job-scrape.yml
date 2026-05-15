@@ -1,0 +1,52 @@
+name: Daily Job Scrape
+
+on:
+  schedule:
+    # Run daily at 8am UTC (3am EST)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    # Manual trigger available
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Run job scraper
+        run: python scripts/scraper.py
+        
+      - name: Update database
+        run: python scripts/db.py --update
+        
+      - name: Commit new jobs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/jobs/$(date +%Y-%m)/
+          git add data/jobs/
+          git diff --staged --quiet || git commit -m "📊 Daily scrape - $(date +%Y-%m-%d)"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.ref }}
+          
+      - name: Generate daily summary
+        run: python scripts/report.py --daily >> $GITHUB_STEP_SUMMARY

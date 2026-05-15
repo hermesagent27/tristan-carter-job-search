@@ -1,0 +1,1 @@
+# Scripts package for job search automation

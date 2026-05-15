@@ -1,0 +1,23 @@
+# Companies Directory
+
+Store company research and notes.
+
+Structure:
+```
+data/companies/
+├── remotecorp.json
+├── techgiant.json
+└── ...
+```
+
+Naming convention: lowercase, hyphenated slug from company name.
+- "RemoteCorp Inc." → `remotecorp.json`
+- "Tech Giant LLC" → `tech-giant.json`
+
+Research fields to track:
+- Glassdoor rating
+- Tech stack
+- Interview process
+- Salary benchmarks
+- Key contacts
+- Application status

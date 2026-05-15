@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tristancarter.dev/job-schema.json",
+  "title": "Job Listing Schema",
+  "description": "Schema for scraped job listings",
+  "type": "object",
+  "required": ["id", "title", "company", "url", "source", "date_scraped"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier: {source}-{hash}"
+    },
+    "title": {
+      "type": "string",
+      "description": "Job title",
+      "minLength": 1
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name",
+      "minLength": 1,
+      "default": "Unknown"
+    },
+    "location": {
+      "type": "string",
+      "description": "Job location (Remote, City, ST, Hybrid)",
+      "default": "Remote"
+    },
+    "is_remote": {
+      "type": "boolean",
+      "description": "Whether position allows remote work",
+      "default": true
+    },
+    "salary_min": {
+      "type": ["integer", "null"],
+      "description": "Minimum annual salary in USD",
+      "minimum": 0
+    },
+    "salary_max": {
+      "type": ["integer", "null"],
+      "description": "Maximum annual salary in USD",
+      "minimum": 0
+    },
+    "salary_text": {
+      "type": ["string", "null"],
+      "description": "Raw salary text from listing"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full job description"
+    },
+    "description_short": {
+      "type": "string",
+      "description": "First 500 chars of description",
+      "maxLength": 500
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Job posting URL"
+    },
+    "source": {
+      "type": "string",
+      "description": "Feed source",
+      "enum": ["RemoteOK", "WeWorkRemotely", "Arc", "JSRemotely", "Remotive", "LinkedIn", "Indeed", "AngelList"]
+    },
+    "source_id": {
+      "type": ["string", "null"],
+      "description": "Original ID from source"
+    },
+    "date_posted": {
+      "type": "string",
+      "format": "date",
+      "description": "Job posting date (YYYY-MM-DD)"
+    },
+    "date_scraped": {
+      "type": "string",
+      "format": "date",
+      "description": "Date we scraped this job (YYYY-MM-DD)"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Matched keywords from description",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": ["entry", "junior", "mid", "senior", "any"],
+      "default": "any",
+      "description": "Inferred experience level"
+    },
+    "role_type": {
+      "type": "string",
+      "enum": ["frontend", "backend", "fullstack", "mobile", "devops", "support", "qa", "data", "other"],
+      "description": "Primary role category"
+    },
+    "employment_type": {
+      "type": "string",
+      "enum": ["full-time", "part-time", "contract", "freelance", "internship"],
+      "default": "full-time"
+    },
+    "flags": {
+      "type": "object",
+      "description": "Automated flagging info",
+      "properties": {
+        "has_drug_test": {
+          "type": "boolean",
+          "default": false
+        },
+        "is_senior": {
+          "type": "boolean",
+          "default": false
+        },
+        "is_hidden": {
+          "type": "boolean",
+          "default": false
+        },
+        "is_duplicate": {
+          "type": "boolean",
+          "default": false
+        },
+        "match_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "0-100 relevance score"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "reviewed", "applied", "archived", "expired"],
+      "default": "new"
+    },
+    "application_id": {
+      "type": ["string", "null"],
+      "description": "If applied, links to application record"
+    }
+  },
+  "additionalProperties": false
+}
