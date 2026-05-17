@@ -1,7 +1,7 @@
 # 🎯 Tristan Carter Job Search
 
-> **Goal:** Land a developer/support role after Amazon delivery → full-time dev transition
-> **Stack:** Vue/Nuxt, frontend + light backend  
+> **Goal:** Land a developer/support role after Amazon delivery → full-time dev transition  
+> **Stack:** Vue/Nuxt 4, Tailwind, DaisyUI  
 > **Status:** Active search | Weekly tracking
 
 ---
@@ -12,18 +12,47 @@
 tristan-carter-job-search/
 ├── 📁 data/
 │   ├── 📁 jobs/            # Raw scraped jobs (YYYY-MM/YYYY-MM-DD.json)
-│   ├── 📁 applications/    # Application tracking (YYYY/active.json)
-│   ├── 📁 companies/       # Company research (slug.json)
+│   ├── 📁 applications/    # Application tracking (applications.json)
 │   └── 📁 templates/       # Reusable docs
 ├── 📁 scripts/             # Python automation
 │   ├── scraper.py         # Daily job scrape
-│   ├── sync.py            # Sync to Obsidian
-│   ├── report.py          # Weekly reports
-│   └── db.py              # SQLite interface
-├── 📁 api/                 # FastAPI backend (roadmap)
-├── 📁 frontend/            # Nuxt UI (roadmap - your stack!)
+│   └── report.py          # Weekly reports
+├── 📁 frontend/            # Nuxt 4 full-stack app (SSR + API routes)
+│   ├── app/               # Nuxt 4 app directory
+│   ├── server/            # Nitro API routes (replaces FastAPI)
+│   └── ...
+├── 📁 .github/
+│   └── workflows/         # Daily scrape job
 └── 📁 docs/                # Architecture & planning
 ```
+
+---
+
+## 🏗️ Architecture (Nuxt 4 Full-Stack)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Vercel (Single Deploy)                    │
+│  ┌─────────────────┐        ┌─────────────────────────────┐ │
+│  │   Nuxt 4 UI     │◄──────►│   Nitro Server Routes       │ │
+│  │   (Vue/TW)      │        │   /api/jobs, /api/apps      │ │
+│  └─────────────────┘        └────────────┬────────────────┘ │
+│                                          │                  │
+└──────────────────────────────────────────┼──────────────────┘
+                                           │
+                     ┌─────────────────────┘
+                     │
+           ┌─────────▼──────────┐
+           │   GitHub Repo      │
+           │   (JSON source)    │
+           └────────────────────┘
+```
+
+**Why Nuxt-only?**
+- Single codebase, single deploy
+- Server routes replace FastAPI (read/write JSON on server)
+- No persistent DB needed — GitHub JSON is source of truth
+- Single-user → no auth complexity
 
 ---
 
@@ -33,30 +62,27 @@ tristan-carter-job-search/
 # 1. Clone & enter
 cd ~/tristan-carter-job-search
 
-# 2. Install deps
-pip install -r requirements.txt
-
-# 3. Run today's job scrape
+# 2. Run today's job scrape
 python scripts/scraper.py
 
-# 4. Sync to Obsidian (optional)
-python scripts/sync.py
-
-# 5. Generate weekly report
-python scripts/report.py --weekly
+# 3. Start Nuxt dev server
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
 
-## 📊 Data Model
+## 📊 Data Model (JSON-Based)
 
 ### Job Listing
 ```json
 {
-  "id": "remoteok-12345",
+  "id": "remoteok-abc123",
   "title": "Frontend Developer",
   "company": "RemoteCorp",
   "location": "Remote",
+  "is_remote": true,
   "salary_min": 60000,
   "salary_max": 80000,
   "description": "...",
@@ -65,7 +91,9 @@ python scripts/report.py --weekly
   "date_posted": "2025-01-15",
   "date_scraped": "2025-01-15",
   "tags": ["vue", "javascript", "remote"],
-  "status": "new"
+  "is_favorite": false,
+  "is_hidden": false,
+  "role_type": "frontend"
 }
 ```
 
@@ -73,29 +101,24 @@ python scripts/report.py --weekly
 ```json
 {
   "id": "app-001",
-  "job_id": "remoteok-12345",
-  "company": "RemoteCorp",
-  "position": "Frontend Developer",
+  "job_id": "remoteok-abc123",
+  "status": "applied",
   "date_applied": "2025-01-16",
-  "status": "applied|interview|offer|rejected|ghosted",
+  "cover_letter": "...",
   "notes": "...",
-  "follow_up_dates": ["2025-01-23"],
-  "contacts": []
+  "updated_at": "2025-01-16T10:00:00Z"
 }
 ```
-
-See [`docs/data-model.md`](docs/data-model.md) for full schema.
 
 ---
 
 ## 🔄 Daily Workflow
 
-| Time | Action | Command |
-|------|--------|---------|
-| Morning | Scrape new jobs | `python scripts/scraper.py` |
-| During day | Review & apply | Update applications/*.json |
-| Evening | Sync to Obsidian | `python scripts/sync.py` |
-| Sunday | Weekly report | `python scripts/report.py --weekly` |
+| Time | Action | Where |
+|------|--------|-------|
+| 8 AM (auto) | Scrape new jobs | GitHub Actions → commits to `data/jobs/` |
+| Manual | Review & apply | Nuxt app at `/` |
+| Manual | Track status | Change tabs: Post → Applied → Interview → Offer |
 
 ---
 
@@ -109,11 +132,13 @@ See [`docs/data-model.md`](docs/data-model.md) for full schema.
 
 ## 🗺️ Roadmap
 
-- [x] SQLite backend for jobs
-- [x] Daily RSS scraping
-- [ ] FastAPI + sync endpoint
-- [ ] Nuxt frontend dashboard
-- [ ] AI-powered cover letter generator
+- [x] JSON-based job storage
+- [x] Daily RSS scraping via cron
+- [ ] Nuxt 4 full-stack app (pages + API routes)
+- [ ] Job browsing with filters (role, salary, remote)
+- [ ] Application tracking (status pipeline)
+- [ ] Dashboard with customizable graphs
+- [ ] Cover letter & application answers generator
 
 ---
 

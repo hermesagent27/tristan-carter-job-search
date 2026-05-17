@@ -1,58 +1,75 @@
-# Frontend Dashboard
+# Nuxt Minimal Starter
 
-Future Nuxt 3 UI for job search management.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Vision
+## Setup
 
-A clean dashboard to:
-- 📊 Visualize search progress
-- 📋 Browse and filter jobs
-- ✍️ Track applications
-- 📈 View weekly/monthly stats
-- 🔔 Get alerts for new matches
-
-## Tech Stack
-
-- **Framework:** Nuxt 3
-- **Styling:** Tailwind CSS
-- **Data:** Fetch from local SQLite via API
-- **Charts:** Chart.js / ApexCharts
-- **Icons:** Heroicons
-
-## Planned Pages
-
-```
-/
-├── Dashboard         # Stats + quick actions
-├── Jobs             # Browse/search listings
-│   └── [id]         # Job detail
-├── Applications     # Track applications
-├── Stats            # Charts & analytics
-└── Settings         # Preferences
-```
-
-## Component Ideas
-
-- `<JobCard />` - Preview with quick actions
-- `<ApplicationTimeline />` - Status progression
-- `<StatsChart />` - Weekly trends
-- `<MatchScore />` - Vue/Nuxt relevance badge
-
-## Development
+Make sure to install dependencies:
 
 ```bash
-# Once API is ready
-npx nuxi@latest init frontend
-cd frontend
+# npm
 npm install
-npm run dev
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-## Integration
+## Development Server
 
-Will connect to:
-- Local FastAPI backend (`/api`)
-- GitHub data sync (Actions)
-- Potential webhook for daily alerts
+Start the development server on `http://localhost:3000`:
 
-> **Note:** This is a roadmap directory. Implementation TBD once backend API is ready.
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
