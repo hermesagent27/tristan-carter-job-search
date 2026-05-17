@@ -33,7 +33,13 @@ async function fetchCachedJson(url: string): Promise<any> {
     return cached.data
   }
   
-  const data = await $fetch(url)
+  // Add headers to avoid GitHub bot detection
+  const data = await $fetch(url, {
+    headers: {
+      'User-Agent': 'JobTracker/1.0',
+      'Accept': 'application/json'
+    }
+  })
   cache.set(url, { data, timestamp: Date.now() })
   
   return data
