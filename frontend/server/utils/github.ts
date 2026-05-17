@@ -52,6 +52,7 @@ export async function getAllJobs(): Promise<Job[]> {
       for (const day of days) {
         try {
           const url = `${RAW_URL}/data/jobs/${month}/${day}.json`
+          console.log(`[Jobs] Fetching: ${url}`)
           const jobs = await fetchCachedJson(url)
           if (Array.isArray(jobs)) {
             const normalized = jobs.map((j: any) => ({
@@ -61,9 +62,10 @@ export async function getAllJobs(): Promise<Job[]> {
               role_type: j.role_type || detectRoleType(j)
             }))
             allJobs.push(...normalized)
+            console.log(`[Jobs] Loaded ${jobs.length} jobs from ${day}`)
           }
-        } catch (e) {
-          // File might not exist, skip
+        } catch (e: any) {
+          console.error(`[Jobs] Failed to fetch ${day}: ${e.message}`)
         }
       }
     }
