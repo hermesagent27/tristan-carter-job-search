@@ -16,7 +16,7 @@
     <main class="container mx-auto px-4 py-6">
       
       <!-- Filters -->
-      <JobFilters
+      <JobsJobFilters
         v-model:searchQuery="searchQuery"
         v-model:roleFilter="roleFilter"
         v-model:remoteOnly="remoteOnly"
@@ -24,7 +24,7 @@
       />
       
       <!-- Tabs -->
-      <JobTabs
+      <JobsJobTabs
         v-model="activeTab"
         :counts="counts"
         class="mb-6"
@@ -43,7 +43,7 @@
       
       <!-- Jobs Grid -->
       <div v-else-if="filteredJobs.length" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <JobCard
+        <JobsJobCard
           v-for="job in filteredJobs"
           :key="job.id"
           :job="job"
