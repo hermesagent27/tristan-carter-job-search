@@ -1,6 +1,6 @@
 <template>
-  <div class="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-200 border border-base-300">
-    <div class="card-body p-5">
+  <div class="card bg-base-100 shadow-sm hover:shadow-md transition-all duration-200 border border-base-300/50 h-full flex flex-col">
+    <div class="card-body p-4 flex flex-col flex-1">
       <!-- Header -->
       <div class="flex justify-between items-start gap-2">
         <div class="flex-1 min-w-0">
@@ -18,8 +18,8 @@
       </div>
       
       <!-- Description -->
-      <p class="text-sm text-base-content/80 line-clamp-2 mt-2">
-        {{ getDescriptionPreview(job) }}
+      <p class="text-sm text-base-content/70 line-clamp-2 mt-2 mb-2 flex-1">
+        {{ getDescriptionPreview }}
       </p>
       
       <!-- Tags -->
@@ -77,7 +77,7 @@ interface Props {
   job: Job
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 const { toggleFavorite, toggleHidden } = useJobs()
 
@@ -96,9 +96,7 @@ const getTagColor = (tag: string) => {
 }
 
 // Strip HTML and get clean preview text
-const getDescriptionPreview = (job: Job): string => {
-  const html = job.description_short || job.description || ''
-  if (!html) return 'No description'
-  return stripHtml(html).slice(0, 150) + (html.length > 150 ? '...' : '')
-}
+const getDescriptionPreview = computed(() => {
+  return truncateText(props.job.description_short || props.job.description, 150)
+})
 </script>

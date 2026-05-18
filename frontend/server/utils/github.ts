@@ -23,6 +23,7 @@ interface Job {
   role_type?: string
   is_favorite: boolean
   is_hidden: boolean
+  status: 'new' | 'applied' | 'interview' | 'offer' | 'rejected'
 }
 
 // Simple in-memory cache
@@ -135,7 +136,8 @@ export async function getAllJobs(): Promise<Job[]> {
               ...j,
               is_favorite: j.is_favorite ?? false,
               is_hidden: j.is_hidden ?? false,
-              role_type: j.role_type || detectRoleType(j)
+              role_type: j.role_type || detectRoleType(j),
+              status: j.status || 'new'
             }))
             allJobs.push(...normalized)
             console.log(`[Jobs] Loaded ${jobs.length} jobs from ${dayFile.name}`)
@@ -172,12 +174,13 @@ async function fetchJobsFromRawUrls(): Promise<Job[]> {
           }
         })
         if (Array.isArray(response)) {
-          const normalized = response.map((j: any) => ({
-            ...j,
-            is_favorite: j.is_favorite ?? false,
-            is_hidden: j.is_hidden ?? false,
-            role_type: j.role_type || detectRoleType(j)
-          }))
+            const normalized = response.map((j: any) => ({
+              ...j,
+              is_favorite: j.is_favorite ?? false,
+              is_hidden: j.is_hidden ?? false,
+              role_type: j.role_type || detectRoleType(j),
+              status: j.status || 'new'
+            }))
           allJobs.push(...normalized)
         }
       } catch (e: any) {

@@ -52,10 +52,17 @@ export const useJobs = () => {
         return false
       }
       
-      // Tab filter - for MVP, all tabs show all non-hidden jobs
-      // TODO: once applications tracking is implemented, filter by application status
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _tab = activeTab.value // Keep for future use
+      // Tab filter - filter by job status
+      const statusMap: Record<string, string> = {
+        'post': 'new',
+        'applied': 'applied',
+        'interview': 'interview',
+        'offer': 'offer'
+      }
+      const expectedStatus = statusMap[activeTab.value]
+      if (expectedStatus && job.status !== expectedStatus) {
+        return false
+      }
       
       return true
     })
@@ -63,10 +70,10 @@ export const useJobs = () => {
   
   // Counts for tabs
   const counts = computed(() => ({
-    post: jobs.value.filter((j: Job) => !j.is_hidden).length,
-    applied: 0, // TODO: fetch applications
-    interview: 0,
-    offer: 0
+    post: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'new').length,
+    applied: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'applied').length,
+    interview: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'interview').length,
+    offer: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'offer').length
   }))
   
   // Persist favorite toggle

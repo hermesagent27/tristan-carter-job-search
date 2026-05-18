@@ -17,6 +17,7 @@ export interface Job {
   role_type?: string
   is_favorite: boolean
   is_hidden: boolean
+  status: 'new' | 'applied' | 'interview' | 'offer' | 'rejected'
 }
 
 export interface Application {
