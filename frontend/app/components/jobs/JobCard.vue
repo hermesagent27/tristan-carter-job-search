@@ -19,7 +19,7 @@
       
       <!-- Description -->
       <p class="text-sm text-base-content/80 line-clamp-2 mt-2">
-        {{ job.description_short || job.description?.slice(0, 150) + '...' || 'No description' }}
+        {{ getDescriptionPreview(job) }}
       </p>
       
       <!-- Tags -->
@@ -93,5 +93,12 @@ const getTagColor = (tag: string) => {
   if (t === 'remote') return 'badge-success'
   if (t === 'typescript') return 'badge-secondary'
   return 'badge-ghost'
+}
+
+// Strip HTML and get clean preview text
+const getDescriptionPreview = (job: Job): string => {
+  const html = job.description_short || job.description || ''
+  if (!html) return 'No description'
+  return stripHtml(html).slice(0, 150) + (html.length > 150 ? '...' : '')
 }
 </script>
