@@ -47,8 +47,6 @@
           v-for="job in filteredJobs"
           :key="job.id"
           :job="job"
-          @toggle-favorite="toggleFavorite"
-          @hide="hideJob"
         />
       </div>
       
@@ -81,22 +79,4 @@ const {
 onMounted(() => {
   fetchJobs()
 })
-
-// Toggle favorite (placeholder - needs backend endpoint)
-const toggleFavorite = async (id: string) => {
-  const job = jobs.value.find(j => j.id === id)
-  if (job) {
-    job.is_favorite = !job.is_favorite
-    // TODO: PATCH /api/jobs/:id
-  }
-}
-
-// Hide job (placeholder)
-const hideJob = async (id: string) => {
-  const job = jobs.value.find(j => j.id === id)
-  if (job) {
-    job.is_hidden = true
-    // TODO: PATCH /api/jobs/:id
-  }
-}
 </script>

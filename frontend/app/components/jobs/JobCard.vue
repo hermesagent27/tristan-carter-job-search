@@ -8,9 +8,10 @@
           <p class="text-muted text-sm">{{ job.company }} • {{ job.location }}</p>
         </div>
         <button 
-          @click="$emit('toggle-favorite', job.id)"
+          @click="toggleFavorite(job.id)"
           class="btn btn-ghost btn-sm btn-circle shrink-0"
           :class="{ 'text-yellow-500': job.is_favorite }"
+          :title="job.is_favorite ? 'Remove favorite' : 'Add favorite'"
         >
           {{ job.is_favorite ? '★' : '☆' }}
         </button>
@@ -52,12 +53,14 @@
             :href="job.url" 
             target="_blank"
             class="btn btn-ghost btn-sm"
+            title="Open original posting"
           >
             ↗
           </a>
           <button 
-            @click="$emit('hide', job.id)"
+            @click="toggleHidden(job.id)"
             class="btn btn-ghost btn-sm text-error"
+            title="Hide job"
           >
             ✕
           </button>
@@ -75,10 +78,8 @@ interface Props {
 }
 
 defineProps<Props>()
-defineEmits<{
-  (e: 'toggle-favorite', id: string): void
-  (e: 'hide', id: string): void
-}>()
+
+const { toggleFavorite, toggleHidden } = useJobs()
 
 const formatSalary = (val?: number) => {
   if (!val) return '?'

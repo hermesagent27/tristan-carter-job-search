@@ -72,6 +72,50 @@ export const useJobs = () => {
     offer: 0
   }))
   
+  // Persist favorite toggle
+  const toggleFavorite = async (jobId: string) => {
+    const job = jobs.value.find(j => j.id === jobId)
+    if (!job) return
+
+    // Optimistic update
+    const newVal = !job.is_favorite
+    job.is_favorite = newVal
+
+    // Persist to server
+    try {
+      await $fetch(`/api/jobs/${jobId}`, {
+        method: 'PATCH',
+        body: { is_favorite: newVal }
+      })
+    } catch (e) {
+      // Revert on failure
+      job.is_favorite = !newVal
+      console.error('Failed to update favorite:', e)
+    }
+  }
+
+  // Persist hide toggle
+  const toggleHidden = async (jobId: string) => {
+    const job = jobs.value.find(j => j.id === jobId)
+    if (!job) return
+
+    // Optimistic update
+    const newVal = !job.is_hidden
+    job.is_hidden = newVal
+
+    // Persist to server
+    try {
+      await $fetch(`/api/jobs/${jobId}`, {
+        method: 'PATCH',
+        body: { is_hidden: newVal }
+      })
+    } catch (e) {
+      // Revert on failure
+      job.is_hidden = !newVal
+      console.error('Failed to update hidden:', e)
+    }
+  }
+
   return {
     jobs,
     loading,
@@ -82,6 +126,8 @@ export const useJobs = () => {
     activeTab,
     searchQuery,
     roleFilter,
-    remoteOnly
+    remoteOnly,
+    toggleFavorite,
+    toggleHidden
   }
 }
