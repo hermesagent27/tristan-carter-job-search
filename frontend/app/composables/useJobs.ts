@@ -52,13 +52,10 @@ export const useJobs = () => {
         return false
       }
       
-      // Tab filter (simplified - all jobs show in 'post' for now)
-      // In full version, this would check applications table
-      if (activeTab.value !== 'post') {
-        // For MVP, only show jobs in 'post' tab
-        // Applications tracking coming later
-        return false
-      }
+      // Tab filter - for MVP, all tabs show all non-hidden jobs
+      // TODO: once applications tracking is implemented, filter by application status
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _tab = activeTab.value // Keep for future use
       
       return true
     })

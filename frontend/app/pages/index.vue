@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-base-100">
     <!-- Header -->
     <header class="bg-base-200 border-b border-base-300">
-      <div class="container mx-auto px-4 py-4">
+      <div class="w-full max-w-7xl mx-auto px-4 py-4" style="max-width: 1200px;">
         <div class="flex justify-between items-center">
           <h1 class="text-2xl font-bold">🎯 Job Tracker</h1>
           <NuxtLink to="/dashboard" class="btn btn-ghost btn-sm">
@@ -13,7 +13,7 @@
     </header>
     
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-6">
+    <main class="w-full max-w-7xl mx-auto px-4 py-6" style="max-width: 1200px;">
       
       <!-- Filters -->
       <JobsJobFilters
@@ -42,7 +42,7 @@
       </div>
       
       <!-- Jobs Grid -->
-      <div v-else-if="filteredJobs.length" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div v-else-if="filteredJobs.length" class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         <JobsJobCard
           v-for="job in filteredJobs"
           :key="job.id"

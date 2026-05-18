@@ -1,6 +1,6 @@
 <template>
-  <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
-    <div class="card-body p-4">
+  <div class="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-200 border border-base-300">
+    <div class="card-body p-5">
       <!-- Header -->
       <div class="flex justify-between items-start gap-2">
         <div class="flex-1 min-w-0">
