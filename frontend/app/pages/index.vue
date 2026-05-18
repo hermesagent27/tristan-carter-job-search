@@ -54,7 +54,10 @@
       <div v-else class="text-center py-12">
         <div class="text-6xl mb-4">🔍</div>
         <h3 class="text-xl font-semibold mb-2">No jobs found</h3>
-        <p class="text-muted">Try adjusting your filters or check back later.</p>
+        <p class="text-muted mb-2">Try adjusting your filters or check back later.</p>
+        <p v-if="process.client" class="text-xs text-base-content/50">
+          Total loaded: {{ jobs.length }} | Filtered: {{ filteredJobs.length }}
+        </p>
       </div>
       
     </main>
@@ -75,8 +78,15 @@ const {
   remoteOnly
 } = useJobs()
 
-// Load jobs on mount
+// Load jobs immediately (for SSR) and on client
+await callOnce(async () => {
+  await fetchJobs()
+})
+
+// Also fetch on client in case of hydration mismatch
 onMounted(() => {
-  fetchJobs()
+  if (jobs.value.length === 0 && !loading.value) {
+    fetchJobs()
+  }
 })
 </script>
