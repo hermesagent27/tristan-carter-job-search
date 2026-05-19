@@ -11,6 +11,39 @@ from pathlib import Path
 from typing import Optional
 from xml.etree import ElementTree as ET
 
+# HTML cleaning for descriptions
+def clean_html(text):
+    """Strip HTML tags and decode entities."""
+    if not text:
+        return ""
+    # Remove HTML tags
+    text = re.sub(r'<[^>]+>', ' ', text)
+    # Decode common HTML entities
+    text = (text
+        .replace('&nbsp;', ' ')
+        .replace('&amp;', '&')
+        .replace('&lt;', '<')
+        .replace('&gt;', '>')
+        .replace('&quot;', '"')
+        .replace('&#39;', "'")
+        .replace('&rsquo;', "'")
+        .replace('&lsquo;', "'")
+        .replace('&rdquo;', '"')
+        .replace('&ldquo;', '"')
+        .replace('&ndash;', '-')
+        .replace('&mdash;', '-')
+        .replace('&hellip;', '...')
+        .replace('&#8217;', "'")
+        .replace('&#8220;', '"')
+        .replace('&#8221;', '"')
+        .replace('&#8211;', '-')
+    )
+    # Fix unicode escapes
+    text = text.encode('latin1', 'ignore').decode('utf-8', 'ignore')
+    # Collapse whitespace
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
 # Configuration
 DATA_DIR = Path(__file__).parent.parent / "data" / "jobs"
 MIN_SALARY = 50000
@@ -225,6 +258,27 @@ def check_location(desc: str) -> tuple:
     return ("Location TBD", False)
 
 
+def load_existing_jobs(data_dir: Path) -> set:
+    """Load all existing job URLs to avoid duplicates."""
+    existing_urls = set()
+    for year_month_dir in data_dir.iterdir():
+        if not year_month_dir.is_dir():
+            continue
+        for json_file in year_month_dir.glob("*.json"):
+            try:
+                with open(json_file, "r", encoding="utf-8") as f:
+                    jobs = json.load(f)
+                    for job in jobs:
+                        if isinstance(job, dict) and "url" in job:
+                            existing_urls.add(job["url"])
+                            # Also normalize URL variants
+                            url = job["url"].split("?")[0].rstrip("/")
+                            existing_urls.add(url)
+            except (json.JSONDecodeError, IOError):
+                continue
+    return existing_urls
+
+
 def find_tags(title: str, desc: str) -> list:
     """Find matching tech tags."""
     combined = f"{title} {desc}".lower()
@@ -241,6 +295,16 @@ def find_tags(title: str, desc: str) -> list:
         tags.append("remote")
     
     return sorted(tags)
+
+
+def normalize_url(url: str) -> str:
+    """Normalize URL for deduplication comparison."""
+    # Remove query params and trailing slashes
+    url = url.split("?")[0].rstrip("/")
+    # Remove hash
+    url = url.split("#")[0]
+    # Lowercase for comparison
+    return url.lower()
 
 
 def matches_criteria(entry: dict) -> bool:
@@ -302,8 +366,8 @@ def format_job(entry: dict, source: str) -> dict:
         "salary_min": salary_min,
         "salary_max": salary_max,
         "salary_text": salary_text,
-        "description": desc[:3000],  # Limit size
-        "description_short": desc[:500],
+        "description": clean_html(desc[:3000]),  # Clean HTML, limit size
+        "description_short": clean_html(desc[:500]),  # Clean HTML, limit size
         "url": url,
         "source": source,
         "source_id": None,
@@ -357,6 +421,12 @@ def main():
     print("=" * 60)
     print()
     
+    # Load existing jobs for deduplication
+    print("Loading existing jobs...")
+    existing_urls = load_existing_jobs(DATA_DIR)
+    print(f"  {len(existing_urls)} existing URLs loaded")
+    print()
+    
     today = datetime.now()
     
     sources = get_sources()
@@ -383,7 +453,9 @@ def main():
             if matches_criteria(entry):
                 job = format_job(entry, src["name"])
                 
-                if job["url"] not in seen_urls:
+                # Check against existing URLs (both raw and normalized)
+                normalized_url = normalize_url(job["url"])
+                if job["url"] not in seen_urls and normalized_url not in existing_urls:
                     seen_urls.add(job["url"])
                     all_jobs.append(job)
                     found += 1

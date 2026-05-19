@@ -52,10 +52,25 @@
       
       <!-- Empty State -->
       <div v-else class="text-center py-12">
-        <div class="text-6xl mb-4">🔍</div>
-        <h3 class="text-xl font-semibold mb-2">No jobs found</h3>
-        <p class="text-muted mb-2">Try adjusting your filters or check back later.</p>
-        <p v-if="process.client" class="text-xs text-base-content/50">
+        <div class="text-6xl mb-4">{{ activeTab === 'post' ? '🔍' : activeTab === 'applied' ? '📝' : activeTab === 'interview' ? '📅' : '🎉' }}</div>
+        <!-- Tab-specific messages -->
+        <template v-if="activeTab === 'post'">
+          <h3 class="text-xl font-semibold mb-2">No jobs found</h3>
+          <p class="text-muted mb-2">Try adjusting your filters or check back later.</p>
+        </template>
+        <template v-else-if="activeTab === 'applied'">
+          <h3 class="text-xl font-semibold mb-2">No applications put in</h3>
+          <p class="text-muted mb-2">Browse jobs and mark them as applied to see them here.</p>
+        </template>
+        <template v-else-if="activeTab === 'interview'">
+          <h3 class="text-xl font-semibold mb-2">No interviews scheduled</h3>
+          <p class="text-muted mb-2">Update your applications to interview stage to see them here.</p>
+        </template>
+        <template v-else-if="activeTab === 'offer'">
+          <h3 class="text-xl font-semibold mb-2">No offers yet</h3>
+          <p class="text-muted mb-2">Keep applying and interviewing!</p>
+        </template>
+        <p class="text-xs text-base-content/50">
           Total loaded: {{ jobs.length }} | Filtered: {{ filteredJobs.length }}
         </p>
       </div>

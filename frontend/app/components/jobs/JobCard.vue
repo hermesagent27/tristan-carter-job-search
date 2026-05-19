@@ -43,12 +43,12 @@
         <span v-else class="text-sm text-muted">Salary not listed</span>
         
         <div class="flex gap-2">
-          <NuxtLink 
-            :to="`/applications/${job.id}`"
+          <button 
+            @click="showDetails = true"
             class="btn btn-primary btn-sm"
           >
             View
-          </NuxtLink>
+          </button>
           <a 
             :href="job.url" 
             target="_blank"
@@ -67,11 +67,59 @@
         </div>
       </div>
     </div>
+    
+    <!-- Job Details Modal -->
+    <dialog v-if="showDetails" class="modal modal-open">
+      <div class="modal-box max-w-2xl">
+        <form method="dialog">
+          <button @click="showDetails = false" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        
+        <h3 class="font-bold text-lg pr-8">{{ job.title }}</h3>
+        <p class="py-1 text-muted">{{ job.company }} • {{ job.location }}</p>
+        
+        <div class="flex flex-wrap gap-2 py-2">
+          <span 
+            v-for="tag in job.tags" 
+            :key="tag"
+            class="badge badge-sm"
+            :class="getTagColor(tag)"
+          >
+            {{ tag }}
+          </span>
+          <span v-if="job.is_remote" class="badge badge-sm badge-success">Remote</span>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="prose max-w-none">
+          <h4 class="font-semibold mb-2">Description</h4>
+          <pre class="whitespace-pre-wrap text-sm bg-base-200 p-4 rounded-lg">{{ job.description }}</pre>
+        </div>
+        
+        <div class="modal-action">
+          <a 
+            :href="job.url" 
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Apply
+          </a>
+          <button @click="showDetails = false" class="btn">Close</button>
+        </div>
+      </div>
+      
+      <!-- Click outside to close -->
+      <form method="dialog" class="modal-backdrop">
+        <button @click="showDetails = false">Close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Job } from '~/types'
+import { truncateText } from '~/utils/text'
 
 interface Props {
   job: Job
@@ -99,4 +147,7 @@ const getTagColor = (tag: string) => {
 const getDescriptionPreview = computed(() => {
   return truncateText(props.job.description_short || props.job.description, 150)
 })
+
+// Show job details modal
+const showDetails = ref(false)
 </script>

@@ -5,6 +5,10 @@ const TOKEN = process.env.GITHUB_TOKEN
 const API_URL = `https://api.github.com/repos/${REPO}`
 const RAW_URL = `https://raw.githubusercontent.com/${REPO}/main`
 
+// Check if we're in development (local) mode
+const IS_DEV = process.env.NODE_ENV === 'development' || !process.env.VERCEL
+const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-carter-job-search/data'
+
 interface Job {
   id: string
   title: string
@@ -107,9 +111,14 @@ async function getFile(path: string): Promise<any | null> {
 // Fetch all jobs from GitHub
 export async function getAllJobs(): Promise<Job[]> {
   try {
+    // If running locally (dev mode), read from local files
+    if (IS_DEV && !TOKEN) {
+      console.log('[Jobs] Running in dev mode, reading from local files')
+      return fetchJobsFromLocalFiles()
+    }
+    
     if (!TOKEN) {
       console.error('[Jobs] GITHUB_TOKEN not configured')
-      // Fallback to raw URLs if no token
       return fetchJobsFromRawUrls()
     }
 
@@ -187,6 +196,56 @@ async function fetchJobsFromRawUrls(): Promise<Job[]> {
         console.error(`[Jobs] Raw URL failed for ${day}: ${e.message}`)
       }
     }
+  }
+  
+  return allJobs
+}
+
+// Read jobs from local filesystem (for dev mode)
+async function fetchJobsFromLocalFiles(): Promise<Job[]> {
+  const fs = await import('fs/promises')
+  const path = await import('path')
+  
+  const allJobs: Job[] = []
+  const jobsDir = path.join(LOCAL_DATA_PATH, 'jobs')
+  
+  try {
+    const months = await fs.readdir(jobsDir)
+    
+    for (const month of months) {
+      const monthDir = path.join(jobsDir, month)
+      const stat = await fs.stat(monthDir).catch(() => null)
+      if (!stat?.isDirectory()) continue
+      
+      const files = await fs.readdir(monthDir)
+      
+      for (const file of files) {
+        if (!file.endsWith('.json')) continue
+        
+        try {
+          const content = await fs.readFile(path.join(monthDir, file), 'utf-8')
+          const jobs = JSON.parse(content)
+          
+          if (Array.isArray(jobs)) {
+            const normalized = jobs.map((j: any) => ({
+              ...j,
+              is_favorite: j.is_favorite ?? false,
+              is_hidden: j.is_hidden ?? false,
+              role_type: j.role_type || detectRoleType(j),
+              status: j.status || 'new'
+            }))
+            allJobs.push(...normalized)
+            console.log(`[Jobs] Loaded ${jobs.length} jobs from ${month}/${file}`)
+          }
+        } catch (e: any) {
+          console.error(`[Jobs] Failed to parse ${month}/${file}: ${e.message}`)
+        }
+      }
+    }
+    
+    console.log(`[Jobs] Total loaded from local files: ${allJobs.length} jobs`)
+  } catch (e: any) {
+    console.error(`[Jobs] Failed to read local files: ${e.message}`)
   }
   
   return allJobs
