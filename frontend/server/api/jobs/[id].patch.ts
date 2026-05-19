@@ -23,6 +23,9 @@ export default defineEventHandler(async (event) => {
     if (body.status !== undefined) {
       updates.status = body.status // 'new', 'applied', 'interview', 'offer'
     }
+    if (body.application_data !== undefined) {
+      updates.application_data = body.application_data
+    }
 
     if (Object.keys(updates).length === 0) {
       throw createError({

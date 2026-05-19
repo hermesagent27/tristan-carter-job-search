@@ -18,6 +18,18 @@ export interface Job {
   is_favorite: boolean
   is_hidden: boolean
   status: 'new' | 'applied' | 'interview' | 'offer' | 'rejected'
+  application_data?: ApplicationData
+}
+
+export interface ApplicationData {
+  cover_letter?: string
+  questions: ApplicationQuestion[]
+  notes?: string
+}
+
+export interface ApplicationQuestion {
+  question: string
+  answer: string
 }
 
 export interface Application {
