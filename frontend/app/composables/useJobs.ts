@@ -103,20 +103,63 @@ export const useJobs = () => {
     const job = jobs.value.find(j => j.id === jobId)
     if (!job) return
 
-    // Optimistic update
     const newVal = !job.is_hidden
     job.is_hidden = newVal
 
-    // Persist to server
     try {
       await $fetch(`/api/jobs/${jobId}`, {
         method: 'PATCH',
         body: { is_hidden: newVal }
       })
     } catch (e) {
-      // Revert on failure
       job.is_hidden = !newVal
       console.error('Failed to update hidden:', e)
+    }
+  }
+
+  // Update job status
+  const updateStatus = async (jobId: string, status: string) => {
+    const job = jobs.value.find(j => j.id === jobId)
+    if (!job) return
+
+    const oldStatus = job.status
+    job.status = status as any
+
+    try {
+      await $fetch(`/api/jobs/${jobId}`, {
+        method: 'PATCH',
+        body: { status }
+      })
+    } catch (e) {
+      job.status = oldStatus
+      console.error('Failed to update status:', e)
+    }
+  }
+
+  // Delete job and block its URL
+  const deleteJob = async (jobId: string) => {
+    const job = jobs.value.find(j => j.id === jobId)
+    if (!job) return
+
+    const jobUrl = job.url
+    const index = jobs.value.findIndex(j => j.id === jobId)
+
+    if (index > -1) {
+      jobs.value.splice(index, 1)
+    }
+
+    try {
+      // Call delete API that blocks the URL
+      await $fetch(`/api/jobs/${jobId}`, {
+        method: 'DELETE'
+      })
+    } catch (e) {
+      console.error('Failed to delete job:', e)
+      // Re-add job on failure
+      if (index > -1) {
+        jobs.value.splice(index, 0, job)
+      }
+      throw e
     }
   }
 
@@ -132,6 +175,8 @@ export const useJobs = () => {
     roleFilter,
     remoteOnly,
     toggleFavorite,
-    toggleHidden
+    toggleHidden,
+    updateStatus,
+    deleteJob
   }
 }

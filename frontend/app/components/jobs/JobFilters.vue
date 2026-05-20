@@ -1,3 +1,15 @@
+<script setup lang="ts">
+const searchQuery = defineModel<string>('searchQuery')
+const roleFilter = defineModel<string>('roleFilter')
+const remoteOnly = defineModel<boolean>('remoteOnly')
+
+const clearFilters = () => {
+  searchQuery.value = ''
+  roleFilter.value = ''
+  remoteOnly.value = false
+}
+</script>
+
 <template>
   <div class="flex flex-wrap gap-3 items-center">
     <!-- Search -->
@@ -35,15 +47,3 @@
     </button>
   </div>
 </template>
-
-<script setup lang="ts">
-const searchQuery = defineModel<string>('searchQuery')
-const roleFilter = defineModel<string>('roleFilter')
-const remoteOnly = defineModel<boolean>('remoteOnly')
-
-const clearFilters = () => {
-  searchQuery.value = ''
-  roleFilter.value = ''
-  remoteOnly.value = false
-}
-</script>

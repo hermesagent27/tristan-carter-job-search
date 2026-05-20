@@ -1,3 +1,149 @@
+<script setup lang="ts">
+import type { Job } from '~/types'
+
+const route = useRoute()
+const jobId = route.params.id as string
+
+const loading = ref(true)
+const error = ref<string | null>(null)
+const job = ref<Job | null>(null)
+const isEditing = ref(false)
+const saving = ref(false)
+
+// Application data structure
+const application = ref({
+  cover_letter: '',
+  questions: [] as { question: string; answer: string }[],
+  notes: ''
+})
+
+// Load job data
+const fetchJob = async () => {
+  loading.value = true
+  error.value = null
+  
+  try {
+    const data = await $fetch(`/api/jobs`)
+    const found = data.jobs?.find((j: any) => j.id === jobId)
+    
+    if (found) {
+      job.value = found
+      
+      if (found.application_data) {
+        application.value = { 
+          ...application.value, 
+          ...found.application_data,
+          questions: found.application_data.questions || []
+        }
+      } else {
+        await generateCoverLetterForJob()
+      }
+    } else {
+      error.value = 'Job not found'
+    }
+  } catch (e) {
+    error.value = 'Failed to load job'
+    console.error(e)
+  } finally {
+    loading.value = false
+  }
+}
+
+// Auto-generate cover letter
+const generateCoverLetterForJob = async () => {
+  if (!job.value) return
+  
+  try {
+    const { cover_letter } = await $fetch(`/api/cover-letter?id=${job.value.id}`)
+    application.value.cover_letter = cover_letter
+  } catch (e) {
+    console.error('Failed to generate cover letter:', e)
+    application.value.cover_letter = `Dear Hiring Manager,
+
+I am writing to express my interest in the ${job.value.title} position at ${job.value.company}. With my background in web development and management experience, I bring both technical skills and leadership perspective to this role.
+
+I am particularly excited about the opportunity to contribute to your team and grow my skills in a collaborative environment. My experience has taught me to take initiative, communicate clearly, and deliver results.
+
+Thank you for considering my application.
+
+Sincerely,
+Tristan Carter`
+  }
+}
+
+// Save application data
+const saveApplication = async () => {
+  if (!job.value) return
+  
+  saving.value = true
+  try {
+    await $fetch(`/api/jobs/${jobId}`, {
+      method: 'PATCH',
+      body: {
+        application_data: application.value
+      }
+    })
+    
+    job.value.application_data = { ...application.value }
+    isEditing.value = false
+  } catch (e) {
+    console.error('Failed to save:', e)
+    alert('Failed to save. Please try again.')
+  } finally {
+  saving.value = false
+  }
+}
+
+// Update job status
+const updateStatus = async (newStatus: string) => {
+  if (!job.value) return
+  
+  try {
+    await $fetch(`/api/jobs/${jobId}`, {
+      method: 'PATCH',
+      body: { status: newStatus }
+    })
+    job.value.status = newStatus as any
+  } catch (e) {
+    console.error('Failed to update status:', e)
+  }
+}
+
+// Add/remove questions
+const addQuestion = () => {
+  application.value.questions.push({ question: '', answer: '' })
+}
+
+const removeQuestion = (index: number) => {
+  application.value.questions.splice(index, 1)
+}
+
+// Helpers
+const formatSalary = (val?: number) => {
+  if (!val) return '?'
+  return val >= 1000 ? `${val/1000}k` : val
+}
+
+const formatDate = (dateStr: string) => {
+  return new Date(dateStr).toLocaleDateString()
+}
+
+const statusClass = computed(() => {
+  const map: Record<string, string> = {
+    new: 'badge-ghost',
+    applied: 'badge-primary',
+    interview: 'badge-warning',
+    offer: 'badge-success',
+    rejected: 'badge-error'
+  }
+  return map[job.value?.status || 'new'] || 'badge-ghost'
+})
+
+onMounted(() => {
+  fetchJob()
+})
+</script>
+
 <template>
   <div class="min-h-screen bg-base-100">
     <!-- Header -->
@@ -53,13 +199,7 @@
               <p class="text-sm">{{ job.location }}</p>
               
               <div class="flex flex-wrap gap-1 mt-3">
-                <span 
-                  v-for="tag in job.tags" 
-                  :key="tag"
-                  class="badge badge-sm badge-ghost"
-                >
-                  {{ tag }}
-                </span>
+                <span v-for="tag in job.tags" :key="tag" class="badge badge-sm badge-ghost">{{ tag }}</span>
                 <span v-if="job.is_remote" class="badge badge-sm badge-success">Remote</span>
               </div>
 
@@ -80,11 +220,7 @@
               </div>
 
               <div class="card-actions mt-4">
-                <a 
-                  :href="job.url" 
-                  target="_blank"
-                  class="btn btn-outline btn-sm w-full"
-                >
+                <a :href="job.url" target="_blank" class="btn btn-outline btn-sm w-full">
                   View Original Posting ↗
                 </a>
               </div>
@@ -153,13 +289,7 @@
             <div class="card-body">
               <div class="flex justify-between items-center mb-4">
                 <h3 class="card-title text-lg">Application Questions</h3>
-                <button 
-                  v-if="isEditing"
-                  @click="addQuestion"
-                  class="btn btn-ghost btn-sm"
-                >
-                  + Add Question
-                </button>
+                <button v-if="isEditing" @click="addQuestion" class="btn btn-ghost btn-sm">+ Add Question</button>
               </div>
 
               <div v-if="application.questions.length === 0" class="text-center py-8 text-muted">
@@ -201,7 +331,7 @@
                     </div>
                   </div>
 
-                  <!-- Remove button (edit mode only) -->
+                  <!-- Remove button -->
                   <button 
                     v-if="isEditing"
                     @click="removeQuestion(index)"
@@ -235,154 +365,3 @@
     </main>
   </div>
 </template>
-
-<script setup lang="ts">
-import type { Job } from '~/types'
-
-const route = useRoute()
-const jobId = route.params.id as string
-
-const loading = ref(true)
-const error = ref<string | null>(null)
-const job = ref<Job | null>(null)
-const isEditing = ref(false)
-const saving = ref(false)
-
-// Application data structure
-const application = ref({
-  cover_letter: '',
-  questions: [] as { question: string; answer: string }[],
-  notes: ''
-})
-
-// Load job data
-const fetchJob = async () => {
-  loading.value = true
-  error.value = null
-  
-  try {
-    // Try to fetch from API
-    const data = await $fetch(`/api/jobs`)
-    const found = data.jobs?.find((j: any) => j.id === jobId)
-    
-    if (found) {
-      job.value = found
-      
-      // Load saved application data if exists
-      if (found.application_data) {
-        application.value = { 
-          ...application.value, 
-          ...found.application_data,
-          questions: found.application_data.questions || []
-        }
-      } else {
-        // Auto-generate cover letter for new applications
-        await generateCoverLetterForJob()
-      }
-    } else {
-      error.value = 'Job not found'
-    }
-  } catch (e) {
-    error.value = 'Failed to load job'
-    console.error(e)
-  } finally {
-    loading.value = false
-  }
-}
-
-// Auto-generate cover letter
-const generateCoverLetterForJob = async () => {
-  if (!job.value) return
-  
-  try {
-    const { cover_letter } = await $fetch(`/api/cover-letter?id=${job.value.id}`)
-    application.value.cover_letter = cover_letter
-  } catch (e) {
-    console.error('Failed to generate cover letter:', e)
-    // Set a default if generation fails
-    application.value.cover_letter = `Dear Hiring Manager,
-
-I am writing to express my interest in the ${job.value.title} position at ${job.value.company}. With my background in web development and management experience, I bring both technical skills and leadership perspective to this role.
-
-I am particularly excited about the opportunity to contribute to your team and grow my skills in a collaborative environment. My experience has taught me to take initiative, communicate clearly, and deliver results.
-
-Thank you for considering my application.
-
-Sincerely,
-Tristan Carter`
-  }
-}
-
-// Save application data
-const saveApplication = async () => {
-  if (!job.value) return
-  
-  saving.value = true
-  try {
-    await $fetch(`/api/jobs/${jobId}`, {
-      method: 'PATCH',
-      body: {
-        application_data: application.value
-      }
-    })
-    
-    // Update local job
-    job.value.application_data = { ...application.value }
-    isEditing.value = false
-  } catch (e) {
-    console.error('Failed to save:', e)
-    alert('Failed to save. Please try again.')
-  } finally {
-    saving.value = false
-  }
-}
-
-// Update job status
-const updateStatus = async (newStatus: string) => {
-  if (!job.value) return
-  
-  try {
-    await $fetch(`/api/jobs/${jobId}`, {
-      method: 'PATCH',
-      body: { status: newStatus }
-    })
-    job.value.status = newStatus as any
-  } catch (e) {
-    console.error('Failed to update status:', e)
-  }
-}
-
-// Add/remove questions
-const addQuestion = () => {
-  application.value.questions.push({ question: '', answer: '' })
-}
-
-const removeQuestion = (index: number) => {
-  application.value.questions.splice(index, 1)
-}
-
-// Helpers
-const formatSalary = (val?: number) => {
-  if (!val) return '?'
-  return val >= 1000 ? `${val/1000}k` : val
-}
-
-const formatDate = (dateStr: string) => {
-  return new Date(dateStr).toLocaleDateString()
-}
-
-const statusClass = computed(() => {
-  const map: Record<string, string> = {
-    new: 'badge-ghost',
-    applied: 'badge-primary',
-    interview: 'badge-warning',
-    offer: 'badge-success',
-    rejected: 'badge-error'
-  }
-  return map[job.value?.status || 'new'] || 'badge-ghost'
-})
-
-onMounted(() => {
-  fetchJob()
-})
-</script>

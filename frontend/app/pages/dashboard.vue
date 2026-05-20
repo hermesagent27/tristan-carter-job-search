@@ -1,12 +1,59 @@
+<script setup lang="ts">
+const loading = ref(true)
+const stats = ref({
+  totalJobs: 0,
+  applied: 0,
+  interview: 0,
+  offer: 0
+})
+
+const roleDistribution = ref<[string, number][]>([])
+
+const formatRole = (role: string) => {
+  const map: Record<string, string> = {
+    frontend: 'Frontend',
+    backend: 'Backend',
+    fullstack: 'Full Stack',
+    support: 'Support',
+    other: 'Other'
+  }
+  return map[role] || role
+}
+
+onMounted(async () => {
+  try {
+    const { jobs } = await $fetch('/api/jobs')
+    stats.value.totalJobs = jobs.length
+    
+    const visibleJobs = jobs.filter((j: any) => !j.is_hidden)
+    const roles: Record<string, number> = {}
+    for (const job of visibleJobs) {
+      const r = job.role_type || 'other'
+      roles[r] = (roles[r] || 0) + 1
+    }
+    roleDistribution.value = Object.entries(roles).sort((a, b) => b[1] - a[1])
+    
+    for (const job of visibleJobs) {
+      if (job.status === 'applied') stats.value.applied++
+      else if (job.status === 'interview') stats.value.interview++
+      else if (job.status === 'offer') stats.value.offer++
+    }
+    
+  } catch (e) {
+    console.error('Failed to load stats:', e)
+  } finally {
+    loading.value = false
+  }
+})
+</script>
+
 <template>
   <div class="min-h-screen bg-base-100">
     <!-- Header -->
     <header class="bg-base-200 border-b border-base-300">
       <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
-          <NuxtLink to="/" class="btn btn-ghost text-xl">
-            🎯 Job Tracker
-          </NuxtLink>
+          <NuxtLink to="/" class="btn btn-ghost text-xl">🎯 Job Tracker</NuxtLink>
           <h1 class="text-2xl font-bold">Dashboard</h1>
         </div>
       </div>
@@ -85,55 +132,3 @@
     </main>
   </div>
 </template>
-
-<script setup lang="ts">
-const loading = ref(true)
-const stats = ref({
-  totalJobs: 0,
-  applied: 0,
-  interview: 0,
-  offer: 0
-})
-
-const roleDistribution = ref<[string, number][]>([])
-
-const formatRole = (role: string) => {
-  const map: Record<string, string> = {
-    frontend: 'Frontend',
-    backend: 'Backend',
-    fullstack: 'Full Stack',
-    support: 'Support',
-    other: 'Other'
-  }
-  return map[role] || role
-}
-
-onMounted(async () => {
-  try {
-    const { jobs } = await $fetch('/api/jobs')
-    stats.value.totalJobs = jobs.length
-    
-    // Count by role (filtering out hidden)
-    const visibleJobs = jobs.filter((j: any) => !j.is_hidden)
-    const roles: Record<string, number> = {}
-    for (const job of visibleJobs) {
-      const r = job.role_type || 'other'
-      roles[r] = (roles[r] || 0) + 1
-    }
-    roleDistribution.value = Object.entries(roles).sort((a, b) => b[1] - a[1])
-    
-    // TODO: Load applications from API when available
-    // For now, count by status field
-    for (const job of visibleJobs) {
-      if (job.status === 'applied') stats.value.applied++
-      else if (job.status === 'interview') stats.value.interview++
-      else if (job.status === 'offer') stats.value.offer++
-    }
-    
-  } catch (e) {
-    console.error('Failed to load stats:', e)
-  } finally {
-    loading.value = false
-  }
-})
-</script>

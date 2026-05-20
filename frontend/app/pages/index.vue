@@ -1,3 +1,47 @@
+<script setup lang="ts">
+const { 
+  jobs, 
+  loading, 
+  error, 
+  fetchJobs, 
+  filteredJobs, 
+  counts,
+  activeTab,
+  searchQuery,
+  roleFilter,
+  remoteOnly,
+  updateStatus,
+  deleteJob
+} = useJobs()
+
+// Handle status update from job card
+const handleUpdateStatus = async (jobId: string, status: string) => {
+  await updateStatus(jobId, status)
+}
+
+// Handle delete from job card
+const handleDeleteJob = async (jobId: string) => {
+  try {
+    await deleteJob(jobId)
+  } catch (e) {
+    console.error('Delete failed:', e)
+    alert('Failed to delete job. Please try again.')
+  }
+}
+
+// Load jobs immediately (for SSR) and on client
+await callOnce(async () => {
+  await fetchJobs()
+})
+
+// Also fetch on client in case of hydration mismatch
+onMounted(() => {
+  if (jobs.value.length === 0 && !loading.value) {
+    fetchJobs()
+  }
+})
+</script>
+
 <template>
   <div class="min-h-screen bg-base-100">
     <!-- Header -->
@@ -37,7 +81,9 @@
       
       <!-- Error State -->
       <div v-else-if="error" class="alert alert-error">
-        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
         <span>{{ error }}</span>
       </div>
       
@@ -47,6 +93,8 @@
           v-for="job in filteredJobs"
           :key="job.id"
           :job="job"
+          @update-status="handleUpdateStatus"
+          @delete-job="handleDeleteJob"
         />
       </div>
       
@@ -78,30 +126,3 @@
     </main>
   </div>
 </template>
-
-<script setup lang="ts">
-const { 
-  jobs, 
-  loading, 
-  error, 
-  fetchJobs, 
-  filteredJobs, 
-  counts,
-  activeTab,
-  searchQuery,
-  roleFilter,
-  remoteOnly
-} = useJobs()
-
-// Load jobs immediately (for SSR) and on client
-await callOnce(async () => {
-  await fetchJobs()
-})
-
-// Also fetch on client in case of hydration mismatch
-onMounted(() => {
-  if (jobs.value.length === 0 && !loading.value) {
-    fetchJobs()
-  }
-})
-</script>
