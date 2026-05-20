@@ -243,11 +243,27 @@ def check_location(desc: str) -> tuple:
     """Check location type. Returns (location_str, is_remote)."""
     desc_lower = desc.lower()
     
+    # Remote detection
     if any(kw in desc_lower for kw in ["remote", "work from home", "wfh", "anywhere"]):
         return ("Remote", True)
+    
+    # Hybrid detection
     if "hybrid" in desc_lower:
         return ("Hybrid", False)
-    if "usa" in desc_lower or "united states" in desc_lower:
+    
+    # Oklahoma detection (city, state or state name)
+    ok_patterns = [
+        r'\boklahoma\s*(?:city)?\b',
+        r'(tulsa|norman|edmond|stillwater|broken arrow|moore|lawton),?\s*ok\b',
+        r',\s*ok\s*\d{5}',
+    ]
+    for pattern in ok_patterns:
+        match = re.search(pattern, desc_lower)
+        if match:
+            return ("Oklahoma (" + match.group(0).replace(',', '').strip().title() + ")", False)
+    
+    # Generic USA references
+    if re.search(r'\busa\b|\bunited states\b', desc_lower):
         return ("USA (unspecified)", False)
     
     # Try to extract city, state
@@ -255,6 +271,7 @@ def check_location(desc: str) -> tuple:
     if match:
         return (match.group(0), False)
     
+    # If no clear location, mark as Location TBD (will be filtered out by matches_criteria)
     return ("Location TBD", False)
 
 
@@ -328,6 +345,12 @@ def matches_criteria(entry: dict) -> bool:
     # Check salary if mentioned
     salary_min, _, _ = extract_salary(full)
     if salary_min and salary_min < MIN_SALARY:
+        return False
+    
+    # Check location - only save Remote or Oklahoma jobs
+    location, is_remote = check_location(desc)
+    is_oklahoma = bool(re.search(r'\boklahoma\b|\bok\b', f"{location} {desc}".lower()))
+    if not is_remote and not is_oklahoma:
         return False
     
     # Must have dev-related title

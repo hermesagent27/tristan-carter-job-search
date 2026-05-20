@@ -12,9 +12,12 @@ export default defineEventHandler(async (event) => {
       jobs = jobs.filter(j => j.role_type && roles.includes(j.role_type))
     }
     
-    if (query.remote === 'true') {
-      jobs = jobs.filter(j => j.is_remote)
-    }
+    // Filter: Only Remote or Oklahoma jobs (user preference - no relocation)
+    jobs = jobs.filter(j => {
+      const isRemote = j.is_remote || /\b(remote|anywhere|wfh|work from home)\b/i.test(j.location || '')
+      const isOklahoma = /\boklahoma\b|\bok\b/i.test(j.location || '')
+      return isRemote || isOklahoma
+    })
     
     if (query.favorites === 'true') {
       jobs = jobs.filter(j => j.is_favorite)
