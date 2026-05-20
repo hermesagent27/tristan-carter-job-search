@@ -2,7 +2,7 @@
   {
     "id": "remoteok-41d420c9d632",
     "title": "IT Support Technician",
-    "company": "Unknown",
+    "company": "Avalere Health United",
     "location": "Remote",
     "is_remote": true,
     "salary_min": null,
@@ -142,7 +142,7 @@
   {
     "id": "wwr-programming-c95c830e587b",
     "title": "Java Full Stack Developer",
-    "company": "ellow Talent Marketplaces Pvt",
+    "company": "Ellow Talent Marketplaces",
     "location": "Remote",
     "is_remote": true,
     "salary_min": null,
@@ -258,7 +258,7 @@
   {
     "id": "wwr-programming-63a56d8657c5",
     "title": "Backend Engineer, 80-100% (f/m/x)",
-    "company": "comparis.ch",
+    "company": "Comparis Ch Backend",
     "location": "Remote",
     "is_remote": true,
     "salary_min": 80000,

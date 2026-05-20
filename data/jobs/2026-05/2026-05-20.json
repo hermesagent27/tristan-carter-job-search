@@ -2,7 +2,7 @@
   {
     "id": "remoteok-41d420c9d632",
     "title": "IT Support Technician",
-    "company": "Unknown",
+    "company": "Avalere Health United",
     "location": "Remote",
     "is_remote": true,
     "salary_min": null,
@@ -37,7 +37,7 @@
   {
     "id": "remoteok-fc4905bbe773",
     "title": "Technical Support Specialist",
-    "company": "Unknown",
+    "company": "Riva",
     "location": "Location TBD",
     "is_remote": false,
     "salary_min": null,
@@ -71,7 +71,7 @@
   {
     "id": "remoteok-2b2cf414f1dd",
     "title": "Application Support Engineer",
-    "company": "Unknown",
+    "company": "Cresta",
     "location": "Stanford AI",
     "is_remote": false,
     "salary_min": null,
@@ -138,7 +138,7 @@
   {
     "id": "remoteok-6e2169707bbc",
     "title": "Software engineer",
-    "company": "Unknown",
+    "company": "Sticker Mule",
     "location": "Remote",
     "is_remote": true,
     "salary_min": null,
@@ -174,7 +174,7 @@
   {
     "id": "remoteok-93520065647c",
     "title": "IT Support Technician",
-    "company": "Unknown",
+    "company": "Avalere Health United",
     "location": "Remote",
     "is_remote": true,
     "salary_min": 63000,
@@ -209,7 +209,7 @@
   {
     "id": "remoteok-e2a6ae6ace93",
     "title": "Business Analyst",
-    "company": "Unknown",
+    "company": "Judi HealthJudi Health",
     "location": "Location TBD",
     "is_remote": false,
     "salary_min": null,
@@ -242,7 +242,7 @@
   {
     "id": "remoteok-74d8898be28e",
     "title": "Capture Analyst",
-    "company": "Unknown",
+    "company": "the Role As",
     "location": "Remote",
     "is_remote": true,
     "salary_min": 71000,

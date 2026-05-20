@@ -2,7 +2,7 @@
   {
     "id": "remoteok-6e2169707bbc",
     "title": "Software engineer",
-    "company": "Unknown",
+    "company": "Sticker Mule",
     "location": "Remote",
     "is_remote": true,
     "salary_min": null,
@@ -38,7 +38,7 @@
   {
     "id": "remoteok-93520065647c",
     "title": "IT Support Technician",
-    "company": "Unknown",
+    "company": "Avalere Health United",
     "location": "Remote",
     "is_remote": true,
     "salary_min": 63000,
@@ -73,7 +73,7 @@
   {
     "id": "remoteok-e2a6ae6ace93",
     "title": "Business Analyst",
-    "company": "Unknown",
+    "company": "Judi HealthJudi Health",
     "location": "Location TBD",
     "is_remote": false,
     "salary_min": null,
@@ -106,7 +106,7 @@
   {
     "id": "remoteok-74d8898be28e",
     "title": "Capture Analyst",
-    "company": "Unknown",
+    "company": "the Role As",
     "location": "Remote",
     "is_remote": true,
     "salary_min": 71000,
@@ -207,7 +207,7 @@
   {
     "id": "remoteok-0020f20243e0",
     "title": "Operations and Support Associate",
-    "company": "Unknown",
+    "company": "us on our",
     "location": "USA (unspecified)",
     "is_remote": false,
     "salary_min": null,
@@ -241,7 +241,7 @@
   {
     "id": "remoteok-574c655ead64",
     "title": "Travel Support Advisor",
-    "company": "Unknown",
+    "company": "the Opportunity We",
     "location": "Remote",
     "is_remote": true,
     "salary_min": 70000,
@@ -453,7 +453,7 @@
   {
     "id": "weworkremotely-b1e36cdc8738",
     "title": "Experienced Software Developer",
-    "company": "Jeff Murray's Programming Shop, Inc.",
+    "company": "Jeff Murray S",
     "location": "Remote",
     "is_remote": true,
     "salary_min": null,

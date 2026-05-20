@@ -338,6 +338,40 @@ def matches_criteria(entry: dict) -> bool:
     return True
 
 
+def extract_company_from_description(desc: str) -> str:
+    """Extract company name from description patterns like 'here at [company]' or 'with [company]'."""
+    if not desc:
+        return ""
+    
+    desc_lower = desc.lower()
+    
+    # Patterns to match company names
+    patterns = [
+        # "here at [company]" / "join us at [company]"
+        r'(?:here|join us|work|team)\s+(?:at|for)\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,.!]|\s+(?:we|you|and|our|as|where|to|we\'re|$))',
+        # "with [company]" when talking about working there
+        r'(?:work|job|role|position|opportunity)\s+(?:with|at)\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,.!]|\s+(?:we|you|and|our|as|where|to|we\'re|$))',
+        # "About [company]"
+        r'about\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,:]|\s+(?:we|our|the|\$|\d))',
+        # "[company] is looking for"
+        r'([A-Z][A-Za-z0-9\s&]+?)\s+is\s+(?:looking|hiring|seeking)',
+        # "Welcome to [company]"
+        r'welcome\s+(?:to\s+)?([A-Z][A-Za-z0-9\s&]+?)(?:\s*[.!]|\s+(?:we|where|our|$))',
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, desc, re.IGNORECASE)
+        if match:
+            company = match.group(1).strip()
+            # Clean up common noise words
+            company = re.sub(r'\s+(?:Inc|LLC|Ltd|Limited|Corp|Corporation|Company)\.?$', '', company, flags=re.IGNORECASE)
+            # Make sure it's not too short or generic
+            if len(company) > 2 and company.lower() not in ['the', 'our', 'this', 'your', 'we', 'and']:
+                return company
+    
+    return ""
+
+
 def format_job(entry: dict, source: str) -> dict:
     """Convert entry to standardized Job schema."""
     title = entry.get("title", "")
@@ -354,6 +388,14 @@ def format_job(entry: dict, source: str) -> dict:
     company = entry.get("company", "")
     if not company and ":" in title:
         company = title.split(":")[0].strip()
+    if not company:
+        # Try to extract from description
+        company = extract_company_from_description(desc)
+    if not company and source == "RemoteOK":
+        # Try RemoteOK URL pattern: remoteok.com/remote-jobs/remote-[job]-[company]-[id]
+        url_match = re.search(r'remoteok\.com.*-job[s]?/.*-([^-]+(?:-[^-]+){0,2})-\d+$', url)
+        if url_match:
+            company = url_match.group(1).replace('-', ' ').title()
     
     job_id = generate_id(source, url)
     
