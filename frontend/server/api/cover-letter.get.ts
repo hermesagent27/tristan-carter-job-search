@@ -1,4 +1,4 @@
-import { generateCoverLetter } from '../../utils/cover-letter'
+import { generateCoverLetter } from '../utils/cover-letter'
 
 export default defineEventHandler(async (event) => {
   try {
@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
       })
     }
     
-    // Get the job
+    // Get the job - getJobById is auto-imported from server/utils
     const job = await getJobById(jobId)
     if (!job) {
       throw createError({
