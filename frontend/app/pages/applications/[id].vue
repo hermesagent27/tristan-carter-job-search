@@ -261,15 +261,23 @@ const fetchJob = async () => {
   error.value = null
   
   try {
-    // Try to fetch from API (can filter by ID)
+    // Try to fetch from API
     const data = await $fetch(`/api/jobs`)
     const found = data.jobs?.find((j: any) => j.id === jobId)
     
     if (found) {
       job.value = found
+      
       // Load saved application data if exists
       if (found.application_data) {
-        application.value = { ...application.value, ...found.application_data }
+        application.value = { 
+          ...application.value, 
+          ...found.application_data,
+          questions: found.application_data.questions || []
+        }
+      } else {
+        // Auto-generate cover letter for new applications
+        await generateCoverLetterForJob()
       }
     } else {
       error.value = 'Job not found'
@@ -279,6 +287,29 @@ const fetchJob = async () => {
     console.error(e)
   } finally {
     loading.value = false
+  }
+}
+
+// Auto-generate cover letter
+const generateCoverLetterForJob = async () => {
+  if (!job.value) return
+  
+  try {
+    const { cover_letter } = await $fetch(`/api/cover-letter?id=${job.value.id}`)
+    application.value.cover_letter = cover_letter
+  } catch (e) {
+    console.error('Failed to generate cover letter:', e)
+    // Set a default if generation fails
+    application.value.cover_letter = `Dear Hiring Manager,
+
+I am writing to express my interest in the ${job.value.title} position at ${job.value.company}. With my background in web development and management experience, I bring both technical skills and leadership perspective to this role.
+
+I am particularly excited about the opportunity to contribute to your team and grow my skills in a collaborative environment. My experience has taught me to take initiative, communicate clearly, and deliver results.
+
+Thank you for considering my application.
+
+Sincerely,
+Tristan Carter`
   }
 }
 
