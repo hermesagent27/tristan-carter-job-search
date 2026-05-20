@@ -11,9 +11,6 @@ const emit = defineEmits(['update-status', 'delete-job'])
 
 const { toggleHidden } = useJobs()
 
-// Modal state
-const deleteModalRef = ref<HTMLDialogElement | null>(null)
-
 const statusOptions = [
   { value: 'new', label: 'New' },
   { value: 'applied', label: 'Applied' },
@@ -51,20 +48,15 @@ const updateStatus = (status: string) => {
   emit('update-status', status)
 }
 
-const openDeleteModal = () => {
-  deleteModalRef.value?.showModal()
-}
-
 const confirmDelete = () => {
   emit('delete-job', props.job.id)
-  deleteModalRef.value?.close()
 }
 </script>
 
 <template>
-  <!-- Daisy Card -->
   <div class="card bg-base-100 shadow-sm hover:shadow-md transition-shadow h-full">
     <div class="card-body p-4 flex flex-col">
+      
       <!-- Header -->
       <div class="flex justify-between items-start gap-2">
         <div class="flex-1 min-w-0">
@@ -82,45 +74,46 @@ const confirmDelete = () => {
             {{ job.is_favorite ? '★' : '☆' }}
           </button>
           
-          <!-- Daisy Dropdown -->
+          <!-- Daisy Dropdown - uses :focus-within, no JS needed -->
           <div class="dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-ghost btn-sm btn-circle">⚙️</label>
-            <ul tabindex="0" class="dropdown-content menu menu-sm z-[1] bg-base-100 rounded-box shadow w-48 border border-base-300 p-0">
-              <li class="menu-title pl-4 pr-2 py-2">Update Status</li>
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm btn-circle">⚙️</div>
+            <ul tabindex="0" class="dropdown-content menu menu-sm bg-base-100 rounded-box shadow-xl w-48 border border-base-300">
+              <li class="menu-title">Update Status</li>
               <li v-for="option in statusOptions" :key="option.value">
-                <button @click="updateStatus(option.value)" class="flex justify-between w-full text-left">
-                  {{ option.label }}
+                <button @click="updateStatus(option.value)" class="flex justify-between">
+                  <span>{{ option.label }}</span>
                   <span v-if="job.status === option.value">✓</span>
                 </button>
               </li>
-              <div class="divider my-0"></div>
+              <div class="divider"></div>
               <li>
-                <button @click="openDeleteModal" class="text-error w-full text-left">Delete Job</button>
+                <!-- Daisy modal trigger using label + checkbox -->
+                <label :for="`delete-modal-${job.id}`" class="text-error">Delete Job</label>
               </li>
             </ul>
           </div>
         </div>
       </div>
       
-      <!-- Daisy Modal -->
-      <dialog ref="deleteModalRef" class="modal modal-middle">
+      <!-- Daisy Modal (CSS-only with checkbox hack) -->
+      <input type="checkbox" :id="`delete-modal-${job.id}`" class="modal-toggle" />
+      <div class="modal" role="dialog">
         <div class="modal-box">
-          <h3 class="text-lg font-bold">Are you sure?</h3>
+          <h3 class="font-bold text-lg">Are you sure?</h3>
           <p class="py-4 text-sm opacity-70">
             This job will be deleted and its URL added to the blocklist. 
             <strong>This cannot be undone.</strong>
           </p>
           <div class="modal-action">
-            <form method="dialog">
-              <button class="btn btn-ghost btn-sm">Cancel</button>
-            </form>
-            <button @click="confirmDelete" class="btn btn-error btn-sm">Delete</button>
+            <!-- Cancel closes the checkbox modal -->
+            <label class="btn btn-ghost btn-sm" :for="`delete-modal-${job.id}`">Cancel</label>
+            <!-- Delete emits and closes via label -->
+            <label @click="confirmDelete" class="btn btn-error btn-sm" :for="`delete-modal-${job.id}`">Delete</label>
           </div>
         </div>
-        <form method="dialog" class="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
+        <!-- Backdrop closes modal when clicked -->
+        <label class="modal-backdrop" :for="`delete-modal-${job.id}`">Close</label>
+      </div>
       
       <!-- Description -->
       <p class="text-sm opacity-70 line-clamp-2 mt-2 flex-1">
