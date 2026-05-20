@@ -23,16 +23,16 @@
       </p>
       
       <!-- Tags -->
-      <div class="flex flex-wrap gap-1 mt-3">
+      <div class="flex flex-wrap gap-1.5 mt-3">
         <span 
-          v-for="tag in job.tags.slice(0, 5)" 
+          v-for="tag in uniqueTags" 
           :key="tag"
-          class="badge badge-sm"
+          class="badge badge-sm border border-current bg-base-200/80"
           :class="getTagColor(tag)"
         >
           {{ tag }}
         </span>
-        <span v-if="job.is_remote" class="badge badge-sm badge-success">Remote</span>
+        <span v-if="job.is_remote" class="badge badge-sm badge-success border border-success bg-success/80">Remote</span>
       </div>
       
       <!-- Footer -->
@@ -81,6 +81,15 @@ interface Props {
 const props = defineProps<Props>()
 
 const { toggleFavorite, toggleHidden } = useJobs()
+
+// Get unique tags excluding 'remote' since we show that separately
+const uniqueTags = computed(() => {
+  if (!props.job.tags) return []
+  // Filter out 'remote' from tags since we display it as a separate badge
+  return props.job.tags
+    .filter(tag => tag.toLowerCase() !== 'remote')
+    .slice(0, 4) // Limit to 4 tags to save space
+})
 
 const formatSalary = (val?: number) => {
   if (!val) return '?'
