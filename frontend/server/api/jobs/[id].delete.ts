@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     
     try {
       // Get job info to get the URL
-      const { getJobById } = await import('~/server/utils/github')
+      const { getJobById } = await import('../../utils/github')
       const job = await getJobById(jobId)
       
       if (!job) {
