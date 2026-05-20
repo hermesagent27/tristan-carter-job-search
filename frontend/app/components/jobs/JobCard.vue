@@ -85,17 +85,17 @@ const confirmDelete = () => {
           <!-- Daisy Dropdown -->
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-sm btn-circle">⚙️</label>
-            <ul tabindex="0" class="dropdown-content menu menu-sm bg-base-100 rounded-box shadow-xl z-10 w-48 border border-base-300">
-              <li class="menu-title">Update Status</li>
+            <ul tabindex="0" class="dropdown-content menu menu-sm z-[1] bg-base-100 rounded-box shadow w-48 border border-base-300 p-0">
+              <li class="menu-title pl-4 pr-2 py-2">Update Status</li>
               <li v-for="option in statusOptions" :key="option.value">
-                <a @click="updateStatus(option.value)" class="flex justify-between">
+                <button @click="updateStatus(option.value)" class="flex justify-between w-full text-left">
                   {{ option.label }}
                   <span v-if="job.status === option.value">✓</span>
-                </a>
+                </button>
               </li>
-              <div class="divider my-1"></div>
+              <div class="divider my-0"></div>
               <li>
-                <a @click="openDeleteModal" class="text-error">Delete Job</a>
+                <button @click="openDeleteModal" class="text-error w-full text-left">Delete Job</button>
               </li>
             </ul>
           </div>
