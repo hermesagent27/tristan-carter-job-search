@@ -361,36 +361,116 @@ def matches_criteria(entry: dict) -> bool:
     return True
 
 
+# Known company slugs for common sites
+KNOWN_COMPANIES = {
+    'sticker-mule': 'Sticker Mule',
+    'avalere-health': 'Avalere Health',
+    'judi-health': 'Judi Health',
+    'catamaran-research': 'Catamaran Research',
+    'orc-id': 'ORCID',
+    'crisp': 'Crisp',
+    'far-out-scout': 'Far Out Scout',
+    'ci-t': 'CI&T',
+    'linear': 'Linear',
+    'altarum': 'Altarum',
+    'careers-in-travel': 'Careers in Travel',
+}
+
+
 def extract_company_from_description(desc: str) -> str:
-    """Extract company name from description patterns like 'here at [company]' or 'with [company]'."""
+    """Extract company name from description by counting frequency of potential matches."""
     if not desc:
         return ""
     
-    desc_lower = desc.lower()
+    BLOCKLIST = {
+        'this', 'our', 'the', 'we', 'you', 'your', 'us', 'and', 'or',
+        'this opportunity', 'our team', 'our company', 'the role',
+        'the company', 'we believe', 'we are', 'your next',
+        'the intersection', 'product managers', 'product team',
+        'our mission', 'our values', 'our product', 'our platform',
+        'the future', 'the world', 'your role', 'your work',
+        'here', 'here we', 'at the', 'with the', 'about this',
+        'about us', 'about our', 'about the', 'join us',
+        'work with', 'work at', 'help us', 'helping us',
+        'on our', 'on this', 'to our', 'to the', 'role', 'career',
+        'opportunity', 'the role as', 'the opportunity we',
+        'we are looking', 'you will', 'you can', 'remote',
+    }
     
-    # Patterns to match company names
+    candidates = []
+    
     patterns = [
-        # "here at [company]" / "join us at [company]"
-        r'(?:here|join us|work|team)\s+(?:at|for)\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,.!]|\s+(?:we|you|and|our|as|where|to|we\'re|$))',
-        # "with [company]" when talking about working there
-        r'(?:work|job|role|position|opportunity)\s+(?:with|at)\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,.!]|\s+(?:we|you|and|our|as|where|to|we\'re|$))',
-        # "About [company]"
-        r'about\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,:]|\s+(?:we|our|the|\$|\d))',
-        # "[company] is looking for"
-        r'([A-Z][A-Za-z0-9\s&]+?)\s+is\s+(?:looking|hiring|seeking)',
-        # "Welcome to [company]"
-        r'welcome\s+(?:to\s+)?([A-Z][A-Za-z0-9\s&]+?)(?:\s*[.!]|\s+(?:we|where|our|$))',
+        r'([A-Z][A-Za-z0-9\s&]+?)\s+is\s+(?:hiring|seeking|looking)',
+        r'(?:join|careers?\s+at)\s+(?:the\s+)?([A-Z][A-Za-z0-9\s&]+?)(?:\s+team|\s*[,.]|\s+and)',
+        r'(?:here|work)\s+at\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,.]|\s+we\s+)',
+        r'welcome\s+(?:to\s+)?([A-Z][A-Za-z0-9\s&]+?)(?:\s*[,.]|\s+where)',
+        r'about\s+([A-Z][A-Za-z0-9\s&]+?)(?:\s*[:,.]|\s+we\s)',  
+        r'\bat\s+([A-Z][A-Za-z0-9\s&]+?)\s*[,.\u00A0]',
     ]
     
     for pattern in patterns:
-        match = re.search(pattern, desc, re.IGNORECASE)
-        if match:
+        matches = re.finditer(pattern, desc, re.IGNORECASE)
+        for match in matches:
             company = match.group(1).strip()
-            # Clean up common noise words
-            company = re.sub(r'\s+(?:Inc|LLC|Ltd|Limited|Corp|Corporation|Company)\.?$', '', company, flags=re.IGNORECASE)
-            # Make sure it's not too short or generic
-            if len(company) > 2 and company.lower() not in ['the', 'our', 'this', 'your', 'we', 'and']:
-                return company
+            company = re.sub(r'\s+(?:Inc\.?|LLC\.?|Ltd\.?|Limited|Corp\.?|Corporation|Company)\.?$', '', company, flags=re.IGNORECASE)
+            company = re.sub(r'\s+', ' ', company).strip()
+            
+            if len(company) < 3 or len(company) > 40:
+                continue
+            if company.lower() in BLOCKLIST:
+                continue
+            
+            candidates.append(company)
+    
+    if not candidates:
+        return ""
+    
+    # Count frequency - real company names appear multiple times
+    from collections import Counter
+    freq = Counter(candidates)
+    most_common = freq.most_common()
+    
+    if most_common[0][1] > 1:
+        return most_common[0][0]
+    
+    # Single appearance - validate it looks like a company name
+    best = most_common[0][0]
+    first_word = best.split()[0].lower() if best.split() else ""
+    if first_word in ['the', 'our', 'this', 'we', 'us', 'your', 'a', 'an']:
+        return ""
+    
+    return best
+
+
+def extract_company_from_url(url: str, source: str) -> str:
+    """Extract company name from URL patterns like RemoteOK and WeWorkRemotely."""
+    if not url:
+        return ""
+    
+    from urllib.parse import urlparse
+    path = urlparse(url).path
+    
+    # Check KNOWN_COMPANIES first
+    for slug, name in KNOWN_COMPANIES.items():
+        if slug.replace('-', '') in path.lower().replace('-', '').replace('/', ''):
+            return name
+    
+    # WeWorkRemotely: ...at-[company]
+    match = re.search(r'-at-([^\/]+?)(?:-remote|/?$)', path)
+    if match:
+        company = match.group(1).replace('-', ' ').title()
+        company = re.sub(r'\s+(?:Inc\.?|LLC\.?|Ltd\.?|Limited|Inc\.?)$', '', company, flags=re.I)
+        return company
+    
+    # RemoteOK: try to extract from path
+    match = re.search(r'remoteok.*-[^-]+(?:-[^-]+){1,4}-(\d+)$', path)
+    if match:
+        before_id = path[:path.rfind(match.group(1))].rstrip('-/')
+        parts = before_id.split('/')[-1].replace('remote-', '').split('-')
+        for i in range(min(4, len(parts))):
+            potential = ' '.join(parts[max(0, len(parts)-3-i):]).title()
+            if len(potential) >= 4:
+                return potential
     
     return ""
 
@@ -412,13 +492,11 @@ def format_job(entry: dict, source: str) -> dict:
     if not company and ":" in title:
         company = title.split(":")[0].strip()
     if not company:
-        # Try to extract from description
+        # Try URL extraction first (more reliable)
+        company = extract_company_from_url(url, source)
+    if not company:
+        # Fallback to description extraction
         company = extract_company_from_description(desc)
-    if not company and source == "RemoteOK":
-        # Try RemoteOK URL pattern: remoteok.com/remote-jobs/remote-[job]-[company]-[id]
-        url_match = re.search(r'remoteok\.com.*-job[s]?/.*-([^-]+(?:-[^-]+){0,2})-\d+$', url)
-        if url_match:
-            company = url_match.group(1).replace('-', ' ').title()
     
     job_id = generate_id(source, url)
     
