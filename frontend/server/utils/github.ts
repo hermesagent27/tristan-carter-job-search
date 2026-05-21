@@ -254,10 +254,14 @@ async function fetchJobsFromLocalFiles(): Promise<Job[]> {
 // Detect role type from tags/title if missing
 function detectRoleType(job: any): string {
   const t = (job.title + ' ' + (job.tags?.join(' ') || '')).toLowerCase()
-  if (t.includes('vue') || t.includes('nuxt') || t.includes('frontend') || t.includes('react')) return 'frontend'
+  if (t.includes('help desk') || t.includes('customer support') || t.includes('technical support') || t.includes('user support')) return 'support'
+  if (t.includes('support') || t.includes('it support')) return 'support'
+  if (t.includes('vue') || t.includes('nuxt') || t.includes('frontend') || t.includes('react') || t.includes('css') || t.includes('html')) return 'frontend'
   if (t.includes('fullstack') || t.includes('full-stack')) return 'fullstack'
-  if (t.includes('backend') || t.includes('node') || t.includes('python')) return 'backend'
-  if (t.includes('support') || t.includes('help desk') || t.includes('it support')) return 'support'
+  if (t.includes('backend') || t.includes('node') || t.includes('python') || t.includes('java ') || t.includes('go ') || t.includes('rust ')) return 'backend'
+  if (t.includes('devops') || t.includes('aws') || t.includes('docker') || t.includes('kubernetes')) return 'devops'
+  if (t.includes('mobile') || t.includes('ios') || t.includes('android') || t.includes('swift')) return 'mobile'
+  if (t.includes('data') || t.includes('analyst') || t.includes('ml') || t.includes('ai')) return 'data'
   return 'other'
 }
 
