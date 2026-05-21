@@ -1,3 +1,5 @@
+import { updateJob } from "../../../server/utils/github";
+
 export default defineEventHandler(async (event) => {
   try {
     // Get job ID from URL
@@ -43,18 +45,12 @@ export default defineEventHandler(async (event) => {
       })
     }
 
-    // For MVP: just return success - persistence happens via client for now
-    // TODO: Implement GitHub API writeback when GITHUB_TOKEN is configured
-    const persisted = false
+    const result = await updateJob(id, updates)
 
-    // Return updated job (whether persisted or not)
     return {
       success: true,
-      persisted,
-      job: {
-        ...currentJob,
-        ...updates
-      }
+      persisted: result.persisted,
+      job: result.job ?? { ...currentJob, ...updates }
     }
 
   } catch (error: any) {

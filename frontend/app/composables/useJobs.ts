@@ -1,4 +1,4 @@
-import type { Job } from '~/types'
+import type { Job } from '../types/index'
 
 export const useJobs = () => {
   const jobs = useState<Job[]>('jobs', () => [])
