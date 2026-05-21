@@ -142,44 +142,6 @@
     "application_id": null
   },
   {
-    "id": "weworkremotely-5c5ecb8d1f95",
-    "title": "Software engineer",
-    "company": "Sticker Mule",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Headquarters: New York, NY URL: https://www.stickermule.com Sticker Mule is building the Internet's most lucrative commerce platform by combining software, manufacturing, and AI into one fully integrated stack. No print company, or pure software company for that matter, can match what we're doing. We're privately owned, profitable, and doing 9-figures in annual revenue with no meddlesome investors. How we work Small, autonomous teams that own products end-to-end. Prioritize what matters right now and pivot instantly when needed. Ship across web and mobile from the same codebase. We use Go, TypeScript, React, Expo, GraphQL, Postgres, and run on GCP. Use AI aggressively to push the limit of what we can do. Move fast, build for the masses, and deprioritize edge cases. Fully remote from 40+ countries and collaborate using Asana and Slack. Requirements You are an exceptional full-stack software engineer. You use AI aggressively and write well in English. What you will work on You'll help build and scale Sticker Mule Pro \u2014 a suite of software tools for creators and businesses: Stores (Shopify alternative) AI tools (internal and customer-facing) Notify (Mailchimp alternative) Reply (Zendesk alternative) Hire Me (Contra alternative) Mobile apps Compensation Salary: $150,000\u2013$250,000 USD $20,000 signing bonus 4 weeks vacation + country-specific holidays Fully remote To apply: https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3",
-    "description_short": "Headquarters: New York, NY URL: https://www.stickermule.com Sticker Mule is building the Internet's most lucrative commerce platform by combining software, manufacturing, and AI into one fully integrated stack.",
-    "url": "https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3",
-    "source": "WeWorkRemotely",
-    "source_id": null,
-    "date_posted": "Thu, 14 May 2026 09:14:28 +0000",
-    "date_scraped": "2026-05-15",
-    "tags": [
-      "ai",
-      "gcp",
-      "postgresql",
-      "react",
-      "remote",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "other",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": true,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "weworkremotely-3225543598a2",
     "title": "Platform Engineer",
     "company": "Catamaran Research",
