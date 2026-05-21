@@ -28,7 +28,11 @@ const clearFilters = () => {
       <option value="frontend">Frontend</option>
       <option value="backend">Backend</option>
       <option value="fullstack">Fullstack</option>
-      <option value="support">Support</option>
+      <option value="support">Support/IT</option>
+      <option value="devops">DevOps</option>
+      <option value="mobile">Mobile</option>
+      <option value="data">Data/ML</option>
+      <option value="other">Other</option>
     </select>
     
     <!-- Remote Toggle -->
