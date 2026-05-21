@@ -6,31 +6,17 @@ export function stripHtml(html: string): string {
   const hasHtmlTags = /<[^>]+>/.test(html)
   if (!hasHtmlTags) {
     return html
-      .replace(/\n/g, ' ')
       .replace(/\s+/g, ' ')
       .trim()
   }
   
   const decoded = html
     .replace(/&lt;[^&]*&gt;/g, '')   // Handle encoded <...> tags
-    .replace(/\u00e2\u0080\u0099/g, "'")  // Fix curly apostrophes
-    .replace(/\u00e2\u0080\u00(9c|9d)/g, '"')  // Fix quotes
-    .replace(/'/g, "'")
-    .replace(/'/g, "'")
-    .replace(/"/g, '"')
-    .replace(/"/g, '"')
+    .replace(/[\u2018\u2019]/g, "'")  // Fix curly single quotes
+    .replace(/[\u201c\u201d]/g, '"')  // Fix curly double quotes
   
   return decoded
     .replace(/<[^>]*>/g, ' ')  // Strip HTML tags
-    .replace(/\n/g, ' ')                // Newlines to spaces
     .replace(/\s+/g, ' ')               // Collapse whitespace
     .trim()
-}
-
-// Truncate text to maxLength
-export function truncateText(text: string | undefined | null, maxLength: number = 10): string {
-  if (!text) return 'No description'
-  const plain = stripHtml(text)
-  if (plain.length <= maxLength) return plain
-  return plain.slice(0, maxLength).trim() + '...'
 }
