@@ -33,40 +33,6 @@
     "application_id": null
   },
   {
-    "id": "remoteok-93520065647c",
-    "title": "IT Support Technician",
-    "company": "Avalere Health",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": 63000,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "About Avalere Health United by one profound purpose: to reach EVERY PATIENT POSSIBLE . At Avalere Health, we ensure every patient is identified, treated, supported, and cared for. Equally. Our Advisory, Medical, and Marketing teams come together \u2013 powerfully and intentionally \u2013 to forge unconventional connections, building a future where healthcare is not a barrier and no patient is left behind. Achieving our mission starts with providing enriching, purpose-driven careers for our team that empower them to make a tangible impact on patient lives. We are committed to creating a culture where our employees are empowered to bring their whole selves to work and tap into the power of diverse backgrounds and skillsets to play a part in making a difference for every patient, everywhere. Our flexible approach to working allows our global teams to decide where they want to work, whether in-office or at home based on team and client need. Major city hubs in London, Manchester, Washington, D.C., and New York, and smaller offices globally, serve as collaboration hubs allowing our teams to come together when it matters. Homeworkers are equally supported, with dedicated social opportunities and resources. Our inclusive culture is at the heart of everything we do. We proudly support our employees in bringing their whole selves to work with our six Employee Network Groups \u2013 Diverse Ability, Family, Gender, LGBTQ+, Mental Health, and Race/Ethnicity. These groups provide opportunities to promote diversity, equity, and inclusion and to connect, learn, and socialise through regular meetings and programs of activity. We are an accredited Fertility Friendly employer with our Fertility Policy, enhanced parental leave, and culture of flexibility ensuring every employee feels supported across their family planning journey and can work in a way that suits their family\u2019s needs. We are deeply invested in supporting professional growth for our employees through day-to-day career experiences, access to thousands of on-demand training sessions, regular career conversations, and the opportunity for global, cross-capability career moves. We take pride in being part of the Disability Confident Scheme. This helps make sure you can be interviewed fairly if you have a disability, long term health condition, or are neurodiverse. If you'd like to apply and need adjustments made, you can let us know in your application. About the Role (On-site Washington D.C. and surrounding suburbs) T",
-    "description_short": "About Avalere Health United by one profound purpose: to reach EVERY PATIENT POSSIBLE . At Avalere Health, we ensure every patient is identified, treated, supported, and cared for. Equally.",
-    "url": "https://remoteOK.com/remote-jobs/remote-it-support-technician-avalere-health-1131591",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-05-14T14:00:18+00:00",
-    "date_scraped": "2026-05-21",
-    "tags": [
-      "remote",
-      "support"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "support",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "weworkremotely-6f221e6c66e8",
     "title": "Full-Stack Developer \u2014 .NET + React + Azure \u2014 Remote (US)",
     "company": "ShiftForce LLC",
