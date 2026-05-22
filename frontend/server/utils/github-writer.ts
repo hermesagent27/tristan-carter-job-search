@@ -127,6 +127,49 @@ async function flushPendingWrites(): Promise<void> {
   }
 }
 
+export async function deleteFile(
+  path: string,
+  message: string
+): Promise<boolean> {
+  if (!TOKEN) {
+    console.error('[GitHub] GITHUB_TOKEN not set - persistence disabled')
+    return false
+  }
+
+  try {
+    const sha = await getFileSha(path)
+    if (!sha) {
+      console.warn(`[GitHub] File not found, nothing to delete: ${path}`)
+      return true
+    }
+
+    const response = await fetch(
+      `https://api.github.com/repos/${REPO}/contents/${path}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+          'User-Agent': 'JobTracker/1.0'
+        },
+        body: JSON.stringify({ message, sha, branch: 'main' })
+      }
+    )
+
+    if (!response.ok) {
+      const err = await response.text()
+      throw new Error(`GitHub delete error: ${err}`)
+    }
+
+    console.log(`[GitHub] Successfully deleted ${path}`)
+    return true
+  } catch (e: any) {
+    console.error(`[GitHub] Error deleting ${path}:`, e.message)
+    return false
+  }
+}
+
 // For immediate writes
 export async function writeJobUpdate(
   jobId: string,

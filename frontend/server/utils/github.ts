@@ -367,6 +367,107 @@ export async function updateJob(id: string, updates: Record<string, any>): Promi
   return { job: job ? { ...job, ...updates } as Job : null, persisted: false }
 }
 
+// Delete a job from local JSON files (dev mode)
+async function deleteJobFromLocalFiles(id: string): Promise<boolean> {
+  const fs = await import('fs/promises')
+  const path = await import('path')
+  const jobsDir = path.join(LOCAL_DATA_PATH, 'jobs')
+
+  try {
+    const months = await fs.readdir(jobsDir)
+    for (const month of months) {
+      const monthDir = path.join(jobsDir, month)
+      const stat = await fs.stat(monthDir).catch(() => null)
+      if (!stat?.isDirectory()) continue
+
+      const files = await fs.readdir(monthDir)
+      for (const file of files) {
+        if (!file.endsWith('.json')) continue
+        const filePath = path.join(monthDir, file)
+
+        try {
+          const content = await fs.readFile(filePath, 'utf-8')
+          const jobs = JSON.parse(content)
+          if (!Array.isArray(jobs)) continue
+
+          const idx = jobs.findIndex((j: any) => j.id === id)
+          if (idx === -1) continue
+
+          jobs.splice(idx, 1)
+
+          if (jobs.length === 0) {
+            await fs.unlink(filePath)
+            console.log(`[Jobs] Deleted empty file ${month}/${file}`)
+          } else {
+            await fs.writeFile(filePath, JSON.stringify(jobs, null, 2))
+            console.log(`[Jobs] Removed job ${id} from ${month}/${file}`)
+          }
+          return true
+        } catch (e: any) {
+          console.error(`[Jobs] Failed to process ${file}: ${e.message}`)
+        }
+      }
+    }
+  } catch (e: any) {
+    console.error(`[Jobs] Failed to scan local jobs dir: ${e.message}`)
+  }
+  return false
+}
+
+// Delete a job via GitHub API (production mode)
+async function deleteJobViaGitHub(id: string): Promise<boolean> {
+  try {
+    const months = await listFiles('data/jobs')
+    for (const month of months) {
+      if (month.type !== 'dir') continue
+      const days = await listFiles(month.path)
+      for (const dayFile of days) {
+        if (!dayFile.name.endsWith('.json')) continue
+        const jobs = await getFile(dayFile.path)
+        if (!Array.isArray(jobs)) continue
+
+        const idx = jobs.findIndex((j: any) => j.id === id)
+        if (idx === -1) continue
+
+        jobs.splice(idx, 1)
+
+        const { writeFile, deleteFile } = await import('./github-writer')
+
+        let success: boolean
+        if (jobs.length === 0) {
+          success = await deleteFile(dayFile.path, `Remove job ${id} (file empty)`)
+        } else {
+          success = await writeFile(dayFile.path, jobs, `Delete job ${id}`)
+        }
+
+        if (success) {
+          cache.delete(`${API_URL}/contents/${dayFile.path}`)
+          console.log(`[Jobs] Deleted job ${id} via GitHub`)
+        }
+        return success
+      }
+    }
+  } catch (e: any) {
+    console.error(`[Jobs] GitHub delete failed: ${e.message}`)
+  }
+  return false
+}
+
+// Delete a job by ID and persist the change
+export async function deleteJob(id: string): Promise<{ deleted: boolean; persisted: boolean }> {
+  if (IS_DEV && !TOKEN) {
+    const deleted = await deleteJobFromLocalFiles(id)
+    return { deleted, persisted: deleted }
+  }
+
+  if (TOKEN) {
+    const deleted = await deleteJobViaGitHub(id)
+    return { deleted, persisted: deleted }
+  }
+
+  return { deleted: false, persisted: false }
+}
+
 // For now, return empty applications array
 export async function getApplications(): Promise<any[]> {
   return []
