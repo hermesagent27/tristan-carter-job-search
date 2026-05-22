@@ -1,0 +1,90 @@
+[
+  {
+    "id": "carefast-manual-web-dev-opencart",
+    "title": "Web Developer (OpenCart/Storefront Maintenance)",
+    "company": "Carefast",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 20,
+    "salary_max": 30,
+    "salary_text": "$20.00 - $30.00 per hour",
+    "description": "Carefast is looking for someone familiar with OpenCart and/or other online storefront platforms to help maintain and improve the store site. This would be on an as-needed basis (contract/freelance).\n\nResponsibilities:\n\u2022 Communicate with management team in a timely manner regarding site issues\n\u2022 Including, but not limited to: Site outages, functionality, performance\n\u2022 Monthly meeting (paid) to discuss on-going tasks and areas for store improvement\n\nQualifications:\n\u2022 Must be familiar with OpenCart store platform and HTML\n\u2022 Experience with other online retail platforms strongly preferred, but not required\n\nBenefits:\n\u2022 Flexible schedule\n\u2022 People with a criminal record are encouraged to apply",
+    "description_short": "Carefast is looking for someone familiar with OpenCart and/or other online storefront platforms to help maintain and improve the store site. This would be on an as-needed basis (contract/freelance).",
+    "url": "https://www.indeed.com/viewjob?jk=85a9984c20ee7540",
+    "source": "Indeed",
+    "source_id": "85a9984c20ee7540",
+    "date_posted": "2026-05-22T00:00:00+00:00",
+    "date_scraped": "2026-05-22",
+    "tags": [
+      "remote",
+      "frontend",
+      "php",
+      "html",
+      "contract"
+    ],
+    "required_skills": [
+      "OpenCart",
+      "HTML",
+      "CSS"
+    ],
+    "experience_level": "any",
+    "role_type": "frontend",
+    "employment_type": "contract",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "hinted-manual-javascript-developer-mid",
+    "title": "JavaScript Developer (mid) (Remote)",
+    "company": "HintEd Company",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "HintEd is a cutting-edge Digital Adoption Platform that helps companies increase productivity by streamlining employee training and user onboarding for enterprise software. As a winner of the Start-Up Chile Program and holder of several global awards as the best HR Tech Solution, HintEd offers on-screen tutorials that guide users step-by-step through tasks within the web and/or Windows applications.\n\nWe are seeking a talented Middle JavaScript Developer to join our team. The ideal candidate will have experience with our tech stack, including HTML 5, CSS3, Javascript/Typescript, vue.js, Git, and Webpack/Vite.\n\nKey Responsibilities:\n\u2022 Develop and maintain web applications using HTML 5, CSS3, Javascript/Typescript, vue.js, Git, and Webpack/Vite\n\u2022 Collaborate with the team to improve development processes and implement best practices\n\u2022 Troubleshoot and debug issues as they arise\n\u2022 Ensure code quality through automated testing\n\u2022 Keep up-to-date with new technologies and trends in web development\n\nRequirements:\n\u2022 Strong experience with HTML 5, CSS3, Javascript/Typescript, vue.js, Git, and Webpack/Vite\n\u2022 Understanding of extensions for Google Chrome and requirements for Manifest 2/3\n\u2022 Experience in testing with a focus on automated end-to-end quality\n\u2022 Strong problem-solving and debugging skills\n\u2022 Good communication and collaboration skills",
+    "description_short": "HintEd is seeking a talented Middle JavaScript Developer with experience in HTML5, CSS3, JavaScript/TypeScript, Vue.js, Git, and Webpack/Vite. You'll develop and maintain web applications and collaborate with the team.",
+    "url": "https://hinted.freshteam.com/jobs/DE1R1WKpeyFf/javascript-developer-mid-remote",
+    "source": "HintEd",
+    "source_id": "DE1R1WKpeyFf",
+    "date_posted": "2026-05-22T00:00:00+00:00",
+    "date_scraped": "2026-05-22",
+    "tags": [
+      "remote",
+      "javascript",
+      "vue",
+      "typescript",
+      "frontend",
+      "contract"
+    ],
+    "required_skills": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
+      "Vue.js",
+      "Git",
+      "Webpack",
+      "Vite"
+    ],
+    "experience_level": "mid",
+    "role_type": "frontend",
+    "employment_type": "contract",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
