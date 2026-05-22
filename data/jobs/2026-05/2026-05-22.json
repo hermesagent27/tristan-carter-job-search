@@ -369,5 +369,47 @@
     },
     "status": "new",
     "application_id": null
+  },
+  {
+    "id": "indeed-manual-a08590c5b92040e3",
+    "title": "Warehouse Utility I",
+    "company": "PLA Solutions",
+    "location": "Oklahoma City, OK",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "The Warehouse Utility I is a versatile General Laborer responsible for supporting various departments to meet their goals while operating with incredible consistency and detail, adapting to changing needs. This role will perform an array of production and operational tasks, from pallet repairs and sorting, loading and unloading trailers, to facility maintenance, based on the daily needs of the location.",
+    "description_short": "The Warehouse Utility I is a versatile General Laborer responsible for supporting various departments to meet their goals while operating with incredible consistency and detail, adapting to changing needs.",
+    "url": "https://www.indeed.com/viewjob?jk=a08590c5b92040e3&from=appshareios",
+    "source": "Indeed",
+    "source_id": "a08590c5b92040e3",
+    "date_posted": "2026-05-22T00:00:00+00:00",
+    "date_scraped": "2026-05-22",
+    "tags": [
+      "warehouse",
+      "logistics",
+      "manual-labor",
+      "general-labor"
+    ],
+    "required_skills": [
+      "Warehouse Operations",
+      "Pallet Handling",
+      "Loading/Unloading",
+      "Hand Tools",
+      "Power Tools"
+    ],
+    "experience_level": "any",
+    "role_type": "other",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "applied",
+    "application_id": null
   }
 ]
