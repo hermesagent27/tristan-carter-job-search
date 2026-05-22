@@ -544,18 +544,40 @@ def get_sources() -> list:
     ]
 
 
-def save_jobs(jobs: list, date: datetime = None) -> Path:
-    """Save jobs to dated JSON file."""
+def save_jobs(jobs: list, date: datetime = None) -> tuple[Path, int]:
+    """Save jobs to dated JSON file - APPENDS to existing, never overwrites."""
     date = date or datetime.now()
     month_dir = DATA_DIR / date.strftime("%Y-%m")
     month_dir.mkdir(parents=True, exist_ok=True)
     
     filepath = month_dir / f"{date.strftime('%Y-%m-%d')}.json"
     
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(jobs, f, indent=2, ensure_ascii=False)
+    # Load existing jobs if file exists
+    existing_jobs = []
+    existing_ids = set()
+    if filepath.exists():
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                existing_jobs = json.load(f)
+                if isinstance(existing_jobs, list):
+                    existing_ids = {j.get("id") for j in existing_jobs if isinstance(j, dict)}
+                    print(f"  Found {len(existing_jobs)} existing jobs in {filepath.name}")
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"  Warning: Could not read existing file: {e}")
     
-    return filepath
+    # Merge: add only new jobs (by ID)
+    new_count = 0
+    for job in jobs:
+        if isinstance(job, dict) and job.get("id") not in existing_ids:
+            existing_jobs.append(job)
+            existing_ids.add(job.get("id"))
+            new_count += 1
+    
+    # Write merged result
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(existing_jobs, f, indent=2, ensure_ascii=False)
+    
+    return filepath, new_count
 
 
 def main():
@@ -611,8 +633,9 @@ def main():
     print(f"{'=' * 60}")
     
     if all_jobs:
-        filepath = save_jobs(all_jobs, today)
-        print(f"\n✅ Saved to: {filepath}")
+        filepath, new_count = save_jobs(all_jobs, today)
+        total_jobs = len(all_jobs)
+        print(f"\n✅ Saved to: {filepath} ({new_count} new, {total_jobs - new_count} existing)")
         
         # Print summary by role type
         by_role = {}
@@ -631,9 +654,9 @@ def main():
     
     else:
         print("\n⚠️ No matching jobs found today")
-        # Create empty file for tracking
-        filepath = save_jobs([], today)
-        print(f"  Created empty file: {filepath}")
+        # Still check/create empty file (doesn't overwrite with data)
+        filepath, _ = save_jobs([], today)
+        print(f"  Ensured file exists: {filepath}")
     
     print()
     return len(all_jobs)
