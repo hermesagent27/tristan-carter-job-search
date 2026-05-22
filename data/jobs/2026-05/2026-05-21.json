@@ -1,40 +1,7 @@
 [
   {
-    "id": "remoteok-da540f8e5234",
-    "title": "Intern SD Engineer",
-    "company": "team",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Ready to embark on this exciting career journey? Apply now and let's revolutionize the economic and technological landscape together! \u2728\ud83d\udc69\u200d\ud83d\udcbb\ud83d\udc68\u200d\ud83d\udcbb At&nbsp; COPIOUS , we believe in People, Knowledge and Solutions. When these three aspects are brought together, something truly valuable is created. That's why we bring together engaged talent to provide high-value technological services that enable our consultants and customers to succeed. We are a Tech &amp; Talent Solution company dedicated to helping businesses grow. Since 2014, we've been partnering with our Talent and Customers to create Career and Business solutions for the People in the business and technology ecosystem.&nbsp; <p dir=\"ltr\" style=\"line-height:1.38;text-align: justify;margin-top:0pt;marg",
-    "description_short": "Ready to embark on this exciting career journey? Apply now and let's revolutionize the economic and technological landscape together! \u2728\ud83d\udc69\u200d\ud83d\udcbb\ud83d\udc68\u200d\ud83d\udcbb At COPIOUS , we believe in People, Knowledge and Solutions.",
-    "url": "https://remoteOK.com/remote-jobs/remote-intern-sd-engineer-copious-1131629",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-05-19T22:00:05+00:00",
-    "date_scraped": "2026-05-21",
-    "tags": [
-      "remote"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "other",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "weworkremotely-6f221e6c66e8",
-    "title": "Full-Stack Developer \u2014 .NET + React + Azure \u2014 Remote (US)",
+    "title": "Full-Stack Developer — .NET + React + Azure — Remote (US)",
     "company": "ShiftForce LLC",
     "location": "Remote",
     "is_remote": true,
