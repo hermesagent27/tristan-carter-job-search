@@ -411,5 +411,51 @@
     },
     "status": "applied",
     "application_id": null
+  },
+  {
+    "id": "milesit-manual-associate-website-designer",
+    "title": "Associate Website Designer",
+    "company": "Miles IT",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 31200,
+    "salary_max": 35360,
+    "salary_text": "$15 - $17/Hour",
+    "description": "Miles IT is looking for an enthusiastic and collaborative Associate Website Designer to join our Associate program in our Marketing division. You will work closely with our developers, bringing website visions to life through Figma mockups, producing versatile design assets with Adobe tools, and contributing to the maintenance of our WordPress websites. This 3-Month Associate program is an exciting opportunity for candidates looking to start their career in marketing!\n\nResponsibilities:\n\u2022 Create mockups for website projects in WordPress\n\u2022 Create assets such as slide decks and letterheads using Microsoft and Google tools\n\u2022 Create advertising graphics, social media images, e-guides/whitepapers, and email graphics\n\u2022 Use Figma as the primary mockup tool for website designs\n\u2022 Work with Adobe programs including Photoshop, InDesign, and Illustrator\n\u2022 Use AI tools for efficient editing and idea generation using Gemini, Photoshop, and Figma\n\u2022 Curate design examples and mood boards to establish creative direction",
+    "description_short": "Miles IT is looking for an enthusiastic Associate Website Designer for a 3-Month Associate program. Work with developers on Figma mockups, Adobe design assets, and WordPress websites.",
+    "url": "https://www.milesit.com/careers/associate-website-designer/",
+    "source": "Miles IT",
+    "source_id": "associate-website-designer",
+    "date_posted": "2026-05-22T00:00:00+00:00",
+    "date_scraped": "2026-05-22",
+    "tags": [
+      "remote",
+      "design",
+      "figma",
+      "wordpress",
+      "adobe",
+      "marketing"
+    ],
+    "required_skills": [
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "WordPress",
+      "Microsoft Office",
+      "Google Workspace"
+    ],
+    "experience_level": "entry",
+    "role_type": "other",
+    "employment_type": "contract",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "applied",
+    "application_id": null
   }
 ]
