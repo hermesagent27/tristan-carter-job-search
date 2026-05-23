@@ -166,16 +166,37 @@ export async function getAllJobs(): Promise<Job[]> {
 }
 
 // Fallback: use raw URLs (may be blocked, but worth trying)
+// Dynamically discovers all month directories and day files via GitHub API tree listing
 async function fetchJobsFromRawUrls(): Promise<Job[]> {
-  console.log('[Jobs] Falling back to raw URLs')
-  const months = ['2026-05']
+  console.log('[Jobs] Falling back to raw URLs with dynamic discovery')
   const allJobs: Job[] = []
   
-  for (const month of months) {
-    const days = ['2026-05-15', '2026-05-16', '2026-05-17']
-    for (const day of days) {
+  if (!TOKEN) {
+    console.error('[Jobs] GITHUB_TOKEN not set - cannot discover files via API')
+    return allJobs
+  }
+  
+  try {
+    // Get the tree for data/jobs directory to discover all month folders
+    const treeUrl = `${API_URL}/git/trees/main?recursive=1`
+    const tree = await $fetch(treeUrl, {
+      headers: {
+        'Authorization': `token ${TOKEN}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'JobTracker/1.0'
+      }
+    }) as { tree: Array<{ path: string; type: string }> }
+    
+    // Find all JSON files under data/jobs/
+    const jobFiles = tree.tree
+      .filter(item => item.type === 'blob' && item.path.startsWith('data/jobs/') && item.path.endsWith('.json'))
+      .map(item => item.path)
+    
+    console.log(`[Jobs] Discovered ${jobFiles.length} job files via GitHub API`)
+    
+    for (const filePath of jobFiles) {
       try {
-        const url = `${RAW_URL}/data/jobs/${month}/${day}.json`
+        const url = `${RAW_URL}/${filePath}`
         const response = await $fetch(url, {
           headers: {
             'User-Agent': 'JobTracker/1.0',
@@ -183,21 +204,25 @@ async function fetchJobsFromRawUrls(): Promise<Job[]> {
           }
         })
         if (Array.isArray(response)) {
-            const normalized = response.map((j: any) => ({
-              ...j,
-              is_favorite: j.is_favorite ?? false,
-              is_hidden: j.is_hidden ?? false,
-              role_type: j.role_type || detectRoleType(j),
-              status: j.status || 'new'
-            }))
+          const normalized = response.map((j: any) => ({
+            ...j,
+            is_favorite: j.is_favorite ?? false,
+            is_hidden: j.is_hidden ?? false,
+            role_type: j.role_type || detectRoleType(j),
+            status: j.status || 'new'
+          }))
           allJobs.push(...normalized)
+          console.log(`[Jobs] Loaded ${normalized.length} jobs from ${filePath}`)
         }
       } catch (e: any) {
-        console.error(`[Jobs] Raw URL failed for ${day}: ${e.message}`)
+        console.error(`[Jobs] Raw URL failed for ${filePath}: ${e.message}`)
       }
     }
+  } catch (e: any) {
+    console.error(`[Jobs] Failed to discover files via GitHub API: ${e.message}`)
   }
   
+  console.log(`[Jobs] Total loaded via raw URLs: ${allJobs.length} jobs`)
   return allJobs
 }
 
