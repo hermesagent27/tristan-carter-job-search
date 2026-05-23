@@ -1,0 +1,106 @@
+[
+  {
+    "id": "remoteok-de91839fdc9c",
+    "title": "Python Developer Brazil",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Anyone AI is recruiting skilled Python Developers to work on a project with a leading AI lab. Qualifications: Advanced professional written proficiency in English 3–7 years of professional software engineering experience Strong proficiency in Python and JavaScript/TypeScript; working knowledge of Java, C#, or Go Backend or full‑stack development experience in production systems Experience with testing frameworks (e.g., pytest, Jest, JUnit, xUnit, Go testing) Proven ability to debug and navigate large, multi‑file codebases Experience with code reviews, refactoring, and production migrations Engagement: Part-time, project-based expert evaluation work Work Type: Remote Contributors will design and evaluate realistic software engineering tasks, including bug resolution, feature implementation, refactoring/migration, and test generation. Work includes both creating complex coding scenarios and reviewing peer submissions for quality and accuracy. This is a project-based consultant role. Consultants will be paid on a per-project basis; hourly rates are estimates based on anticipated completion time. Consultants control their own schedule, provide their own tools, and may simultaneously provide services to other vendors/employers (subject to those vendors’ allowances). Responsibilities: Contributors will: Design and implement multi-file coding tasks across bug fixing, feature development, refactoring, and testing Write clear natural-language specifications and reference implementations Develop and extend unit and integration test suites Review peer-generated tasks for correctness, clarity, and realism Identify edge cases, ambiguities, and potential failure modes Ensure alignment between specifications, code, and expected outputs Expected Outcomes: High-quality, pr",
+    "description_short": "Anyone AI is recruiting skilled Python Developers to work on a project with a leading AI lab. Qualifications: Advanced professional written proficiency in English 3–7 years of professional software engineering experience Strong proficiency in Py",
+    "url": "https://remoteOK.com/remote-jobs/remote-python-developer-brazil-anyone-ai-1131634",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-05-22T06:00:03+00:00",
+    "date_scraped": "2026-05-23",
+    "tags": [
+      "javascript",
+      "remote",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "remoteok-3eb387897080",
+    "title": "Operations Analyst",
+    "company": "how fast and easy Tremendous is to use",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 95000,
+    "salary_max": 105000,
+    "salary_text": "$95k - $105k",
+    "description": "Tremendous is the global platform built for businesses to send thousands of payouts to anyone, anywhere, for free. We're trusted by 20,000 organizations like Atlassian, MIT, and United Way to deliver gift cards and money to millions of recipients worldwide. Our customers (researchers, marketers, HR teams, nonprofits, and platform businesses) rave about how fast and easy Tremendous is to use. Check out our ratings on G2. Tremendous is profitable and growing without outside investors. We're a fully remote, high-documentation, low-meeting culture, which means more time for what matters in both your professional and personal life. The team agrees– our employee NPS is in the high 80s. We're looking for an Operations Analyst to join our small-but-mighty operations team. As the third person on the team, you'll shape how we handle day-to-day compliance operations and have real autonomy to drive impact. This role sits at the intersection of security, user experience, and sound judgment, requiring someone who doesn't just follow rules but thoughtfully balances risk, customer needs, and operational excellence. What You'll Do Review account activity and make informed decisions using AI-assisted analysis. You'll investigate payment approval requests, flag anomalies through pattern recognition tools, and make sound judgment calls on approval or escalation, combining human judgment with AI insights. Identify suspicious activity and fraud patterns. Learn about regulatory requirements as they come up and help implement them in your day-to-day work. Use AI tools to rapidly surface anomalies and patterns, freeing you to focus on the judgment calls that matter most. Suggest process improvements that could make things more efficient or reduce risk. Document what you learn and share it with the team. Balance compliance with user experience by using AI to process large datasets, draft communications, and analyze trade-offs at scale. Work cross-functionally with product, support, and business teams to make decisions that reduce risk and support scalable growth. What You'll Bring Strong analytical and problem-solving skills with exceptional attention to detail. You can take a messy situation, break it down, and see the pattern. Familiarity with AI tools and a willingness to experiment with them for productivity. You don't need deep AI expertise, but you're comfortable learning to use LLMs, data analysis tools, or automation platforms to augment your work. Clear communication and genuine collaboration. You work well across teams, explain complex topics simply, and aren't afraid to ask for context. Comfort with multitasking, prioritization, and staying organized amid competing demands. An ownership mindset and genuine curiosity. You take responsibility for outcomes, seek continuous improvement, and th",
+    "description_short": "Tremendous is the global platform built for businesses to send thousands of payouts to anyone, anywhere, for free. We're trusted by 20,000 organizations like Atlassian, MIT, and United Way to deliver gift cards and money to millions of recipients worldwide. Our customers (researchers, marketers, HR teams, nonprofits, and platform businesses) rave about how fast and easy Tremendous is to use. Check out our ratings on G2. Tremendous is profitable and growing without outside investors",
+    "url": "https://remoteOK.com/remote-jobs/remote-operations-analyst-tremendous-1131696",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-05-22T01:57:03+00:00",
+    "date_scraped": "2026-05-23",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "weworkremotely-0a73e984ce66",
+    "title": "AI Engineer/Python Develope",
+    "company": "Toptal",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Headquarters: Remote URL: https://www.toptal.com/ About the Client A leading global agriculture company empowering millions of farmers to make smarter, data-driven decisions building technology with real-world impact at scale. The Role We're looking for an experienced AI/Python Engineer to design, build, and optimize intelligent systems using Python and Azure from prototyping new ideas to maintaining production-grade pipelines. What You'll Do Design and implement Python and Azure-based solutions for complex business problems Build and maintain RAG pipelines, multi-agent systems, and LLM-powered workflows Optimize existing systems for performance and scalability Ensure compliance with data privacy regulations Why This Role High-impact global projects at enterprise scale Collaborate with top-tier engineers via the Toptal network Requirements What We're Looking For Strong Python skills + data science libraries (NumPy, Pandas, Scikit-learn) Solid Azure services and cloud architecture experience Hands-on experience with LangChain, LangGraph, RAG pipelines, and multi-agent orchestration Familiarity with MCP (Model Context Protocol) To apply: https://weworkremotely.com/remote-jobs/toptal-ai-engineer-python-develope",
+    "description_short": "Headquarters: Remote URL: https://www.toptal.com/ About the Client A leading global agriculture company empowering millions of farmers to make smarter, data-driven decisions building technology with real-world impact at scale.",
+    "url": "https://weworkremotely.com/remote-jobs/toptal-ai-engineer-python-develope",
+    "source": "WeWorkRemotely",
+    "source_id": null,
+    "date_posted": "Fri, 22 May 2026 16:43:25 +0000",
+    "date_scraped": "2026-05-23",
+    "tags": [
+      "remote",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "other",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
