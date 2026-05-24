@@ -19,9 +19,6 @@ export default defineEventHandler(async (event) => {
     if (body.is_favorite !== undefined) {
       updates.is_favorite = Boolean(body.is_favorite)
     }
-    if (body.is_hidden !== undefined) {
-      updates.is_hidden = Boolean(body.is_hidden)
-    }
     if (body.status !== undefined) {
       updates.status = body.status // 'new', 'applied', 'interview', 'offer'
     }

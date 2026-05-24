@@ -32,9 +32,6 @@ export const useJobs = () => {
   // Filtered jobs based on active tab and filters
   const filteredJobs = computed(() => {
     return jobs.value.filter((job: Job) => {
-      // Exclude hidden
-      if (job.is_hidden) return false
-      
       // Search filter
       if (searchQuery.value) {
         const q = searchQuery.value.toLowerCase()
@@ -70,10 +67,10 @@ export const useJobs = () => {
   
   // Counts for tabs
   const counts = computed(() => ({
-    post: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'new').length,
-    applied: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'applied').length,
-    interview: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'interview').length,
-    offer: jobs.value.filter((j: Job) => !j.is_hidden && j.status === 'offer').length
+    post: jobs.value.filter((j: Job) => j.status === 'new').length,
+    applied: jobs.value.filter((j: Job) => j.status === 'applied').length,
+    interview: jobs.value.filter((j: Job) => j.status === 'interview').length,
+    offer: jobs.value.filter((j: Job) => j.status === 'offer').length
   }))
   
   // Persist favorite toggle
@@ -95,25 +92,6 @@ export const useJobs = () => {
       // Revert on failure
       job.is_favorite = !newVal
       console.error('Failed to update favorite:', e)
-    }
-  }
-
-  // Persist hide toggle
-  const toggleHidden = async (jobId: string) => {
-    const job = jobs.value.find(j => j.id === jobId)
-    if (!job) return
-
-    const newVal = !job.is_hidden
-    job.is_hidden = newVal
-
-    try {
-      await $fetch(`/api/jobs/${jobId}`, {
-        method: 'PATCH',
-        body: { is_hidden: newVal }
-      })
-    } catch (e) {
-      job.is_hidden = !newVal
-      console.error('Failed to update hidden:', e)
     }
   }
 
@@ -175,8 +153,7 @@ export const useJobs = () => {
     roleFilter,
     remoteOnly,
     toggleFavorite,
-    toggleHidden,
     updateStatus,
     deleteJob
-  }
+}
 }

@@ -26,8 +26,7 @@ interface Job {
   tags: string[]
   role_type?: string
   is_favorite: boolean
-  is_hidden: boolean
-  status: 'new' | 'applied' | 'interview' | 'offer' | 'rejected'
+  status: 'new' | 'applied' | 'interview' | 'offer'
 }
 
 // Simple in-memory cache
@@ -144,7 +143,6 @@ export async function getAllJobs(): Promise<Job[]> {
             const normalized = jobs.map((j: any) => ({
               ...j,
               is_favorite: j.is_favorite ?? false,
-              is_hidden: j.is_hidden ?? false,
               role_type: j.role_type || detectRoleType(j),
               status: j.status || 'new'
             }))
@@ -255,7 +253,6 @@ async function fetchJobsFromLocalFiles(): Promise<Job[]> {
             const normalized = jobs.map((j: any) => ({
               ...j,
               is_favorite: j.is_favorite ?? false,
-              is_hidden: j.is_hidden ?? false,
               role_type: j.role_type || detectRoleType(j),
               status: j.status || 'new'
             }))

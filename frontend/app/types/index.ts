@@ -16,8 +16,7 @@ export interface Job {
   tags: string[]
   role_type?: string
   is_favorite: boolean
-  is_hidden: boolean
-  status: 'new' | 'applied' | 'interview' | 'offer' | 'rejected'
+  status: 'new' | 'applied' | 'interview' | 'offer'
   application_data?: ApplicationData
 }
 
@@ -35,7 +34,7 @@ export interface ApplicationQuestion {
 export interface Application {
   id: string
   job_id: string
-  status: 'applied' | 'interview' | 'offer' | 'rejected'
+  status: 'applied' | 'interview' | 'offer'
   date_applied: string
   updated_at: string
   cover_letter?: string

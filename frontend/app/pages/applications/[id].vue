@@ -133,11 +133,24 @@ const statusClass = computed(() => {
     new: 'badge-ghost',
     applied: 'badge-primary',
     interview: 'badge-warning',
-    offer: 'badge-success',
-    rejected: 'badge-error'
+    offer: 'badge-success'
   }
   return map[job.value?.status || 'new'] || 'badge-ghost'
 })
+
+// Delete job and redirect to home
+const deleteJob = async () => {
+  if (!job.value) return
+  if (!confirm('Are you sure you want to delete this job? It cannot be undone.')) return
+  
+  try {
+    await $fetch(`/api/jobs/${jobId}`, { method: 'DELETE' })
+    await navigateTo('/')
+  } catch (e) {
+    console.error('Failed to delete job:', e)
+    alert('Failed to delete job. Please try again.')
+  }
+}
 
 onMounted(() => {
   fetchJob()
@@ -254,11 +267,10 @@ onMounted(() => {
                   Mark Offer
                 </button>
                 <button 
-                  @click="updateStatus('rejected')"
-                  class="btn btn-sm"
-                  :class="job.status === 'rejected' ? 'btn-error' : 'btn-outline btn-error'"
+                  @click="deleteJob"
+                  class="btn btn-error btn-sm"
                 >
-                  Mark Rejected
+                  Delete
                 </button>
               </div>
             </div>

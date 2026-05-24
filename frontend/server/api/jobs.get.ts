@@ -19,17 +19,15 @@ export default defineEventHandler(async (event) => {
       return isRemote || isOklahoma
     })
     
-    // Filter: Age limit - hide "new" jobs older than 90 days unless favorited or status changed
+    // Filter: Age limit - hide "new" jobs older than 90 days unless favorited (user still considering) or status changed
     const NINETY_DAYS_MS = 90 * 24 * 60 * 60 * 1000
     const now = Date.now()
     jobs = jobs.filter(j => {
       // Always show if:
       // - Not a "new" status (user interacted with it)
-      // - Is favorited
-      // - Is hidden (user explicitly dismissed)
+      // - Is favorited (user explicitly keeping it)
       if (j.status !== 'new') return true
       if (j.is_favorite) return true
-      if (j.is_hidden) return true
       
       // For "new" jobs, check if within 90 days
       const postedDate = j.date_posted ? new Date(j.date_posted).getTime() : now
@@ -39,10 +37,6 @@ export default defineEventHandler(async (event) => {
     
     if (query.favorites === 'true') {
       jobs = jobs.filter(j => j.is_favorite)
-    }
-    
-    if (query.hidden === 'false') {
-      jobs = jobs.filter(j => !j.is_hidden)
     }
     
     // Search filter
