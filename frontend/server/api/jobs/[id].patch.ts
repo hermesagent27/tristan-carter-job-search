@@ -1,4 +1,4 @@
-import { updateJob } from "../../../server/utils/github";
+import { updateJob, getJobById, updateStatsFile } from '../../../server/utils/github'
 
 export default defineEventHandler(async (event) => {
   try {
@@ -43,6 +43,12 @@ export default defineEventHandler(async (event) => {
     }
 
     const result = await updateJob(id, updates)
+
+    // Update stats file after status change
+    if (updates.status !== undefined) {
+      console.log('[Stats] Writing stats because status changed...')
+      await updateStatsFile().catch(e => console.error('[Stats] Failed to write stats:', e))
+    }
 
     return {
       success: true,

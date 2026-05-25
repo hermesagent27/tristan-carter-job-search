@@ -494,3 +494,58 @@ export async function deleteJob(id: string): Promise<{ deleted: boolean; persist
 export async function getApplications(): Promise<any[]> {
   return []
 }
+
+// Generate and save stats to GitHub
+export async function updateStatsFile(): Promise<boolean> {
+  const { writeFile, getFileSha } = await import('./github-writer')
+  const { $fetch } = await import('ofetch')
+  
+  try {
+    // Fetch from our own stats endpoint
+    const jobs = await getAllJobs()
+    
+    // Calculate stats (same logic as /api/stats.get.ts)
+    const stats: Record<string, any> = {
+      timestamp: new Date().toISOString(),
+      summary: {
+        totalJobs: jobs.length,
+        totalNew: jobs.filter(j => j.status === 'new').length,
+        totalApplied: jobs.filter(j => j.status === 'applied').length,
+        totalInterview: jobs.filter(j => j.status === 'interview').length,
+        totalOffer: jobs.filter(j => j.status === 'offer').length,
+        totalDeleted: jobs.filter(j => j.status === 'deleted').length,
+        totalFavorites: jobs.filter(j => j.is_favorite).length
+      },
+      distributions: {
+        roles: {} as Record<string, number>,
+        sources: {} as Record<string, number>
+      }
+    }
+    
+    // Role distribution
+    for (const job of jobs) {
+      const role = job.role_type || 'other'
+      stats.distributions.roles[role] = (stats.distributions.roles[role] || 0) + 1
+    }
+    
+    // Source distribution
+    for (const job of jobs) {
+      const source = job.source || 'Unknown'
+      stats.distributions.sources[source] = (stats.distributions.sources[source] || 0) + 1
+    }
+    
+    // Write to GitHub
+    const success = await writeFile(
+      'data/stats.json',
+      stats,
+      '📊 Update statistics'
+    )
+    
+    console.log(`[Stats] Updated stats.json: ${success ? 'success' : 'failed'}`)
+    return success
+    
+  } catch (e: any) {
+    console.error('[Stats] Failed to update stats:', e.message)
+    return false
+  }
+}
