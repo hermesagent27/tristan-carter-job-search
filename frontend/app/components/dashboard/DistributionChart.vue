@@ -75,7 +75,7 @@ function formatLabel(key: string): string {
   <div>
     <h4 class="font-semibold mb-4 text-center">{{ title }}</h4>
     <div class="chart-container" style="height: 250px;">
-      <Doughnut :data="chartData" :options="chartOptions" /></Doughnut>
+      <Doughnut :data="chartData" :options="chartOptions" />
     </div>
   </div>
 </template>

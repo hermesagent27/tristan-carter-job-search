@@ -72,6 +72,6 @@ const chartOptions = {
 
 <template>
   <div class="chart-container" style="height: 250px;">
-    <Bar :data="chartData" :options="chartOptions" /></Bar>
+    <Bar :data="chartData" :options="chartOptions" />
   </div>
 </template>
