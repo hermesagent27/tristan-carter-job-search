@@ -68,39 +68,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "weworkremotely-0a73e984ce66",
-    "title": "AI Engineer/Python Develope",
-    "company": "Toptal",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Headquarters: Remote URL: https://www.toptal.com/ About the Client A leading global agriculture company empowering millions of farmers to make smarter, data-driven decisions building technology with real-world impact at scale. The Role We're looking for an experienced AI/Python Engineer to design, build, and optimize intelligent systems using Python and Azure from prototyping new ideas to maintaining production-grade pipelines. What You'll Do Design and implement Python and Azure-based solutions for complex business problems Build and maintain RAG pipelines, multi-agent systems, and LLM-powered workflows Optimize existing systems for performance and scalability Ensure compliance with data privacy regulations Why This Role High-impact global projects at enterprise scale Collaborate with top-tier engineers via the Toptal network Requirements What We're Looking For Strong Python skills + data science libraries (NumPy, Pandas, Scikit-learn) Solid Azure services and cloud architecture experience Hands-on experience with LangChain, LangGraph, RAG pipelines, and multi-agent orchestration Familiarity with MCP (Model Context Protocol) To apply: https://weworkremotely.com/remote-jobs/toptal-ai-engineer-python-develope",
-    "description_short": "Headquarters: Remote URL: https://www.toptal.com/ About the Client A leading global agriculture company empowering millions of farmers to make smarter, data-driven decisions building technology with real-world impact at scale.",
-    "url": "https://weworkremotely.com/remote-jobs/toptal-ai-engineer-python-develope",
-    "source": "WeWorkRemotely",
-    "source_id": null,
-    "date_posted": "Fri, 22 May 2026 16:43:25 +0000",
-    "date_scraped": "2026-05-23",
-    "tags": [
-      "remote",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "other",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]

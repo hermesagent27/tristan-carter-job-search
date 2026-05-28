@@ -48,6 +48,48 @@ def clean_html(text):
 DATA_DIR = Path(__file__).parent.parent / "data" / "jobs"
 MIN_SALARY = 50000
 
+
+def fetch_json(url: str, timeout: int = 20) -> Optional[dict]:
+    """Fetch JSON from API."""
+    try:
+        req = urllib.request.Request(url, headers={
+            **HEADERS,
+            "Accept": "application/json",
+        })
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = resp.read().decode("utf-8")
+            return json.loads(data)
+    except Exception as e:
+        print(f"    Error fetching JSON {url}: {e}")
+        return None
+
+
+def parse_remotive_api(data: dict) -> list:
+    """Parse Remotive JSON API response."""
+    entries = []
+    jobs = data.get("jobs", [])
+    for job in jobs:
+        title = job.get("title", "").strip()
+        url = job.get("url", "").strip()
+        desc = job.get("description", "").strip()
+        date = job.get("publication_date", "")
+        company = job.get("company_name", "")
+        
+        if title and url:
+            # Check location - only include remote or USA-based
+            location = job.get("candidate_required_location", "")
+            location_str = str(location) if location else ""
+            
+            entries.append({
+                "title": title,
+                "link": url,
+                "description": desc,
+                "date_posted": date,
+                "company": company,
+                "location": location_str,
+            })
+    return entries
+
 # Keywords matching user's stack/interests
 TECH_KEYWORDS = {
     "vue": ["vue", "vue.js", "vuejs"],
@@ -144,6 +186,40 @@ def parse_rss(content: bytes) -> list:
                 "title": title, "link": link, "description": desc,
                 "date_posted": date, "company": "",
             })
+    
+    return entries
+
+
+def parse_html_jobs(content: bytes, source: str) -> list:
+    """Parse HTML job listings (e.g., Hacker News)."""
+    text = content.decode("utf-8", errors="ignore")
+    entries = []
+    
+    if source == "HN-Jobs":
+        # HN jobs is a simple table with titleline links
+        # Pattern: <span class="titleline"><a href="URL">TITLE</a></span>
+        pattern = r'<span class="titleline">\s*<a[^>]*href="([^"]*)"[^>]*>(.*?)</a>'
+        for match in re.finditer(pattern, text):
+            link = match.group(1)
+            title_html = match.group(2)
+            # Clean title (remove nested HTML)
+            title = re.sub(r'<[^>]+>', '', title_html)
+            title = title.strip()
+            
+            if title and link:
+                # Make absolute URL
+                if link.startswith('/'):
+                    link = 'https://news.ycombinator.com' + link
+                elif not link.startswith('http'):
+                    link = 'https://' + link
+                    
+                entries.append({
+                    "title": title,
+                    "link": link,
+                    "description": f"{source} job listing",
+                    "date_posted": "",
+                    "company": "",
+                })
     
     return entries
 
@@ -455,13 +531,6 @@ def extract_company_from_url(url: str, source: str) -> str:
         if slug.replace('-', '') in path.lower().replace('-', '').replace('/', ''):
             return name
     
-    # WeWorkRemotely: ...at-[company]
-    match = re.search(r'-at-([^\/]+?)(?:-remote|/?$)', path)
-    if match:
-        company = match.group(1).replace('-', ' ').title()
-        company = re.sub(r'\s+(?:Inc\.?|LLC\.?|Ltd\.?|Limited|Inc\.?)$', '', company, flags=re.I)
-        return company
-    
     # RemoteOK: try to extract from path
     match = re.search(r'remoteok.*-[^-]+(?:-[^-]+){1,4}-(\d+)$', path)
     if match:
@@ -536,11 +605,9 @@ def format_job(entry: dict, source: str) -> dict:
 def get_sources() -> list:
     """Job feed sources."""
     return [
-        {"name": "RemoteOK", "url": "https://remoteok.com/rss"},
-        {"name": "WeWorkRemotely", "url": "https://weworkremotely.com/remote-jobs.rss"},
-        {"name": "WWR-Programming", "url": "https://weworkremotely.com/categories/remote-programming-jobs.rss"},
-        {"name": "JS-Remotely", "url": "https://jsremotely.com/rss.xml"},
-        {"name": "Remotive", "url": "https://remotive.com/api/remote-jobs"},
+        {"name": "RemoteOK", "url": "https://remoteok.com/rss", "type": "rss"},
+        {"name": "Remotive", "url": "https://remotive.com/api/remote-jobs", "type": "json"},
+        {"name": "Jobspresso", "url": "https://jobspresso.co/?s&feed=rss2", "type": "rss"},
     ]
 
 
@@ -603,14 +670,27 @@ def main():
     for src in sources:
         print(f"  → {src['name']}", end=" ", flush=True)
         
-        content = fetch_xml(src["url"])
-        if not content:
-            print("❌ fetch failed")
-            continue
+        source_type = src.get("type", "rss")
+        entries = []
         
-        entries = parse_rss(content)
+        if source_type == "json":
+            # JSON API (e.g., Remotive)
+            data = fetch_json(src["url"])
+            if data:
+                entries = parse_remotive_api(data)
+        elif source_type == "html":
+            # HTML scraping (e.g., Hacker News)
+            content = fetch_xml(src["url"])
+            if content:
+                entries = parse_html_jobs(content, src["name"])
+        else:
+            # RSS/Atom feed
+            content = fetch_xml(src["url"])
+            if content:
+                entries = parse_rss(content)
+        
         if not entries:
-            print("⚠️ no entries")
+            print("❌ no entries")
             continue
         
         found = 0
