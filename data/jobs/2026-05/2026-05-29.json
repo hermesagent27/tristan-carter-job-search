@@ -1,0 +1,36 @@
+[
+  {
+    "id": "remoteok-f6ddd2eb6773",
+    "title": "Customer Support Specialist",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 70000,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Position: Customer Support SpecialistType: ContractCompensation: $20 - $70/hourLocation: Remote",
+    "description_short": "Position: Customer Support SpecialistType: ContractCompensation: $20 - $70/hourLocation: Remote",
+    "url": "https://remoteOK.com/remote-jobs/remote-customer-support-specialist-crossing-hurdles-1132391",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-05-27T18:02:13+00:00",
+    "date_scraped": "2026-05-29",
+    "tags": [
+      "remote",
+      "support"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "support",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
