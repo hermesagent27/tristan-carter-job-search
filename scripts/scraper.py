@@ -16,9 +16,8 @@ def clean_html(text):
     """Strip HTML tags and decode entities."""
     if not text:
         return ""
-    # Remove HTML tags
-    text = re.sub(r'<[^>]+>', ' ', text)
-    # Decode common HTML entities
+    
+    # Decode HTML entities FIRST (before tag stripping can mangle them)
     text = (text
         .replace('&nbsp;', ' ')
         .replace('&amp;', '&')
@@ -26,6 +25,7 @@ def clean_html(text):
         .replace('&gt;', '>')
         .replace('&quot;', '"')
         .replace('&#39;', "'")
+        .replace('&#034;', '"')
         .replace('&rsquo;', "'")
         .replace('&lsquo;', "'")
         .replace('&rdquo;', '"')
@@ -34,12 +34,33 @@ def clean_html(text):
         .replace('&mdash;', '-')
         .replace('&hellip;', '...')
         .replace('&#8217;', "'")
+        .replace('&#8216;', "'")
         .replace('&#8220;', '"')
         .replace('&#8221;', '"')
         .replace('&#8211;', '-')
+        .replace('&#8203;', '')  # zero-width space
+        .replace('&#8239;', ' ')  # narrow non-breaking space
+        .replace('&#8195;', ' ')  # em space
+        .replace('&#8194;', ' ')  # en space
+        .replace('&#xa0;', ' ')   # non-breaking space
     )
+    
+    # Remove HTML tags AFTER entity decoding (so < becomes actual < char)
+    text = re.sub(r'<[^>]*?>', ' ', text, flags=re.DOTALL)
+    
+    # Remove inline CSS style attributes (e.g., style="...")
+    text = re.sub(r'style="[^"]*"', '', text)
+    
+    # Remove other style-like fragments that escaped
+    text = re.sub(r'\s*style\s*=\s*"[^"]*"', '', text)
+    text = re.sub(r'\s*dir\s*=\s*"[^"]*"', '', text)
+    
     # Fix unicode escapes
-    text = text.encode('latin1', 'ignore').decode('utf-8', 'ignore')
+    try:
+        text = text.encode('latin1', 'ignore').decode('utf-8', 'ignore')
+    except:
+        pass
+    
     # Collapse whitespace
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
@@ -405,6 +426,14 @@ def matches_criteria(entry: dict) -> bool:
     title = entry.get("title", "")
     desc = entry.get("description", "")
     full = f"{title} {desc}".lower()
+    
+    # Exclude premium/paywall jobs (RemoteOK pattern)
+    if re.search(r'upgrade.*?premium|premium.*?member|subscribe.*?view|log\s*in\s+to\s+view|sign\s*in\s+to\s+view', full, re.IGNORECASE):
+        return False
+    
+    # Exclude RemoteOK truncated jobs (super short descriptions = paywalled)
+    if "remoteok" in entry.get("link", "").lower() and len(str(desc)) < 1000:
+        return False
     
     # Exclude drug tests
     if has_drug_test(full):
