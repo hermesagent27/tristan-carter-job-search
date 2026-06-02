@@ -372,9 +372,12 @@ def check_location(desc: str) -> tuple:
     return ("Location TBD", False)
 
 
-def load_existing_jobs(data_dir: Path) -> set:
-    """Load all existing job URLs to avoid duplicates."""
+def load_existing_jobs(data_dir: Path) -> tuple[set, set, set]:
+    """Load all existing job URLs and title+company combos to avoid duplicates."""
     existing_urls = set()
+    existing_title_company = set()
+    existing_ids = set()
+    
     for year_month_dir in data_dir.iterdir():
         if not year_month_dir.is_dir():
             continue
@@ -383,14 +386,28 @@ def load_existing_jobs(data_dir: Path) -> set:
                 with open(json_file, "r", encoding="utf-8") as f:
                     jobs = json.load(f)
                     for job in jobs:
-                        if isinstance(job, dict) and "url" in job:
-                            existing_urls.add(job["url"])
-                            # Also normalize URL variants
-                            url = job["url"].split("?")[0].rstrip("/")
-                            existing_urls.add(url)
+                        if isinstance(job, dict):
+                            # Store ID
+                            if "id" in job:
+                                existing_ids.add(job["id"])
+                            
+                            # Store URL variants
+                            if "url" in job:
+                                existing_urls.add(job["url"])
+                                # Normalize URL: remove query params, hash, trailing slash
+                                normalized = job["url"].split("?")[0].split("#")[0].rstrip("/").lower()
+                                existing_urls.add(normalized)
+                                # Also strip protocol
+                                existing_urls.add(normalized.replace("https://", "").replace("http://", ""))
+                            
+                            # Store title+company combo
+                            title = job.get("title", "").lower().strip()
+                            company = job.get("company", "").lower().strip()
+                            if title and company and company != "unknown":
+                                existing_title_company.add(f"{company}|{title}")
             except (json.JSONDecodeError, IOError):
                 continue
-    return existing_urls
+    return existing_urls, existing_title_company, existing_ids
 
 
 def find_tags(title: str, desc: str) -> list:
@@ -684,8 +701,9 @@ def main():
     
     # Load existing jobs for deduplication
     print("Loading existing jobs...")
-    existing_urls = load_existing_jobs(DATA_DIR)
+    existing_urls, existing_title_company, existing_ids = load_existing_jobs(DATA_DIR)
     print(f"  {len(existing_urls)} existing URLs loaded")
+    print(f"  {len(existing_title_company)} existing title+company combos")
     print()
     
     today = datetime.now()
@@ -727,9 +745,18 @@ def main():
             if matches_criteria(entry):
                 job = format_job(entry, src["name"])
                 
-                # Check against existing URLs (both raw and normalized)
+                # Check all duplicates: ID, URL, title+company
                 normalized_url = normalize_url(job["url"])
-                if job["url"] not in seen_urls and normalized_url not in existing_urls:
+                tc_key = f"{job['company'].lower().strip()}|{job['title'].lower().strip()}"
+                
+                is_duplicate = (
+                    job["id"] in existing_ids or
+                    job["url"] in seen_urls or
+                    normalized_url in existing_urls or
+                    (job["company"] != "Unknown" and tc_key in existing_title_company)
+                )
+                
+                if not is_duplicate:
                     seen_urls.add(job["url"])
                     all_jobs.append(job)
                     found += 1
