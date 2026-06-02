@@ -1,1 +1,33 @@
-[]
+[
+  {
+    "id": "dailypay-f4a797dd-112b-4a25-9f61-4a8f1acb19a8",
+    "title": "Jr. Web Developer",
+    "company": "DailyPay",
+    "location": "US-Remote",
+    "is_remote": true,
+    "salary_min": 86000,
+    "salary_max": 113000,
+    "salary_text": "$86K – $113K",
+    "description": "DailyPay is transforming the way people get paid. As a worktech company and the industry's leading on demand pay solution, DailyPay uses an award-winning technology platform to help America's top employers build stronger relationships with their employees. Reporting to the Senior Website Manager, the Junior Front-End Developer is responsible for supporting DailyPay's B2B and B2C marketing web ecosystem across WordPress (Elementor) and Contentful. Front-End Development & Customization: Build and maintain marketing pages across WordPress using Elementor and modular components in Contentful. Write custom CSS, JavaScript, and PHP to extend functionality beyond builder defaults. A/B Testing Implementation: Support the technical execution of experiments using CSS overrides, JavaScript DOM manipulation, and conditional rendering logic. Prevent layout shifts and flicker issues. ABM & Personalization Support: Assist in implementing account-based marketing experiences and custom audience journeys. Support integrations with ABM platforms. QA & Cross-Browser Testing: Own structured QA prior to launch, including responsive validation, form submission testing, link validation, tracking verification, and accessibility basics. Conduct thorough cross-browser testing across Chrome, Safari, Firefox, Edge, and mobile environments. Debugging & Technical Investigation: Use Chrome DevTools extensively to diagnose issues involving layout, performance, tracking, JavaScript conflicts, API/network calls, and third-party scripts. Performance & Technical Hygiene: Support optimization of page speed and Core Web Vitals. Ensure semantic HTML structure, manage CSS specificity cleanly, minimize unnecessary script load.",
+    "description_short": "DailyPay is transforming the way people get paid. Junior Front-End Developer responsible for supporting B2B and B2C marketing web ecosystem across WordPress (Elementor) and Contentful. Build and maintain marketing pages, implement A/B tests, support ABM personalization, conduct QA and cross-browser testing, debug with Chrome DevTools, and optimize Core Web Vitals.",
+    "url": "https://jobs.ashbyhq.com/dailypay/f4a797dd-112b-4a25-9f61-4a8f1acb19a8",
+    "source": "DailyPay",
+    "source_id": "f4a797dd-112b-4a25-9f61-4a8f1acb19a8",
+    "date_posted": "2026-06-02",
+    "date_scraped": "2026-06-02",
+    "tags": ["wordpress", "elementor", "contentful", "javascript", "css", "php", "ab-testing", "analytics", "ga4", "personalization", "abm", "devtools", "performance", "core-web-vitals"],
+    "required_skills": ["HTML5", "CSS3", "JavaScript", "WordPress", "Elementor", "PHP", "Contentful", "Chrome DevTools", "A/B Testing", "GA4", "Core Web Vitals", "Cross-browser Testing"],
+    "experience_level": "junior",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 85
+    },
+    "status": "applied",
+    "application_id": "app-dailypay-20260602"
+  }
+]
