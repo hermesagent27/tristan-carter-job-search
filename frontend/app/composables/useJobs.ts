@@ -10,6 +10,7 @@ export const useJobs = () => {
   const searchQuery = useState<string>('search-query', () => '')
   const roleFilter = useState<string>('role-filter', () => '')
   const remoteOnly = useState<boolean>('remote-only', () => false)
+  const sortBy = useState<'newest' | 'oldest' | 'company-az' | 'company-za'>('sort-by', () => 'newest')
   
   // Fetch jobs from API
   const fetchJobs = async () => {
@@ -31,7 +32,7 @@ export const useJobs = () => {
   
   // Filtered jobs based on active tab and filters
   const filteredJobs = computed(() => {
-    return jobs.value.filter((job: Job) => {
+    let result = jobs.value.filter((job: Job) => {
       // Search filter
       if (searchQuery.value) {
         const q = searchQuery.value.toLowerCase()
@@ -63,6 +64,25 @@ export const useJobs = () => {
       
       return true
     })
+    
+    // Sort the filtered results
+    const sort = sortBy.value || 'newest'
+    result = [...result].sort((a, b) => {
+      switch (sort) {
+        case 'newest':
+          return new Date(b.date_posted).getTime() - new Date(a.date_posted).getTime()
+        case 'oldest':
+          return new Date(a.date_posted).getTime() - new Date(b.date_posted).getTime()
+        case 'company-az':
+          return (a.company || '').localeCompare(b.company || '', undefined, { sensitivity: 'base' })
+        case 'company-za':
+          return (b.company || '').localeCompare(a.company || '', undefined, { sensitivity: 'base' })
+        default:
+          return 0
+      }
+    })
+    
+    return result
   })
   
   // Counts for tabs
@@ -152,8 +172,9 @@ export const useJobs = () => {
     searchQuery,
     roleFilter,
     remoteOnly,
+    sortBy,
     toggleFavorite,
     updateStatus,
     deleteJob
-}
+  }
 }

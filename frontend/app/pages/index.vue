@@ -10,6 +10,7 @@ const {
   searchQuery,
   roleFilter,
   remoteOnly,
+  sortBy,
   updateStatus,
   deleteJob
 } = useJobs()
@@ -64,6 +65,7 @@ onMounted(() => {
         v-model:searchQuery="searchQuery"
         v-model:roleFilter="roleFilter"
         v-model:remoteOnly="remoteOnly"
+        v-model:sortBy="sortBy"
         class="mb-6"
       />
       
