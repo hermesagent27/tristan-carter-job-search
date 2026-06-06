@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ashby-ea4a4cec31bb",
+    "title": "Product Support Engineer - Americas",
+    "company": "Ashby",
+    "location": "Remote - US; Remote - Canada",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": "$75K \u2013 $122K",
+    "description": "Product Support Engineer role at Ashby. Full details: https://jobs.ashbyhq.com/ashby/80c20b00-c3c3-441b-95bd-56eb870e77fb",
+    "description_short": "Product Support Engineer - Americas at Ashby",
+    "url": "https://jobs.ashbyhq.com/ashby/80c20b00-c3c3-441b-95bd-56eb870e77fb",
+    "source": "Ashby",
+    "source_id": null,
+    "date_posted": "2026-06-06T02:39:54+00:00",
+    "date_scraped": "2026-06-06",
+    "tags": [
+      "remote",
+      "support",
+      "ashby"
+    ],
+    "required_skills": [],
+    "experience_level": "mid",
+    "role_type": "support",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
