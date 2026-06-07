@@ -33,5 +33,36 @@
     },
     "status": "new",
     "application_id": null
+  },
+  {
+    "id": "indeed-7ccae59fb63a7e4b",
+    "title": "Entry Level Web Developer I",
+    "company": "Indeed Company",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Entry Level Web Developer I position posted on Indeed.",
+    "description_short": "Entry Level Web Developer I position posted on Indeed.",
+    "url": "https://www.indeed.com/viewjob?jk=7ccae59fb63a7e4b&from=appshareios",
+    "source": "Indeed",
+    "source_id": "7ccae59fb63a7e4b",
+    "date_posted": "2026-06-07T00:00:00+00:00",
+    "date_scraped": "2026-06-07",
+    "tags": [],
+    "required_skills": [],
+    "experience_level": "entry",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "applied",
+    "application_id": null
   }
 ]
