@@ -64,5 +64,36 @@
     },
     "status": "applied",
     "application_id": null
+  },
+  {
+    "id": "indeed-8e23d6196fe21617",
+    "title": "Jr. React / JavaScript UI Developer",
+    "company": "Concept Plus",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Jr. React / JavaScript UI Developer position at Concept Plus",
+    "description_short": "Junior React/JavaScript UI Developer role",
+    "url": "https://www.indeed.com/viewjob?jk=8e23d6196fe21617",
+    "source": "Indeed",
+    "source_id": "8e23d6196fe21617",
+    "date_posted": "2026-06-08",
+    "date_scraped": "2026-06-08",
+    "tags": ["react", "javascript", "ui", "junior", "frontend"],
+    "required_skills": [],
+    "experience_level": "junior",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "applied",
+    "application_id": null
   }
 ]
