@@ -125,6 +125,7 @@ const categoryBadgeClass = (cat: string) => {
           <div class="flex items-center gap-4">
             <NuxtLink to="/" class="btn btn-ghost btn-sm">← Back</NuxtLink>
             <h1 class="text-2xl font-bold">All Questions</h1>
+          <NuxtLink to="/dashboard" class="btn btn-ghost btn-sm">Dashboard</NuxtLink>
           </div>
           <button @click="showModal = true" class="btn btn-primary btn-sm">
             + Add Question

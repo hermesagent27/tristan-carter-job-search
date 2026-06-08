@@ -98,6 +98,7 @@ onMounted(() => {
             🎯 Job Tracker
           </NuxtLink>
           <h1 class="text-2xl font-bold">Dashboard</h1>
+          <NuxtLink to="/questions" class="btn btn-ghost btn-sm">Questions</NuxtLink>
         </div>
       </div>
     </header>
