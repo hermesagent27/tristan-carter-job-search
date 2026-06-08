@@ -1,4 +1,5 @@
 import { updateJob, getJobById, updateStatsFile } from '../../../server/utils/github'
+import { syncQuestionsFromJob } from '../../../server/utils/questions'
 
 export default defineEventHandler(async (event) => {
   try {
@@ -43,6 +44,11 @@ export default defineEventHandler(async (event) => {
     }
 
     const result = await updateJob(id, updates)
+
+    // Sync questions to global store if application_data was updated
+    if (body.application_data?.questions !== undefined) {
+      await syncQuestionsFromJob(id, currentJob.company, currentJob.title, body.application_data.questions)
+    }
 
     // Update stats file after status change
     if (updates.status !== undefined) {

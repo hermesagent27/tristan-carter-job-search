@@ -9,11 +9,15 @@ export default defineEventHandler(async (event) => {
     
     try {
       const { deleteJob } = await import('../../utils/github')
+      const { orphanQuestionsFromJob } = await import('../../utils/questions')
       const result = await deleteJob(jobId)
 
       if (!result.deleted) {
         throw createError({ statusCode: 404, statusMessage: 'Job not found' })
       }
+
+      // Orphan questions so they persist after job deletion
+      await orphanQuestionsFromJob(jobId)
 
       return { success: true, persisted: result.persisted, message: 'Job deleted' }
     } catch (e) {

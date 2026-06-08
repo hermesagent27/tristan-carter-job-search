@@ -33,5 +33,36 @@
     },
     "status": "new",
     "application_id": null
+  },
+  {
+    "id": "berg-freestyle-20260608",
+    "title": "Freestyle Application",
+    "company": "Berg Software",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "At Berg Software we're passionate about software development and proud of our achievements. With more than 30 years of hard work, we have a strong expertise in developing and implementing complex projects for global clients. 'The Berg Squad' has both the hard and the soft skills. We cover multiple technologies (beyond just web and cloud) for several industries (manufacturing, retail, IT, data storage etc). Our employees maintain the life-work balance, while always respecting each other. We have created a high-performance workplace that's also fun.",
+    "description_short": "Freestyle application for software development roles. Remote full-time position at Berg Software.",
+    "url": "https://www.berg-software.com/en/jobs/frestyle-application/",
+    "source": "Manual Entry",
+    "source_id": null,
+    "date_posted": "2026-06-08",
+    "date_scraped": "2026-06-08",
+    "tags": ["remote", "software development", "full-time"],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "applied",
+    "application_id": null
   }
 ]

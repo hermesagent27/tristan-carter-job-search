@@ -53,6 +53,9 @@ onMounted(() => {
           <NuxtLink to="/dashboard" class="btn btn-ghost btn-sm">
             Dashboard
           </NuxtLink>
+          <NuxtLink to="/questions" class="btn btn-ghost btn-sm">
+            Questions
+          </NuxtLink>
         </div>
       </div>
     </header>
