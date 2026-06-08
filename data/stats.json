@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-03T03:45:34.073Z",
+  "timestamp": "2026-06-08T14:01:21.101Z",
   "summary": {
-    "totalJobs": 16,
-    "totalNew": 10,
-    "totalApplied": 6,
+    "totalJobs": 50,
+    "totalNew": 40,
+    "totalApplied": 10,
     "totalInterview": 0,
     "totalOffer": 0,
     "totalDeleted": 0,
@@ -11,21 +11,31 @@
   },
   "distributions": {
     "roles": {
-      "other": 2,
-      "support": 4,
+      "other": 3,
+      "support": 6,
       "data": 1,
-      "frontend": 4,
-      "backend": 2,
-      "devops": 3
+      "frontend": 11,
+      "backend": 9,
+      "devops": 3,
+      "mobile": 4,
+      "fullstack": 8,
+      "design": 3,
+      "lead": 1,
+      "management": 1
     },
     "sources": {
-      "RemoteOK": 9,
+      "RemoteOK": 20,
       "HintEd": 1,
-      "Indeed": 1,
+      "Indeed": 2,
       "Miles IT": 1,
       "Remotive": 1,
       "DailyPay": 1,
-      "LinkedIn": 2
+      "LinkedIn": 2,
+      "VueJobs": 6,
+      "Agency Direct": 13,
+      "Gusto": 1,
+      "Ashby": 1,
+      "Manual Entry": 1
     }
   }
 }
