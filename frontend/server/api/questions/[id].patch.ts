@@ -1,13 +1,5 @@
-import { readFile, writeFile } from 'fs/promises'
-import { join } from 'path'
 import type { Question } from '~/types/questions'
-
-const IS_DEV = process.env.NODE_ENV === 'development' || !process.env.VERCEL
-const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-carter-job-search/data'
-
-const DATA_PATH = IS_DEV 
-  ? join(LOCAL_DATA_PATH, 'questions.json')
-  : join(process.cwd(), '..', '..', 'data', 'questions.json')
+import { getAllQuestions, updateQuestion } from '../../../utils/github'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'PATCH') {
@@ -22,28 +14,29 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
   try {
-    const data = await readFile(DATA_PATH, 'utf-8')
-    const questions: Question[] = JSON.parse(data)
+    const questions = await getAllQuestions()
+    const idx = questions.findIndex((q: Question) => q.id === id)
     
-    const index = questions.findIndex(q => q.id === id)
-    if (index === -1) {
+    if (idx === -1) {
       throw createError({ statusCode: 404, statusMessage: 'Question not found' })
     }
     
     const updated: Question = {
-      ...questions[index],
+      ...questions[idx],
       ...(body.question !== undefined && { question: body.question.trim() }),
       ...(body.answer !== undefined && { answer: body.answer.trim() }),
       ...(body.category && { category: body.category }),
       updated_at: new Date().toISOString()
     }
     
-    questions[index] = updated
-    await writeFile(DATA_PATH, JSON.stringify(questions, null, 2))
+    const result = await updateQuestion(id, updated)
     
-    return { success: true, question: updated }
-  } catch (e) {
+    return { success: true, question: result.question }
+  } catch (e: any) {
     console.error('Failed to update question:', e)
-    throw createError({ statusCode: 500, statusMessage: 'Failed to update question' })
+    throw createError({ 
+      statusCode: e.statusCode || 500, 
+      statusMessage: e.statusMessage || 'Failed to update question' 
+    })
   }
 })

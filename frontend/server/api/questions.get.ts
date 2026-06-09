@@ -1,13 +1,5 @@
-import { readFile, writeFile } from 'fs/promises'
-import { join } from 'path'
 import type { Question } from '~/types/questions'
-
-const IS_DEV = process.env.NODE_ENV === 'development' || !process.env.VERCEL
-const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-carter-job-search/data'
-
-const DATA_PATH = IS_DEV 
-  ? join(LOCAL_DATA_PATH, 'questions.json')
-  : join(process.cwd(), '..', '..', 'data', 'questions.json')
+import { getAllQuestions } from '../../utils/github'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'GET') {
@@ -15,8 +7,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const data = await readFile(DATA_PATH, 'utf-8')
-    const questions: Question[] = JSON.parse(data)
+    const questions: Question[] = await getAllQuestions()
     
     // Get query params
     const query = getQuery(event)

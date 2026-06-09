@@ -1,14 +1,6 @@
-import { readFile, writeFile } from 'fs/promises'
-import { join } from 'path'
-import { randomUUID } from 'crypto'
 import type { Question } from '~/types/questions'
-
-const IS_DEV = process.env.NODE_ENV === 'development' || !process.env.VERCEL
-const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-carter-job-search/data'
-
-const DATA_PATH = IS_DEV 
-  ? join(LOCAL_DATA_PATH, 'questions.json')
-  : join(process.cwd(), '..', '..', 'data', 'questions.json')
+import { getAllQuestions, updateQuestion } from '../../utils/github'
+import { randomUUID } from 'crypto'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'POST') {
@@ -26,38 +18,42 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const data = await readFile(DATA_PATH, 'utf-8')
-    const questions: Question[] = JSON.parse(data)
-    
     const now = new Date().toISOString()
-    const newQuestion: Question = {
-      id: body.id || randomUUID().slice(0, 12),
-      question: body.question.trim(),
-      answer: (body.answer || '').trim(),
-      category: body.category,
-      job_id: body.job_id || null,
-      job_company: body.job_company || null,
-      job_title: body.job_title || null,
-      created_at: body.created_at || now,
-      updated_at: now
-    }
     
-    // Check for duplicates by question text (case insensitive) for same job
-    const existingIndex = questions.findIndex(q => 
-      q.question.toLowerCase() === newQuestion.question.toLowerCase() &&
-      q.job_id === newQuestion.job_id
+    // Check for duplicates first
+    const questions = await getAllQuestions()
+    const existing = questions.find((q: Question) => 
+      q.question.toLowerCase() === body.question.trim().toLowerCase() &&
+      q.job_id === (body.job_id || null)
     )
     
-    if (existingIndex >= 0) {
+    if (existing) {
       // Update existing
-      questions[existingIndex] = { ...questions[existingIndex], ...newQuestion, id: questions[existingIndex].id }
+      const result = await updateQuestion(existing.id, {
+        ...existing,
+        answer: (body.answer || existing.answer || '').trim(),
+        category: body.category,
+        updated_at: now
+      })
+      return { success: true, question: result.question }
     } else {
-      questions.push(newQuestion)
+      // Create new
+      const newId = body.id || `q-${randomUUID().slice(0, 8)}`
+      const newQuestion = {
+        id: newId,
+        question: body.question.trim(),
+        answer: (body.answer || '').trim(),
+        category: body.category,
+        job_id: body.job_id || null,
+        job_company: body.job_company || null,
+        job_title: body.job_title || null,
+        created_at: body.created_at || now,
+        updated_at: now
+      }
+      
+      const result = await updateQuestion(newId, newQuestion)
+      return { success: true, question: newQuestion }
     }
-    
-    await writeFile(DATA_PATH, JSON.stringify(questions, null, 2))
-    
-    return { success: true, question: existingIndex >= 0 ? questions[existingIndex] : newQuestion }
   } catch (e) {
     console.error('Failed to save question:', e)
     throw createError({ statusCode: 500, statusMessage: 'Failed to save question' })

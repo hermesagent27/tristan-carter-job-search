@@ -293,6 +293,19 @@ export async function getJobById(id: string): Promise<Job | null> {
   return jobs.find(j => j.id === id) || null
 }
 
+// Get all questions from GitHub
+export async function getAllQuestions(): Promise<any[]> {
+  try {
+    const data = await getFile('data/questions.json')
+    if (Array.isArray(data)) {
+      return data
+    }
+  } catch (e: any) {
+    console.error(`[Questions] Failed to load: ${e.message}`)
+  }
+  return []
+}
+
 // Find and update a job in local JSON files (dev mode)
 async function updateJobInLocalFiles(id: string, updates: Record<string, any>): Promise<Job | null> {
   const fs = await import('fs/promises')
@@ -548,4 +561,60 @@ export async function updateStatsFile(): Promise<boolean> {
     console.error('[Stats] Failed to update stats:', e.message)
     return false
   }
+}
+
+
+// === QUESTION FUNCTIONS ===
+
+// Update or create a question via GitHub API
+export async function updateQuestion(id: string, updates: Record<string, any>): Promise<{ question: any | null; persisted: boolean }> {
+  try {
+    // Get current questions
+    const questions = await getAllQuestions()
+    
+    const idx = questions.findIndex((q: any) => q.id === id)
+    if (idx >= 0) {
+      // Update existing
+      questions[idx] = { ...questions[idx], ...updates, updated_at: new Date().toISOString() }
+    } else {
+      // Create new
+      const newQuestion = {
+        id,
+        ...updates,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      }
+      questions.push(newQuestion)
+    }
+    
+    // Write back to GitHub
+    const success = await commitQuestionsToGitHub(questions)
+    return { question: questions.find((q: any) => q.id === id) || null, persisted: success }
+  } catch (e: any) {
+    console.error(`[Questions] Failed to update question ${id}: ${e.message}`)
+    return { question: null, persisted: false }
+  }
+}
+
+// Delete a question via GitHub API
+export async function deleteQuestion(id: string): Promise<{ deleted: boolean; persisted: boolean }> {
+  try {
+    const questions = await getAllQuestions()
+    const filtered = questions.filter((q: any) => q.id !== id)
+    
+    if (filtered.length === questions.length) {
+      return { deleted: false, persisted: false } // Not found
+    }
+    
+    const success = await commitQuestionsToGitHub(filtered)
+    return { deleted: true, persisted: success }
+  } catch (e: any) {
+    console.error(`[Questions] Failed to delete question ${id}: ${e.message}`)
+    return { deleted: false, persisted: false }
+  }
+}
+
+// Commit questions.json to GitHub
+async function commitQuestionsToGitHub(questions: any[]): Promise<boolean> {
+  return await writeFile('data/questions.json', questions, '📝 Update questions')
 }
