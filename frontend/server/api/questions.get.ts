@@ -1,5 +1,5 @@
 import type { Question } from '~/types/questions'
-import { getAllQuestions } from '../../utils/github'
+import { getAllQuestions } from '../utils/github'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'GET') {

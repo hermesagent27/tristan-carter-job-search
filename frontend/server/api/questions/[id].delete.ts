@@ -1,4 +1,4 @@
-import { deleteQuestion } from '../../../utils/github'
+import { deleteQuestion } from '../../utils/github'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'DELETE') {

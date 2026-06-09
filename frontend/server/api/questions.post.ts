@@ -1,5 +1,5 @@
 import type { Question } from '~/types/questions'
-import { getAllQuestions, updateQuestion } from '../../utils/github'
+import { getAllQuestions, updateQuestion } from '../utils/github'
 import { randomUUID } from 'crypto'
 
 export default defineEventHandler(async (event) => {

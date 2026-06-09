@@ -1,5 +1,5 @@
 import type { Question } from '~/types/questions'
-import { getAllQuestions, updateQuestion } from '../../../utils/github'
+import { updateQuestion } from '../../utils/github'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'PATCH') {
