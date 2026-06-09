@@ -94,11 +94,25 @@ onMounted(() => {
     <header class="bg-base-200 border-b border-base-300">
       <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
-          <NuxtLink to="/" class="btn btn-ghost text-xl">
-            🎯 Job Tracker
-          </NuxtLink>
-          <h1 class="text-2xl font-bold">Dashboard</h1>
-          <NuxtLink to="/questions" class="btn btn-ghost btn-sm">Questions</NuxtLink>
+          <NuxtLink to="/" class="btn btn-ghost text-xl">🎯 Job Tracker</NuxtLink>
+          
+          <!-- Desktop Nav -->
+          <div class="hidden sm:flex items-center gap-4">
+            <h1 class="text-2xl font-bold">Dashboard</h1>
+            <NuxtLink to="/questions" class="btn btn-ghost btn-sm">Questions</NuxtLink>
+          </div>
+          
+          <!-- Mobile Hamburger -->
+          <div class="sm:hidden dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+              <li><NuxtLink to="/questions">Questions</NuxtLink></li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
