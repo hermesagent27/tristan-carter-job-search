@@ -13,7 +13,7 @@ const saving = ref(false)
 // Application data structure
 const application = ref({
   cover_letter: '',
-  questions: [] as { question: string; answer: string }[],
+  questions: [] as { question: string; answer: string; category?: 'technical' | 'behavioral' | 'other' }[],
   notes: ''
 })
 
@@ -90,7 +90,7 @@ const saveApplication = async () => {
     console.error('Failed to save:', e)
     alert('Failed to save. Please try again.')
   } finally {
-  saving.value = false
+    saving.value = false
   }
 }
 
@@ -109,9 +109,9 @@ const updateStatus = async (newStatus: string) => {
   }
 }
 
-// Add/remove questions
+ // Add/remove questions
 const addQuestion = () => {
-  application.value.questions.push({ question: '', answer: '' })
+  application.value.questions.push({ question: '', answer: '', category: 'technical' })
 }
 
 const removeQuestion = (index: number) => {
@@ -315,43 +315,53 @@ onMounted(() => {
                   :key="index"
                   class="border border-base-300 rounded-lg p-4"
                 >
-                  <!-- Question -->
-                  <div class="mb-3">
-                    <label class="label text-sm font-medium">Question {{ index + 1 }}</label>
-                    <input
-                      v-if="isEditing"
-                      v-model="qa.question"
-                      class="input input-bordered w-full"
-                      placeholder="Enter the question..."
-                    />
-                    <p v-else class="font-medium">{{ qa.question }}</p>
-                  </div>
+                 <!-- Question -->
+                 <div class="mb-3">
+                   <label class="label text-sm font-medium">Question {{ index + 1 }}</label>
+                   <input
+                     v-if="isEditing"
+                     v-model="qa.question"
+                     class="input input-bordered w-full"
+                     placeholder="Enter the question..."
+                   />
+                   <p v-else class="font-medium">{{ qa.question }}</p>
+                 </div>
 
-                  <!-- Answer -->
-                  <div>
-                    <label class="label text-sm font-medium">Your Answer</label>
-                    <textarea
-                      v-if="isEditing"
-                      v-model="qa.answer"
-                      class="textarea textarea-bordered w-full"
-                      rows="3"
-                      placeholder="Write your answer..."
-                    ></textarea>
-                    <div v-else class="bg-base-200 p-3 rounded-lg">
-                      <p v-if="qa.answer" class="whitespace-pre-wrap">{{ qa.answer }}</p>
-                      <p v-else class="text-muted italic">No answer recorded.</p>
-                    </div>
-                  </div>
+                 <!-- Category -->
+                 <div class="mb-3" v-if="isEditing">
+                   <label class="label text-sm font-medium">Category</label>
+                   <select v-model="qa.category" class="select select-bordered w-full select-sm">
+                     <option value="technical">Technical</option>
+                     <option value="behavioral">Behavioral</option>
+                     <option value="other">Other</option>
+                   </select>
+                 </div>
 
-                  <!-- Remove button -->
-                  <button 
-                    v-if="isEditing"
-                    @click="removeQuestion(index)"
-                    class="btn btn-ghost btn-xs text-error mt-2"
-                  >
-                    Remove Question
-                  </button>
-                </div>
+                 <!-- Answer -->
+                 <div>
+                   <label class="label text-sm font-medium">Your Answer</label>
+                   <textarea
+                     v-if="isEditing"
+                     v-model="qa.answer"
+                     class="textarea textarea-bordered w-full"
+                     rows="3"
+                     placeholder="Write your answer..."
+                   ></textarea>
+                   <div v-else class="bg-base-200 p-3 rounded-lg">
+                     <p v-if="qa.answer" class="whitespace-pre-wrap">{{ qa.answer }}</p>
+                     <p v-else class="text-muted italic">No answer recorded.</p>
+                   </div>
+                 </div>
+
+                 <!-- Remove button -->
+                 <button 
+                   v-if="isEditing"
+                   @click="removeQuestion(index)"
+                   class="btn btn-ghost btn-xs text-error mt-2"
+                 >
+                   Remove Question
+                 </button>
+               </div>
               </div>
             </div>
           </div>

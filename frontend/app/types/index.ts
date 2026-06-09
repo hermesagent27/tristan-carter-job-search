@@ -29,6 +29,7 @@ export interface ApplicationData {
 export interface ApplicationQuestion {
   question: string
   answer: string
+  category?: 'technical' | 'behavioral' | 'other'
 }
 
 export interface Application {

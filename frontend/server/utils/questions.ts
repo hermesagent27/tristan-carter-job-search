@@ -61,7 +61,7 @@ export async function syncQuestionsFromJob(
   jobId: string, 
   company: string, 
   title: string,
-  jobQuestions: Array<{ question: string; answer: string }>
+  jobQuestions: Array<{ question: string; answer: string; category?: 'technical' | 'behavioral' | 'other' }>
 ): Promise<void> {
   const questions = await loadQuestions()
   const now = new Date().toISOString()
@@ -78,10 +78,13 @@ export async function syncQuestionsFromJob(
       q.question.toLowerCase().trim() === jq.question.toLowerCase().trim()
     )
     
+    const category = jq.category || inferCategory(jq.question)
+    
     if (existing) {
-      // Update answer if changed
-      if (existing.answer !== jq.answer) {
+      // Update answer and category if changed
+      if (existing.answer !== jq.answer || existing.category !== category) {
         existing.answer = jq.answer
+        existing.category = category
         existing.updated_at = now
       }
       processedIds.add(existing.id)
@@ -91,7 +94,7 @@ export async function syncQuestionsFromJob(
         id: `q-${randomUUID().slice(0, 8)}`,
         question: jq.question.trim(),
         answer: jq.answer.trim(),
-        category: inferCategory(jq.question),
+        category,
         job_id: jobId,
         job_company: company,
         job_title: title,
