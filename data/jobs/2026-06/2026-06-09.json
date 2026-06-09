@@ -1,0 +1,37 @@
+[
+  {
+    "id": "remoteok-8306c4281d09",
+    "title": "Business Intelligence Analyst",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Business Intelligence (Power BI) Analyst Client: Government of Alberta (GoA) – Technology and Innovation Project: Digital Regulatory Assurance System (DRAS) Location: Remote within Canada (Occasional onsite meetings in Edmonton, AB) Duration: Long-Term Contract (Approx. 18 Months + Possible 6-Month Extension) Hours: 36.25 Hours/Week (Monday – Friday, Alberta Time) Start Date: June 2026 About the Project The Digital Regulatory Assurance System (DRAS) is a major Government of Alberta initiative led by Environment and Protected Areas (EPA) to modernize, digitize, and streamline environmental and natural resource regulatory processes. DRAS supports the complete regulatory lifecycle—from application and authorization through compliance monitoring, remediation, and closure—using a single digital platform. As the volume and complexity of data continue to grow, the program requires an experienced Business Intelligence Analyst to provide advanced analytics, reporting, dashboard development, and data-driven insights that support operational and strategic decision-making. Key Responsibilities Design, develop, and maintain advanced dashboards, scorecards, and visual analytics using Microsoft Power BI. Build and optimize enterprise reporting solutions using Power BI, DAX, and Power Query. Develop and maintain data models, semantic models, and ETL processes. Integrate Power BI solutions with Azure-based data platforms and on-premises data sources. Collaborate with business stakeholders, data architects, and data engineers to understand reporting requirements and KPIs. Translate business requirements into scalable analytical and reporting solutions. Conduct data analysis to identify trends, patterns, anomalies, and business opportunities. Present analytical findings and recommendations to business and executive stakeholders. Implement and maintain Power BI Service features including scheduled refreshes, alerts, and workspace management. Configure Row-Level Security (RLS), incremental refresh, and performance optimization strategies. Ensure data quality, consistency, governance, and security compliance. Provide end-user support, training, and documentation. Leverage AI-assisted analytics tools to automate insights generation and enhance reporting capabilities. Perform other related duties as required. Mandatory Qualifications Education Post-secondary Degree, Diploma, or Certificate in Computer Science, Information Technology, Data Analytics, or a related discipline. Experience 5+ years of experience translating business requireme",
+    "description_short": "Business Intelligence (Power BI) Analyst Client: Government of Alberta (GoA) – Technology and Innovation Project: Digital Regulatory Assurance System (DRAS) Location: Remote within Canada (Occasional onsite meetings in Edmonton, AB) Duration: Long-Term Contract (Approx. 18 Months + Possible 6-Month Extension) Hours: 36.25 Hours/Week (Monday – Friday, Alberta Time) Start Date:",
+    "url": "https://remoteOK.com/remote-jobs/remote-business-intelligence-analyst-joblinxsapp-1133037",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-08T10:00:00+00:00",
+    "date_scraped": "2026-06-09",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "senior",
+    "role_type": "devops",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
