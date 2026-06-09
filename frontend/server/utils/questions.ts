@@ -8,7 +8,7 @@ const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-ca
 
 const DATA_PATH = IS_DEV 
   ? join(LOCAL_DATA_PATH, 'questions.json')
-  : '/data/questions.json'
+  : join(process.cwd(), '..', '..', 'data', 'questions.json')
 
 // Infer category from question text
 function inferCategory(question: string): 'technical' | 'behavioral' | 'other' {
