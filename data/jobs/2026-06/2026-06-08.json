@@ -95,5 +95,36 @@
     },
     "status": "applied",
     "application_id": null
+  },
+  {
+    "id": "manual-highfive-media-20260608",
+    "title": "Web and Graphic Designer",
+    "company": "High Five Media",
+    "location": "On-site (not remote)",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Join Our Creative Team at High Five Media! Are you a talented web and graphic designer with a passion for creating stunning digital experiences? High Five Media is looking for a skilled designer with 3+ years of hands-on experience to join our dynamic team. If you thrive in a fast-paced, collaborative environment and are an expert in Adobe Creative Suite, we want to hear from you! As a key member of our creative team, you'll be responsible for designing eye-catching websites and graphic design projects that make a real impact for our diverse range of clients. Your expertise will shine across a variety of projects—from custom Squarespace sites and marketing collateral to brand design and campaign creative—all while balancing creativity with fast-paced production demands. What We're Looking For: 3+ years of professional web and graphic design experience; Strong proficiency in Adobe Creative Suite (Photoshop, Illustrator, InDesign, etc.) is a must; Solid working experience with Squarespace or WordPress is a must; Working experience with Shopify is a valuable plus; A keen eye for design, with the ability to translate concepts into beautiful, functional websites; Ability to thrive both in a collaborative team environment and when tackling projects independently; Strong communication skills to work effectively with both our internal team and clients; A positive, proactive attitude and a desire to grow with our team. Benefits include: 14 days PTO, 9 paid holidays, paid medical insurance, matching 401(k), maternity/paternity leave. Also offering a Paid Internship track for candidates not yet fully qualified.",
+    "description_short": "Web and Graphic Designer at High Five Media. 3+ years experience required. Adobe Creative Suite, Squarespace/WordPress required. In-office only. Paid internship track available.",
+    "url": "https://www.indeed.com/cmp/High-Five-Media/jobs",
+    "source": "Manual Entry",
+    "source_id": null,
+    "date_posted": "2026-06-08",
+    "date_scraped": "2026-06-08",
+    "tags": ["design", "adobe-creative-suite", "squarespace", "wordpress", "on-site", "internship-track"],
+    "required_skills": ["Adobe Creative Suite", "Squarespace", "WordPress"],
+    "experience_level": "mid",
+    "role_type": "design",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "applied",
+    "application_id": null
   }
 ]
