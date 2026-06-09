@@ -614,7 +614,8 @@ export async function deleteQuestion(id: string): Promise<{ deleted: boolean; pe
   }
 }
 
-// Commit questions.json to GitHub
+// Commit questions.json to GitHub  
 async function commitQuestionsToGitHub(questions: any[]): Promise<boolean> {
+  const { writeFile } = await import('../utils/github-writer')
   return await writeFile('data/questions.json', questions, '📝 Update questions')
 }

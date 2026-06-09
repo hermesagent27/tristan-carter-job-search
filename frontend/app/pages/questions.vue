@@ -23,6 +23,11 @@ const editAnswer = ref('')
 const editQuestion = ref('')
 const editCategory = ref<QuestionCategory>('technical')
 
+// Custom delete confirmation dialog
+const showDeleteConfirm = ref(false)
+const deleteTargetId = ref<string | null>(null)
+const deleteTargetQuestion = ref('')
+
 const filteredQuestions = computed(() => {
   let result = questions.value
   
@@ -99,11 +104,45 @@ const cancelEdit = () => {
   editingId.value = null
 }
 
-const deleteQuestion = async (id: string) => {
-  if (!confirm('Delete this question?')) return
+// Show delete confirmation dialog
+const confirmDelete = (q: Question) => {
+  deleteTargetId.value = q.id
+  deleteTargetQuestion.value = q.question.slice(0, 100) + (q.question.length > 100 ? '...' : '')
+  showDeleteConfirm.value = true
+}
+
+// Cancel delete
+const cancelDelete = () => {
+  deleteTargetId.value = null
+  deleteTargetQuestion.value = ''
+  showDeleteConfirm.value = false
+}
+
+// Execute delete
+const executeDelete = async () => {
+  if (!deleteTargetId.value) return
   
-  await $fetch(`/api/questions/${id}`, { method: 'DELETE' })
-  refresh()
+  try {
+    const response = await $fetch(`/api/questions/${deleteTargetId.value}`, { 
+      method: 'DELETE'
+    })
+    
+    console.log('[Delete] Response:', response)
+    
+    if (response.success) {
+      // Close dialog
+      showDeleteConfirm.value = false
+      deleteTargetId.value = null
+      deleteTargetQuestion.value = ''
+      // Refresh list
+      await refresh()
+    } else {
+      alert('Failed to delete question')
+    }
+  } catch (e: any) {
+    console.error('Failed to delete question:', e)
+    alert(`Failed to delete: ${e.message || 'Unknown error'}`)
+  }
 }
 
 const categoryBadgeClass = (cat: string) => {
@@ -214,7 +253,7 @@ const categoryBadgeClass = (cat: string) => {
                 <!-- Actions -->
                 <div class="flex flex-col gap-2">
                   <button @click="startEdit(q)" class="btn btn-ghost btn-xs">Edit</button>
-                  <button @click="deleteQuestion(q.id)" class="btn btn-ghost btn-xs text-error">Delete</button>
+                  <button @click="confirmDelete(q)" class="btn btn-ghost btn-xs text-error">Delete</button>
                 </div>
               </div>
             </template>
@@ -277,6 +316,27 @@ const categoryBadgeClass = (cat: string) => {
         </div>
       </div>
       <div class="modal-backdrop" @click="showModal = false"></div>
+    </dialog>
+
+    <!-- Delete Confirmation Modal -->
+    <dialog :open="showDeleteConfirm" class="modal modal-open" v-if="showDeleteConfirm">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold mb-2 text-error">Delete Question?</h3>
+        <div class="bg-error/10 p-4 rounded-lg mb-4">
+          <p class="text-sm">This action cannot be undone. The question will be permanently removed from your archive.</p>
+        </div>
+        <div class="mb-4">
+          <label class="label text-sm mb-1">Question to delete:</label>
+          <p class="text-sm font-medium">"{{ deleteTargetQuestion }}"</p>
+        </div>
+        <div class="modal-action">
+          <button @click="cancelDelete" class="btn btn-ghost">Cancel</button>
+          <button @click="executeDelete" class="btn btn-error">
+            Delete Forever
+          </button>
+        </div>
+      </div>
+      <div class="modal-backdrop" @click="cancelDelete"></div>
     </dialog>
   </div>
 </template>
