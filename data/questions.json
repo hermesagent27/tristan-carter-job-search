@@ -20,5 +20,27 @@
     "job_title": "Sample Job",
     "created_at": "2026-06-05T00:00:00Z",
     "updated_at": "2026-06-05T00:00:00Z"
+  },
+  {
+    "id": "q-dailypay-001",
+    "question": "On a scale of 1-10, how comfortable are you with Javascript and CSS? Briefly describe a project where you had to use this language to solve a specific UI or logic problem.",
+    "answer": "10, I built my first three websites with vanilla HTML, CSS, and JavaScript. I love creating unique designs and experiences. One example would be for my very first client project, I had built some cards displaying a photo of my client's work, with a description and I had given the cards a slick CSS :hover animation. Through manual testing, I found that CSS :hover doesn't have the best functionality with touch devices. Instead of waiting for a tap to 'hover' the card, I used JavaScript to grab the scroll position, total card height, and the y-position of the top of the card. Then find an acceptable threshold to add/ remove a class based on if the card was passed that threshold or not. Essentially, I added a class when the card was on-screen to mimic the hover effect.",
+    "category": "technical",
+    "job_id": "dailypay-f4a797dd-112b-4a25-9f61-4a8f1acb19a8",
+    "job_company": "DailyPay",
+    "job_title": "Jr. Web Developer",
+    "created_at": "2026-06-02T00:00:00Z",
+    "updated_at": "2026-06-02T00:00:00Z"
+  },
+  {
+    "id": "q-dailypay-002",
+    "question": "What tools do you use when you are stuck on a problem.",
+    "answer": "If I can't immediately solve a bug and I know that it is something I'm uncomfortable with. I will sic copilot or, if it's connected, my Hermes agent to triage, but not edit code. I will have it list out possible root causes and investigate each root cause to see which has a higher chance of being the real issue. Also Sentry's Seer tool is great at pin-pointing root cause of issues.",
+    "category": "technical",
+    "job_id": "dailypay-f4a797dd-112b-4a25-9f61-4a8f1acb19a8",
+    "job_company": "DailyPay",
+    "job_title": "Jr. Web Developer",
+    "created_at": "2026-06-02T00:00:00Z",
+    "updated_at": "2026-06-02T00:00:00Z"
   }
 ]
