@@ -46,5 +46,75 @@
       "questions": [],
       "notes": ""
     }
+  },
+  {
+    "id": "remoteok-90091d25003f",
+    "title": "Data Analyst",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "About Fusemachines Founded in 2013, Fusemachines is a global provider of enterprise AI products and services, on a mission to democratize AI. Leveraging proprietary AI Studio and AI Engines, the company helps drive the clients’ AI Enterprise Transformation, regardless of where they are in their Digital AI journeys. With offices in North America, Asia, and Latin America, Fusemachines provides a suite of enterprise AI offerings and specialty services that allow organizations of any size to implement and scale AI. Fusemachines serves companies in industries such as retail, manufacturing, and government. Fusemachines continues to actively pursue the mission of democratizing AI for the masses by providing high-quality AI education in underserved communities and helping organizations achieve their full potential with AI. Type: Remote, Full-time Important: Immigration Sponsorship Policy This position is not eligible for employment visa sponsorship or transfer sponsorship now or in the future. Direct Company Sponsorship: Such as H-1B, J-1, or TN visas Employer of Record: Listing Fusemachines as the immigration employer on any government documentation Written Documentation: Providing letters or other support for any work authorization (e.g., OPT, STEM OPT, CPT) About the role: We are seeking a talented and experienced Data Analyst responsible for gathering, interpreting, analyzing, and visualizing large and complex datasets to provide insights and support data-driven decision-making (BI, visualization, and Advanced Analytics). Qualification / Skill Set Requirement: Data Collection and modeling: Gathering data from various sources such as databases, spreadsheets, APIs, and other relevant sources to support business requirements Data Cleaning and Preprocessing: Reviewing and organizing data to ensure accuracy, consistency, and completeness. This may involve handling missing values, removing outliers, and transforming data into a suitable format for analysis Data Analysis: Applying statistical techniques and analytical methods to examine data and identify patterns, trends, relationships and insights that inform business decisions. This will involve using tools like SQL, Python or specialized data analysis software Data Visualization : Design, build and maintain visual representations of data through charts, graphs, and dashboards to communicate insights effectively to stakeholders. Data visualization tools like SnowSight, and Power BI Reporting: Summarizing and presenting findings from data analysis in a clear and concise manner. This includes creating reports, slide decks, or presentations to communicate insights and recommendations to non-technical stakeholders Data Governance, including Quality Assurance: Ensuring the accuracy, consistency, and integrity",
+    "description_short": "About Fusemachines Founded in 2013, Fusemachines is a global provider of enterprise AI products and services, on a mission to democratize AI. Leveraging proprietary AI Studio and AI Engines, the company helps drive the clients’ AI Enterprise Transformation, regardless of where they are in their Digital AI journeys. With offices in North America, Asia, and Latin America, Fusemachines provides a suite of enterprise AI offerings and specialty services that allow organizati",
+    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-fusemachines-1133041",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-09T01:42:50+00:00",
+    "date_scraped": "2026-06-10",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "junior",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "remoteok-13b3cfd23a66",
+    "title": "Junior Market Specialist Analyst",
+    "company": "team members from anywhere in the world",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Shumba Capital Ltd is an international company focused on digital assets, market research, and data-driven trading. We work with crypto markets and help our team grow from the ground up. We are fully remote and welcome team members from anywhere in the world. We are looking for a Junior Market Specialist / Analyst with at least 1 year of experience in crypto or trading. You will support daily market operations, monitor trading activity, and help improve our strategies. This is a hands-on role where you will learn and contribute at the same time. Key Responsibilities Monitor crypto market movements, prices, and liquidity. Support trading operations on exchanges (Spot, Futures, Options). Help with rebalancing assets across multiple exchanges (CEX and DEX). Track and report technical or financial issues to the development team. Work with internal data and charts to find market signals. Ensure trading bots follow risk rules and performance targets. Assist with treasury records and coordinate with the finance team. Communicate with the commercial team about client trading results. What We Offer Fully remote work — no location restrictions. Flexible hours (suitable for different time zones). Work with real market data and professional tools. Opportunity to grow within an international team. Supportive environment with feedback and collaboration. Requirements Basic understanding of spot, futures, and options markets. Analytical mindset and attention to detail. Ability to work under pressure and make quick decisions. Good communication skills in English (written and spoken). Team player, adaptable, and self-organized.",
+    "description_short": "Shumba Capital Ltd is an international company focused on digital assets, market research, and data-driven trading. We work with crypto markets and help our team grow from the ground up. We are fully remote and welcome team members from anywhere in the world. We are looking for a Junior Market Specialist / Analyst with at least 1 year of experience in crypto or trading. You will support daily market operation",
+    "url": "https://remoteOK.com/remote-jobs/remote-junior-market-specialist-analyst-shumba-1133023",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-08T21:03:02+00:00",
+    "date_scraped": "2026-06-10",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "junior",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
   }
 ]
