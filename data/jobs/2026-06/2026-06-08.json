@@ -1,40 +1,5 @@
 [
   {
-    "id": "remoteok-97f6464f6516",
-    "title": "Administrative Support",
-    "company": "Unknown",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Job Title: Administrative Support (Data Entry Clerk) Location: Westminster CO (Remote Role) Contract Role Job Overview We are seeking a detail-oriented and organized Data Entry Clerk to join our team. This role is essential for maintaining accurate and efficient data management within our organization. The ideal candidate will possess strong computer skills, experience with databases and CRM systems, and excellent organizational abilities. This position offers an opportunity to contribute to our digital transformation operations while developing valuable office experience in a professional environment. Top Skills 1-: Strong working knowledge of Microsoft Excel and Google Workspace (especially Google Sheets). 2-: Attention to Detail: Ability to spot minor inconsistencies or errors in large volumes of data. 3-: Experience with Salesforce preferred but not required. Duties Input, update, and maintain data within various databases and CRM systems with high accuracy. Perform data entry tasks including order entry, data collection, and transcription. Utilize spreadsheets to create pivot tables, organize data, and generate reports as needed. Manage filing systems and ensure proper documentation for easy retrieval of information. Support administrative functions through typing, organizing files, and maintaining data integrity. Conduct basic math calculations to verify data accuracy and process transactions efficiently. Collaborate with team members to ensure timely completion of data-related projects and tasks. Qualifications Proven experience in data entry, clerical work, or administrative support preferred. Proficiency in Google Workspace or Office Suite, including the use of pivot tables. Strong typing skills with high accuracy and attention to detail. Familiarity with databases, CRM systems, and order entry processes is highly desirable. Excellent organizational skills with the ability to manage multiple tasks simultaneously. Basic math skills for verifying data accuracy and performing calculations. Office experience or administrative background is a plus. Ability to work independently with minimal supervision while adhering to deadlines. This position is ideal for candidates who are meticulous, efficient, and eager to support organizational operations through precise data management. Ability to effectively work within record software and update files accurately Thanks & Regards, Vivek Sharma Account Manager Email: vivek@vishusa.com Vish Consulting Services, Inc </stro",
-    "description_short": "Job Title: Administrative Support (Data Entry Clerk) Location: Westminster CO (Remote Role) Contract Role Job Overview We are seeking a detail-oriented and organized Data Entry Clerk to join our team. This role is essential for maintaining accurate and efficient data management within our organization. The ideal candidate will possess strong computer skills, experience with databases and CRM systems,",
-    "url": "https://remoteOK.com/remote-jobs/remote-administrative-support-vish-consulting-it-1132970",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-07T01:23:50+00:00",
-    "date_scraped": "2026-06-08",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "berg-freestyle-20260608",
     "title": "Freestyle Application",
     "company": "Berg Software",
@@ -50,7 +15,11 @@
     "source_id": null,
     "date_posted": "2026-06-08",
     "date_scraped": "2026-06-08",
-    "tags": ["remote", "software development", "full-time"],
+    "tags": [
+      "remote",
+      "software development",
+      "full-time"
+    ],
     "required_skills": [],
     "experience_level": "any",
     "role_type": "backend",
@@ -81,7 +50,13 @@
     "source_id": "8e23d6196fe21617",
     "date_posted": "2026-06-08",
     "date_scraped": "2026-06-08",
-    "tags": ["react", "javascript", "ui", "junior", "frontend"],
+    "tags": [
+      "react",
+      "javascript",
+      "ui",
+      "junior",
+      "frontend"
+    ],
     "required_skills": [],
     "experience_level": "junior",
     "role_type": "frontend",
@@ -112,8 +87,19 @@
     "source_id": null,
     "date_posted": "2026-06-08",
     "date_scraped": "2026-06-08",
-    "tags": ["design", "adobe-creative-suite", "squarespace", "wordpress", "on-site", "internship-track"],
-    "required_skills": ["Adobe Creative Suite", "Squarespace", "WordPress"],
+    "tags": [
+      "design",
+      "adobe-creative-suite",
+      "squarespace",
+      "wordpress",
+      "on-site",
+      "internship-track"
+    ],
+    "required_skills": [
+      "Adobe Creative Suite",
+      "Squarespace",
+      "WordPress"
+    ],
     "experience_level": "mid",
     "role_type": "design",
     "employment_type": "full-time",
