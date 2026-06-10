@@ -120,31 +120,19 @@ const removeQuestion = (index: number) => {
 }
 
 // Download cover letter as Word doc
-const downloadCoverLetter = async () => {
+const downloadCoverLetter = () => {
   if (!job.value) return
   
   downloadingCoverLetter.value = true
-  try {
-    const response = await $fetch(`/api/cover-letter/download?id=${job.value.id}`, {
-      responseType: 'blob'
-    })
-    
-    // Create download link
-    const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' })
-    const url = window.URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = `Cover_Letter_${job.value.company}_${job.value.title}.docx`.replace(/[^\w.\-]/g, '_')
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-    window.URL.revokeObjectURL(url)
-  } catch (e) {
-    console.error('Failed to download cover letter:', e)
-    alert('Failed to download. Please try again.')
-  } finally {
+  
+  // Direct browser download - works on mobile Safari
+  const url = `/api/cover-letter/download?id=${job.value.id}`
+  window.location.href = url
+  
+  // Reset button after short delay
+  setTimeout(() => {
     downloadingCoverLetter.value = false
-  }
+  }, 2000)
 }
 
 // Helpers
