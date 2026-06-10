@@ -9,6 +9,7 @@ const error = ref<string | null>(null)
 const job = ref<Job | null>(null)
 const isEditing = ref(false)
 const saving = ref(false)
+const downloadingCoverLetter = ref(false)
 
 // Application data structure
 const application = ref({
@@ -116,6 +117,34 @@ const addQuestion = () => {
 
 const removeQuestion = (index: number) => {
   application.value.questions.splice(index, 1)
+}
+
+// Download cover letter as Word doc
+const downloadCoverLetter = async () => {
+  if (!job.value) return
+  
+  downloadingCoverLetter.value = true
+  try {
+    const response = await $fetch(`/api/cover-letter/download?id=${job.value.id}`, {
+      responseType: 'blob'
+    })
+    
+    // Create download link
+    const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' })
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `Cover_Letter_${job.value.company}_${job.value.title}.docx`.replace(/[^\w.\-]/g, '_')
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    window.URL.revokeObjectURL(url)
+  } catch (e) {
+    console.error('Failed to download cover letter:', e)
+    alert('Failed to download. Please try again.')
+  } finally {
+    downloadingCoverLetter.value = false
+  }
 }
 
 // Helpers
@@ -297,7 +326,17 @@ onMounted(() => {
           <!-- Cover Letter -->
           <div class="card bg-base-100 shadow-sm border border-base-300">
             <div class="card-body">
-              <h3 class="card-title text-lg">Cover Letter</h3>
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="card-title text-lg">Cover Letter</h3>
+                <button
+                  v-if="!isEditing && application.cover_letter"
+                  @click="downloadCoverLetter"
+                  :disabled="downloadingCoverLetter"
+                  class="btn btn-outline btn-sm"
+                >
+                  {{ downloadingCoverLetter ? 'Generating...' : '⬇ Download Word' }}
+                </button>
+              </div>
               <textarea
                 v-if="isEditing"
                 v-model="application.cover_letter"
