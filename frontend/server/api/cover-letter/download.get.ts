@@ -1,4 +1,4 @@
-import { generateCoverLetter } from '../utils/cover-letter'
+import { generateCoverLetter } from '../../utils/cover-letter'
 
 export default defineEventHandler(async (event) => {
   try {
