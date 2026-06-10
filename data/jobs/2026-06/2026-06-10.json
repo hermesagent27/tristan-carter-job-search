@@ -1,0 +1,50 @@
+[
+  {
+    "id": "venu-manual-001",
+    "title": "Front-End Developer",
+    "company": "venU",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "venU is looking for a Front-End Developer to join our team. We are building innovative solutions and need someone with strong web development skills who can contribute to our growing platform. The role involves working with modern web technologies and collaborating with a dynamic team.",
+    "description_short": "Front-End Developer at venU - Building innovative solutions with modern web technologies. Remote position.",
+    "url": "https://ven-u.com/careers/",
+    "source": "Manual",
+    "source_id": "venu-cares-001",
+    "date_posted": "2026-06-10",
+    "date_scraped": "2026-06-10",
+    "tags": [
+      "frontend",
+      "javascript",
+      "vue",
+      "react",
+      "typescript",
+      "tailwind"
+    ],
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Modern Frameworks"
+    ],
+    "experience_level": "junior",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 90
+    },
+    "status": "new",
+    "application_id": null,
+    "application_data": {
+      "cover_letter": "Dear VenU Team,\n\nI'm writing to express my interest in the front-end developer position. While I may not yet have experience with SVN and LMS, I do have experience with databases and CMS. I also bring a strong general web development foundation, self-starter mentality, and a quick adaptability from being self-taught.\n\nManaging a Sonic Drive-In at a young age sharpened my skills to have clear communication, composure under pressure, and the ability to keep multiple priorities moving without losing attention to detail. All of which has made me the developer I am today!\n\nSince 2023, I've been building polished, responsive websites using Vue, Nuxt, and Tailwind CSS, balancing aesthetics with practicality across every project. I like making slick designs and still focusing on accessibility and progressive web enhancements so that every user gets a great experience.\n\nI enjoy fast-paced, collaborative environments where interruptions are welcomed and the feedback loop is quick, but can also thrive when left alone. Thank you for your time and consideration for this opportunity. I hope to talk more soon!\n\nBest Regards,\nTristan Carter",
+      "questions": [],
+      "notes": ""
+    }
+  }
+]
