@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   },
   
   runtimeConfig: {
-    githubRepo: 'hermesagent27/tristan-carter-job-search'
+    githubRepo: 'hermesagent27/tristan-carter-job-search',
+    authPassword: process.env.AUTH_PASSWORD || 'qULT9VJ6DN9Y0lc2'
   }
 })
