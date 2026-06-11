@@ -12,9 +12,8 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  // Set HTTP-only cookie with base64 encoded password
-  const hash = Buffer.from(password).toString('base64')
-  setCookie(event, 'job-tracker-auth', hash, {
+  // Set HTTP-only cookie with plain password (simpler matching)
+  setCookie(event, 'job-tracker-auth', password, {
     httpOnly: true,
     secure: true,
     sameSite: 'strict',

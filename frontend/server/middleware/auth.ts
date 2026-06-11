@@ -1,21 +1,22 @@
 // Server-side auth middleware - checks for valid session
-import { getCookie, createError } from 'h3'
-
 export default defineEventHandler((event) => {
-  // Skip auth check for login endpoints
-  const path = event.node.req.url
-  if (path?.startsWith('/api/auth/') || path === '/login') {
+  const url = event.path || event.node.req.url || ''
+  
+  // Skip auth check for auth API and login page
+  if (url.startsWith('/api/auth/') || url === '/login' || url.startsWith('/login?')) {
     return
   }
 
   // Check for auth cookie
   const authCookie = getCookie(event, 'job-tracker-auth')
   const config = useRuntimeConfig()
+  const password = config.authPassword
   
-  // Validate cookie matches password hash (simple check)
-  const expectedHash = Buffer.from(config.authPassword).toString('base64')
+  // Skip if no password configured
+  if (!password) return
   
-  if (authCookie !== expectedHash) {
+  // Validate cookie matches password
+  if (authCookie !== password) {
     throw createError({
       statusCode: 401,
       statusMessage: 'Unauthorized'
