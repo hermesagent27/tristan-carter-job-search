@@ -4,7 +4,12 @@ export default defineNuxtRouteMiddleware(async (to) => {
   if (to.path === '/login') {
     return
   }
-  
+
+  // Only run on client side
+  if (process.server) {
+    return
+  }
+
   try {
     const { authenticated } = await $fetch('/api/auth/check')
     if (!authenticated) {
