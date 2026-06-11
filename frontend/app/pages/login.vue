@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 definePageMeta({
   layout: false
 })
@@ -10,56 +10,49 @@ const loading = ref(false)
 async function login() {
   error.value = ''
   loading.value = true
-  
   try {
     await $fetch('/api/auth/login', {
       method: 'POST',
       body: { password: password.value }
     })
-    // Redirect to home on success
     navigateTo('/')
   } catch (e) {
-    error.value = 'Incorrect password'
-  } finally {
+    error.value = 'Wrong password'
     loading.value = false
   }
 }
 </script>
 
 <template>
-  <div class="min-h-screen bg-base-100 flex items-center justify-center p-4">
-    <div class="card bg-base-200 shadow-xl w-full max-w-sm">
-      <div class="card-body">
-        <h1 class="card-title text-2xl font-bold text-center mb-6">Job Tracker</h1>
-        
-        <form @submit.prevent="login" class="space-y-4">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Password</span>
-            </label>
-            <input
-              v-model="password"
-              type="password"
-              class="input input-bordered"
-              placeholder="Enter password..."
-              required
-            />
-          </div>
-          
-          <div v-if="error" class="alert alert-error text-sm py-2">
-            {{ error }}
-          </div>
-          
-          <button
-            type="submit"
-            class="btn btn-primary w-full"
-            :disabled="loading"
-          >
-            <span v-if="loading" class="loading loading-spinner loading-sm"></span>
-            {{ loading ? 'Logging in...' : 'Login' }}
-          </button>
-        </form>
-      </div>
+  <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; background: #1a1a2e;">
+    <div style="background: #16213e; padding: 2rem; border-radius: 8px; width: 100%; max-width: 360px;">
+      <h1 style="text-align: center; color: white; margin-bottom: 1.5rem; font-size: 1.5rem;">Job Tracker</h1>
+
+      <form @submit.prevent="login">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; color: #94a3b8; margin-bottom: 0.5rem; font-size: 0.875rem;">Password</label>
+          <input
+            v-model="password"
+            type="password"
+            placeholder="Enter password..."
+            required
+            style="width: 100%; padding: 0.75rem; border: 1px solid #334155; border-radius: 4px; background: #0f172a; color: white; font-size: 1rem; box-sizing: border-box;"
+          />
+        </div>
+
+        <div v-if="error" style="background: #ef4444; color: white; padding: 0.75rem; border-radius: 4px; margin-bottom: 1rem; font-size: 0.875rem;">
+          {{ error }}
+        </div>
+
+        <button
+          type="submit"
+          :disabled="loading"
+          style="width: 100%; padding: 0.875rem; background: #3b82f6; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;"
+        >
+          <span v-if="loading">Loading...</span>
+          <span v-else>Login</span>
+        </button>
+      </form>
     </div>
   </div>
 </template>
