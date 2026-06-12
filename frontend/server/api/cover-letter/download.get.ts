@@ -1,4 +1,5 @@
 import { generateCoverLetter } from '../../utils/cover-letter'
+import { getJobById } from '../../utils/github'
 
 export default defineEventHandler(async (event) => {
   try {
