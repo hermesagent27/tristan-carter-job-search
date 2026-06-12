@@ -1,9 +1,34 @@
 <script setup lang="ts">
-const { data: authStatus } = await useFetch('/api/auth/check')
+const showAddModal = ref(false)
+const jobUrl = ref('')
+const adding = ref(false)
+const addError = ref('')
 
-async function logout() {
-  await $fetch('/api/auth/logout', { method: 'POST' })
-  navigateTo('/login')
+async function addJob() {
+  if (!jobUrl.value.trim()) return
+  
+  adding.value = true
+  addError.value = ''
+  
+  try {
+    const response = await $fetch('/api/jobs/import', {
+      method: 'POST',
+      body: { url: jobUrl.value.trim() }
+    })
+    
+    if (response.success) {
+      jobUrl.value = ''
+      showAddModal.value = false
+      // Refresh jobs list
+      await refreshNuxtData('jobs')
+    } else {
+      addError.value = response.error || 'Failed to add job'
+    }
+  } catch (e: any) {
+    addError.value = e.message || 'Failed to add job'
+  } finally {
+    adding.value = false
+  }
 }
 </script>
 
@@ -22,7 +47,7 @@ async function logout() {
           <NuxtLink to="/dashboard" class="btn btn-ghost btn-sm">Dashboard</NuxtLink>
           <NuxtLink to="/questions" class="btn btn-ghost btn-sm">Questions</NuxtLink>
           <div class="divider divider-horizontal mx-1"></div>
-          <button class="btn btn-ghost btn-sm text-error" @click="logout">Logout</button>
+          <button class="btn btn-primary btn-sm" @click="showAddModal = true">+ Add Job</button>
         </div>
         
         <!-- Mobile Hamburger -->
@@ -36,11 +61,41 @@ async function logout() {
             <li><NuxtLink to="/">Jobs</NuxtLink></li>
             <li><NuxtLink to="/dashboard">Dashboard</NuxtLink></li>
             <li><NuxtLink to="/questions">Questions</NuxtLink></li>
-            <li class="menu-title">Account</li>
-            <li><button @click="logout" class="text-error">Logout</button></li>
+            <li class="menu-title">Actions</li>
+            <li><button @click="showAddModal = true" class="text-primary">+ Add Job</button></li>
           </ul>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Add Job Modal -->
+  <dialog :open="showAddModal" class="modal modal-bottom sm:modal-middle" @click.self="showAddModal = false">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg mb-4">Add New Job</h3>
+      <form @submit.prevent="addJob">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Job URL</span>
+          </label>
+          <input
+            v-model="jobUrl"
+            type="url"
+            placeholder="https://linkedin.com/jobs/view/..."
+            class="input input-bordered w-full"
+            required
+          />
+          <label v-if="addError" class="label">
+            <span class="label-text-alt text-error">{{ addError }}</span>
+          </label>
+        </div>
+        <div class="modal-action">
+          <button type="button" class="btn btn-ghost" @click="showAddModal = false">Cancel</button>
+          <button type="submit" class="btn btn-primary" :disabled="adding || !jobUrl.trim()">
+            {{ adding ? 'Adding...' : 'Add Job' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 </template>
