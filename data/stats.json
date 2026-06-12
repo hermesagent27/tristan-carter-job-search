@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-08T14:01:23.035Z",
+  "timestamp": "2026-06-12T01:54:54.353Z",
   "summary": {
-    "totalJobs": 50,
-    "totalNew": 40,
-    "totalApplied": 10,
+    "totalJobs": 59,
+    "totalNew": 46,
+    "totalApplied": 13,
     "totalInterview": 0,
     "totalOffer": 0,
     "totalDeleted": 0,
@@ -14,19 +14,19 @@
       "other": 3,
       "support": 6,
       "data": 1,
-      "frontend": 11,
-      "backend": 9,
-      "devops": 3,
-      "mobile": 4,
+      "frontend": 13,
+      "backend": 11,
+      "devops": 6,
+      "mobile": 5,
       "fullstack": 8,
-      "design": 3,
+      "design": 4,
       "lead": 1,
       "management": 1
     },
     "sources": {
-      "RemoteOK": 20,
+      "RemoteOK": 26,
       "HintEd": 1,
-      "Indeed": 2,
+      "Indeed": 3,
       "Miles IT": 1,
       "Remotive": 1,
       "DailyPay": 1,
@@ -35,7 +35,8 @@
       "Agency Direct": 13,
       "Gusto": 1,
       "Ashby": 1,
-      "Manual Entry": 1
+      "Manual Entry": 2,
+      "Manual": 1
     }
   }
 }
