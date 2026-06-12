@@ -57,7 +57,11 @@
       "remote",
       "senior"
     ],
-    "required_skills": ["Vue 3", "JavaScript", "Frontend"],
+    "required_skills": [
+      "Vue 3",
+      "JavaScript",
+      "Frontend"
+    ],
     "experience_level": "senior",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -93,7 +97,11 @@
       "remote",
       "mid-level"
     ],
-    "required_skills": ["Vue", "Nuxt", "JavaScript"],
+    "required_skills": [
+      "Vue",
+      "Nuxt",
+      "JavaScript"
+    ],
     "experience_level": "mid",
     "role_type": "fullstack",
     "employment_type": "full-time",
@@ -104,7 +112,7 @@
       "is_duplicate": false,
       "match_score": 95
     },
-    "status": "new",
+    "status": "applied",
     "application_id": null
   },
   {
@@ -129,7 +137,10 @@
       "senior",
       "on-site"
     ],
-    "required_skills": ["Vue.js", "Frontend"],
+    "required_skills": [
+      "Vue.js",
+      "Frontend"
+    ],
     "experience_level": "senior",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -165,7 +176,10 @@
       "contract",
       "mid-level"
     ],
-    "required_skills": ["Vue.js", "JavaScript"],
+    "required_skills": [
+      "Vue.js",
+      "JavaScript"
+    ],
     "experience_level": "mid",
     "role_type": "fullstack",
     "employment_type": "contract",
@@ -201,7 +215,10 @@
       "remote",
       "contract"
     ],
-    "required_skills": ["Vue.js", "JavaScript"],
+    "required_skills": [
+      "Vue.js",
+      "JavaScript"
+    ],
     "experience_level": "senior",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -238,7 +255,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["CMS", "UI Development", "Web Development"],
+    "required_skills": [
+      "CMS",
+      "UI Development",
+      "Web Development"
+    ],
     "experience_level": "any",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -275,7 +296,12 @@
       "nuxt",
       "remote"
     ],
-    "required_skills": ["Design", "Engineering", "Vue", "Nuxt"],
+    "required_skills": [
+      "Design",
+      "Engineering",
+      "Vue",
+      "Nuxt"
+    ],
     "experience_level": "any",
     "role_type": "design",
     "employment_type": "full-time",
@@ -310,7 +336,10 @@
       "vercel",
       "remote"
     ],
-    "required_skills": ["Backend", "Software Engineering"],
+    "required_skills": [
+      "Backend",
+      "Software Engineering"
+    ],
     "experience_level": "any",
     "role_type": "backend",
     "employment_type": "full-time",
@@ -345,7 +374,10 @@
       "frontend",
       "vercel"
     ],
-    "required_skills": ["Frontend", "Dashboard"],
+    "required_skills": [
+      "Frontend",
+      "Dashboard"
+    ],
     "experience_level": "any",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -381,7 +413,12 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Full Stack", "JavaScript", "React", "Node"],
+    "required_skills": [
+      "Full Stack",
+      "JavaScript",
+      "React",
+      "Node"
+    ],
     "experience_level": "senior",
     "role_type": "fullstack",
     "employment_type": "full-time",
@@ -416,7 +453,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Leadership", "Engineering", "Architecture"],
+    "required_skills": [
+      "Leadership",
+      "Engineering",
+      "Architecture"
+    ],
     "experience_level": "senior",
     "role_type": "lead",
     "employment_type": "full-time",
@@ -452,7 +493,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Product Design", "UX/UI", "Design Systems"],
+    "required_skills": [
+      "Product Design",
+      "UX/UI",
+      "Design Systems"
+    ],
     "experience_level": "senior",
     "role_type": "design",
     "employment_type": "full-time",
@@ -489,7 +534,11 @@
       "agency",
       "wordpress"
     ],
-    "required_skills": ["JavaScript", "React", "WordPress"],
+    "required_skills": [
+      "JavaScript",
+      "React",
+      "WordPress"
+    ],
     "experience_level": "senior",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -526,7 +575,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Ruby on Rails", "React", "Design"],
+    "required_skills": [
+      "Ruby on Rails",
+      "React",
+      "Design"
+    ],
     "experience_level": "any",
     "role_type": "fullstack",
     "employment_type": "full-time",
@@ -563,7 +616,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Laravel", "PHP", "Vue"],
+    "required_skills": [
+      "Laravel",
+      "PHP",
+      "Vue"
+    ],
     "experience_level": "any",
     "role_type": "fullstack",
     "employment_type": "full-time",
@@ -600,7 +657,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Elixir", "Phoenix", "JavaScript"],
+    "required_skills": [
+      "Elixir",
+      "Phoenix",
+      "JavaScript"
+    ],
     "experience_level": "any",
     "role_type": "fullstack",
     "employment_type": "full-time",
@@ -637,7 +698,11 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Product Design", "UX", "Leadership"],
+    "required_skills": [
+      "Product Design",
+      "UX",
+      "Leadership"
+    ],
     "experience_level": "senior",
     "role_type": "design",
     "employment_type": "contract",
@@ -674,7 +739,10 @@
       "remote",
       "agency"
     ],
-    "required_skills": ["Design Management", "Leadership"],
+    "required_skills": [
+      "Design Management",
+      "Leadership"
+    ],
     "experience_level": "senior",
     "role_type": "management",
     "employment_type": "contract",
@@ -710,7 +778,10 @@
       "on-site",
       "security"
     ],
-    "required_skills": ["Vue.js", "Software Engineering"],
+    "required_skills": [
+      "Vue.js",
+      "Software Engineering"
+    ],
     "experience_level": "mid",
     "role_type": "fullstack",
     "employment_type": "full-time",
