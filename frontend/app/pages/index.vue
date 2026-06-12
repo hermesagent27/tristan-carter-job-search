@@ -45,33 +45,7 @@ onMounted(() => {
 
 <template>
   <div class="min-h-screen bg-base-100">
-    <!-- Header -->
-    <header class="bg-base-200 border-b border-base-300">
-      <div class="w-full max-w-7xl mx-auto px-4 py-4" style="max-width: 1200px;">
-        <div class="flex justify-between items-center">
-          <h1 class="text-2xl font-bold">🎯 Job Tracker</h1>
-          
-          <!-- Desktop Nav -->
-          <div class="hidden sm:flex gap-2">
-            <NuxtLink to="/dashboard" class="btn btn-ghost btn-sm">Dashboard</NuxtLink>
-            <NuxtLink to="/questions" class="btn btn-ghost btn-sm">Questions</NuxtLink>
-          </div>
-          
-          <!-- Mobile Hamburger -->
-          <div class="sm:hidden dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-ghost btn-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-              <li><NuxtLink to="/dashboard">Dashboard</NuxtLink></li>
-              <li><NuxtLink to="/questions">Questions</NuxtLink></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+    <AppNavbar />
     
     <!-- Main Content -->
     <main class="w-full max-w-7xl mx-auto px-4 py-6" style="max-width: 1200px;">

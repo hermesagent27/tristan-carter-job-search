@@ -90,32 +90,7 @@ onMounted(() => {
 
 <template>
   <div class="min-h-screen bg-base-100">
-    <!-- Header -->
-    <header class="bg-base-200 border-b border-base-300">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex justify-between items-center">
-          <NuxtLink to="/" class="btn btn-ghost text-xl">🎯 Job Tracker</NuxtLink>
-          
-          <!-- Desktop Nav -->
-          <div class="hidden sm:flex items-center gap-4">
-            <h1 class="text-2xl font-bold">Dashboard</h1>
-            <NuxtLink to="/questions" class="btn btn-ghost btn-sm">Questions</NuxtLink>
-          </div>
-          
-          <!-- Mobile Hamburger -->
-          <div class="sm:hidden dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-ghost btn-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-              <li><NuxtLink to="/questions">Questions</NuxtLink></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+    <AppNavbar />
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center items-center py-20">
@@ -123,7 +98,7 @@ onMounted(() => {
     </div>
 
     <!-- Main Content -->
-    <main v-else class="container mx-auto px-4 py-6">
+    <main v-else class="w-full max-w-7xl mx-auto px-4 py-6" style="max-width: 1200px;">
       <!-- Last Updated -->
       <p class="text-sm text-base-content/60 text-right mb-4">
         Last updated: {{ lastUpdated }}
