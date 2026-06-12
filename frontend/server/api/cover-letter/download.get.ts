@@ -2,11 +2,16 @@ import { generateCoverLetter } from '../../utils/cover-letter'
 import { getJobById } from '../../utils/github'
 
 export default defineEventHandler(async (event) => {
+  console.log('[CoverLetter Download] Request received:', event.node.req.url)
+  
   try {
     const query = getQuery(event)
     const jobId = query.id as string
     
+    console.log('[CoverLetter Download] Job ID:', jobId)
+    
     if (!jobId) {
+      console.error('[CoverLetter Download] Missing job ID')
       throw createError({
         statusCode: 400,
         statusMessage: 'Job ID required'
@@ -16,25 +21,40 @@ export default defineEventHandler(async (event) => {
     // Get the job
     const job = await getJobById(jobId)
     if (!job) {
+      console.error('[CoverLetter Download] Job not found:', jobId)
       throw createError({
         statusCode: 404,
         statusMessage: 'Job not found'
       })
     }
     
+    console.log('[CoverLetter Download] Found job:', job.company, '-', job.title)
+    
     // Get cover letter (use saved one or generate)
     let coverLetter = job.application_data?.cover_letter || ''
+    console.log('[CoverLetter Download] Saved cover letter length:', coverLetter.length)
+    
     if (!coverLetter) {
+      console.log('[CoverLetter Download] Generating cover letter...')
       coverLetter = await generateCoverLetter(job)
+      console.log('[CoverLetter Download] Generated cover letter length:', coverLetter.length)
     }
     
     // Build Word document XML
+    console.log('[CoverLetter Download] Building Word document...')
     const docBuffer = buildWordDoc(coverLetter)
+    console.log('[CoverLetter Download] Document buffer size:', docBuffer.length, 'bytes')
     
     // Set response headers for download
-    setHeader(event, 'Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
-    setHeader(event, 'Content-Disposition', `attachment; filename="Cover_Letter_${sanitizeFilename(job.company)}_${sanitizeFilename(job.title)}.docx"`)
+    const filename = `Cover_Letter_${sanitizeFilename(job.company)}_${sanitizeFilename(job.title)}.docx`
+    console.log('[CoverLetter Download] Filename:', filename)
     
+    setHeader(event, 'Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    setHeader(event, 'Content-Disposition', `attachment; filename="${filename}"`)
+    setHeader(event, 'Content-Length', String(docBuffer.length))
+    setHeader(event, 'Cache-Control', 'no-cache')
+    
+    console.log('[CoverLetter Download] Headers set, returning buffer...')
     return docBuffer
     
   } catch (error: any) {

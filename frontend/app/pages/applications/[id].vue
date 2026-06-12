@@ -120,19 +120,84 @@ const removeQuestion = (index: number) => {
 }
 
 // Download cover letter as Word doc
-const downloadCoverLetter = () => {
+const downloadCoverLetter = async () => {
   if (!job.value) return
   
   downloadingCoverLetter.value = true
+  console.log('[CoverLetter Download] Starting download for job:', job.value.id)
   
-  // Direct browser download - works on mobile Safari
-  const url = `/api/cover-letter/download?id=${job.value.id}`
-  window.location.href = url
-  
-  // Reset button after short delay
-  setTimeout(() => {
+  try {
+    // Fetch the file as a blob
+    const url = `/api/cover-letter/download?id=${job.value.id}`
+    console.log('[CoverLetter Download] Fetching:', url)
+    
+    const response = await fetch(url)
+    console.log('[CoverLetter Download] Response status:', response.status, response.statusText)
+    
+    if (!response.ok) {
+      throw new Error(`Failed to download: ${response.status} ${response.statusText}`)
+    }
+    
+    const blob = await response.blob()
+    console.log('[CoverLetter Download] Blob size:', blob.size, 'bytes')
+    console.log('[CoverLetter Download] Blob type:', blob.type)
+    
+    const objectUrl = window.URL.createObjectURL(blob)
+    console.log('[CoverLetter Download] Object URL created:', objectUrl)
+    
+    // For iOS Safari, we need to use a different approach
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    const filename = `Cover_Letter_${job.value.company}_${job.value.title}.docx`.replace(/[^a-zA-Z0-9_.-]/g, '_')
+    
+    console.log('[CoverLetter Download] User agent:', navigator.userAgent)
+    console.log('[CoverLetter Download] Is iOS:', isIOS)
+    console.log('[CoverLetter Download] Navigator.share available:', !!navigator.share)
+    
+    if (isIOS && navigator.share && navigator.canShare) {
+      console.log('[CoverLetter Download] Using iOS share...')
+      // iOS with native share support
+      const file = new File([blob], filename, { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' })
+      const shareData = { files: [file], title: filename }
+      
+      if (navigator.canShare(shareData)) {
+        try {
+          await navigator.share(shareData)
+          console.log('[CoverLetter Download] iOS share completed')
+        } catch (shareError) {
+          // User cancelled or share failed - try fallback
+          console.log('[CoverLetter Download] Share failed/cancelled:', shareError)
+          console.log('[CoverLetter Download] Falling back to direct link...')
+          // Open in new tab - iOS will show "Open in..." options
+          window.open(objectUrl, '_blank')
+        }
+      } else {
+        console.log('[CoverLetter Download] Cannot share this file type, using fallback...')
+        window.open(objectUrl, '_blank')
+      }
+    } else {
+      console.log('[CoverLetter Download] Using download link (not iOS share)...')
+      // Desktop or non-share iOS - use download link
+      const link = document.createElement('a')
+      link.href = objectUrl
+      link.download = filename
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      console.log('[CoverLetter Download] Clicking download link...')
+      link.click()
+      document.body.removeChild(link)
+      console.log('[CoverLetter Download] Download link clicked')
+    }
+    
+    window.URL.revokeObjectURL(objectUrl)
+    console.log('[CoverLetter Download] Object URL revoked')
+    
+  } catch (error) {
+    console.error('[CoverLetter Download] Error:', error)
+    alert('Failed to download cover letter. Please try again.')
+  } finally {
     downloadingCoverLetter.value = false
-  }, 2000)
+    console.log('[CoverLetter Download] Button state reset')
+  }
 }
 
 // Helpers
