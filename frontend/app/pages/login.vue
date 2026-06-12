@@ -1,8 +1,4 @@
 <script setup>
-definePageMeta({
-  layout: false
-})
-
 const password = ref('')
 const error = ref('')
 const loading = ref(false)
