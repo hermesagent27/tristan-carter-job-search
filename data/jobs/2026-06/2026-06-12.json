@@ -1,5 +1,54 @@
 [
   {
+    "id": "linkedin-repligen-R409",
+    "title": "Full Stack Web Developer",
+    "company": "Repligen",
+    "location": "Waltham, MA (50+ Remote States)",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Make a global impact—join Repligen. We're united by a mission to inspire advances in bioprocessing as a preferred partner in the production of biologic drugs that improve human health worldwide. As a Full Stack Web Developer, you will help build and enhance Repligen's global digital experiences across corporate, product, and eCommerce platforms. This role is hands-on and delivery-focused, centered on a Symfony-based digital experience architecture, primarily implemented through Pimcore DXP and integrated with Shopify and other enterprise systems. This is an ideal opportunity for a developer with strong PHP/Symfony fundamentals and experience in modern CMS/DXP or structured content platforms who is interested in expanding their expertise into Pimcore and enterprise digital platforms. Prior Pimcore experience is a plus, but it is not required for candidates with the right transferable skills. You will collaborate with Digital Marketing, Commercial, IT, and external partners in an Agile environment to develop and optimize customer-facing experiences that improve usability, scalability, performance, and future AI-driven capabilities.",
+    "description_short": "Make a global impact—join Repligen. As a Full Stack Web Developer, you will help build and enhance Repligen's global digital experiences across corporate, product, and eCommerce platforms. Symfony/Pimcore DXP, Shopify integration, Vue.js frontend.",
+    "url": "https://repligen.wd108.myworkdayjobs.com/Repligen_Careers/job/Waltham-MA/Full-Stack-Web-Developer_R-409?source=LinkedIn",
+    "source": "LinkedIn",
+    "source_id": "R-409",
+    "date_posted": "2026-06-10",
+    "date_scraped": "2026-06-12",
+    "tags": [
+      "php",
+      "symfony",
+      "pimcore",
+      "vue",
+      "javascript",
+      "fullstack",
+      "shopify",
+      "agile"
+    ],
+    "required_skills": [
+      "PHP",
+      "Symfony",
+      "Vue.js",
+      "JavaScript",
+      "Twig",
+      "REST APIs",
+      "MySQL",
+      "Webpack"
+    ],
+    "experience_level": "mid",
+    "role_type": "fullstack",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 85
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
     "id": "remoteok-ffd67b79724f",
     "title": "Service Desk Analyst 11am 8pm",
     "company": "Unknown",
