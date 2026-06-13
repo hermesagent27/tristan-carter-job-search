@@ -1,40 +1,5 @@
 [
   {
-    "id": "remoteok-f87c8c1c6202",
-    "title": "Customer Support",
-    "company": "products",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Customer Support Specialist (Arabic) | Remote We are actively seeking a detail-oriented Remote Customer Support (Arabic) Specialist to join our team. In this role, you will be responsible for delivering professional and timely support to Arabic-speaking customers through various communication channels. You will handle customer inquiries, resolve issues efficiently, and ensure a positive customer experience at every interaction. Strong communication skills in Arabic, excellent problem-solving ability, and attention to detail are essential for success in this remote position. Your contribution will play a key role in maintaining customer satisfaction and supporting the overall growth of our organization. Key Responsibilities 1) Customer Communication Respond to customer inquiries via email, chat, or phone in Arabic (and English if required) Provide accurate information about products, services, and processes Maintain clear, professional, and empathetic communication 2) Issue Resolution Assist customers with troubleshooting and resolving common issues Identify root causes and guide customers through solutions Escalate complex or sensitive cases to appropriate teams 3) Case Management Document all customer interactions in CRM or support systems Track open cases and follow up to ensure timely resolution Maintain accurate and up-to-date customer records 4) Quality and Service Standards Ensure all responses meet company quality and communication standards Handle complaints with professionalism and empathy Support continuous improvement by identifying recurring issues 5) Team Collaboration Work closely with internal teams to resolve customer concerns Participate in training sessions and team meetings Stay updated on product changes, policies, and procedures Required Skills and Qualifications Fluency in Arabic (written and spoken) and good English skills Strong communication and interpersonal abilities Customer-focused mindset with empathy and patience Ab...",
-    "description_short": "Customer Support Specialist (Arabic) | Remote We are actively seeking a detail-oriented Remote Customer Support (Arabic) Specialist to join our team. In this role, you will be responsible for delivering professional and timely support to Arabic-speaking customers through various communication channels. You will handle customer inquiries, resolve issues efficiently, and ensure a positive customer experience at every interaction. Strong",
-    "url": "https://remoteOK.com/remote-jobs/remote-customer-support-recruitlytics-hires-1132765",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-03T11:13:07+00:00",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "support",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "vuejobs-security-risk-advisors-001",
     "title": "Senior Front-End Developer - Vue 3 (SDE III)",
     "company": "Security Risk Advisors",
