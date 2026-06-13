@@ -277,45 +277,6 @@
     "application_id": null
   },
   {
-    "id": "bighuman-tech-lead-011",
-    "title": "Tech Lead",
-    "company": "Big Human",
-    "location": "Remote (US)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Tech Lead at Big Human. Design agency remote position.",
-    "description_short": "Tech Lead at Big Human. Remote US.",
-    "url": "https://www.bighuman.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "tech-lead",
-      "remote",
-      "agency"
-    ],
-    "required_skills": [
-      "Leadership",
-      "Engineering",
-      "Architecture"
-    ],
-    "experience_level": "senior",
-    "role_type": "lead",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": true,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 70
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "bighuman-product-design-lead-012",
     "title": "Product Design Lead",
     "company": "Big Human",
