@@ -1,40 +1,5 @@
 [
   {
-    "id": "remoteok-e8e752dd1128",
-    "title": "Data Analyst",
-    "company": "how this part of the craft is evolving",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": 100000,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "About Us Stio® is an omni-channel mountain brand that designs, develops and sells beautiful, functional, and innovative apparel, footwear and other accessories infused with the soul of the mountain lifestyle. With headquarters in Jackson, Wyoming, Stio draws inspiration from the surrounding Teton Range and offers product via Stio.com, catalog, B2B and its Mountain Studio® retail locations. We live and love mountain life, and as such see ourselves as caretakers of the resources that provide it. We are proud partners of Protect Our Winters and the Conservation Alliance among many other organizations. We have a strong preferred materials platform, use Bluesign® approved textiles wherever possible, audit our supply chains for best practices, and operate our workplaces responsibly. We think that outside is the best side and that you can't improve on nature. It's good for mind, body and soul, and it's our responsibility to help enable access for all people, regardless of race, gender, beliefs, background or ability. We strive for inclusion at Stio and in our local and national communities. YOUR ROLE The Data Analyst is a key early member of Stio's Data & Analytics team, working alongside the Director of Data & Analytics to expand how the business uses data to make decisions. This is a full-stack, horizontal role: the work spans data infrastructure (ingestion, modeling, transformation) through analysis, BI development, and direct stakeholder partnership across Finance, Merchandising, Marketing, Operations, Inventory Planning, and B2B. You'll work where the highest-leverage problems are and grow the breadth and depth of the analytics function in the process. You'll work in a stack built around Snowflake, Fivetran, dbt, Power BI, GitHub, and increasingly Python in addition to SQL and R. AI-assisted development is the default form factor for the team. Most of the code we ship is written collaboratively with AI agents in tools like Claude Code, then reviewed, tested, and iterated. The expectation is not that you arrive an expert in AI tooling. The expectation is that you bring strong fundamentals — the kind of data and modeling intuition that lets you catch silently wrong AI output that runs cleanly and passes tests — and that you're genuinely curious about how this part of the craft is evolving. As an early team member, you'll help shape how we work in this environment, not just execute someone else's playbook. We're looking for an analyst who connects what they see in the data to the bigger picture and who has a strong bias for tying analysis to action. The right person doesn't hesitate to sweep the floor (fix a broken Excel link), isn't afraid to question the status quo (does this metric actually measure what it claims to?), and would rather quickly solve a pressing business problem with simple analysis than build a sophisticated model that collects dust. A",
-    "description_short": "About Us Stio® is an omni-channel mountain brand that designs, develops and sells beautiful, functional, and innovative apparel, footwear and other accessories infused with the soul of the mountain lifestyle. With headquarters in Jackson, Wyoming, Stio draws inspiration from the surrounding Teton Range and offers product via Stio.com, catalog, B2B and its Mountain Studio® retail locations. We live and love mountain life, and as such see ourselves as caretakers of",
-    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-stior-1132903",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-06T02:36:46+00:00",
-    "date_scraped": "2026-06-07",
-    "tags": [
-      "fullstack",
-      "remote",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "fullstack",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "indeed-7ccae59fb63a7e4b",
     "title": "Entry Level Web Developer I",
     "company": "Indeed Company",
