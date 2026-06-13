@@ -106,39 +106,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "remoteok-574c655ead64",
-    "title": "Travel Support Advisor",
-    "company": "Careers in Travel",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": 70000,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "About the Opportunity We are seeking reliable and customer-focused individuals to join our team as Travel Support Advisors . In this role, you will assist clients throughout the travel planning process by providing support with reservations, itinerary details, and travel-related questions. This opportunity is ideal for individuals who enjoy helping others, solving problems, and providing a positive customer experience. Travel Support Advisors work with established booking platforms and travel resources to assist clients before, during, and after their trips. \\n Key Responsibilities Provide support to clients with travel arrangements including flights, hotels, cruises, transportation, and vacation packages Assist with questions related to itineraries, reservations, and travel details Communicate with travel suppliers and partners to confirm bookings and resolve issues Maintain accurate records of client interactions, bookings, and updates Assist clients with itinerary changes, updates, or travel-related concerns Provide guidance on travel schedules, documentation requirements, and trip details Monitor travel updates and communicate any relevant changes to clients Deliver professional and timely customer service throughout the travel experience Qualifications Strong communication and problem-solving skills Customer-service mindset with a focus on client satisfaction Ability to manage multiple requests and respond in a timely manner <li data-section-id=\"1bp9le1\" data-start=\"1744\" dat",
-    "description_short": "About the Opportunity We are seeking reliable and customer-focused individuals to join our team as Travel Support Advisors .",
-    "url": "https://remoteOK.com/remote-jobs/remote-travel-support-advisor-careers-in-travel-destination-planners-1131546",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-05-11T22:00:25+00:00",
-    "date_scraped": "2026-05-15",
-    "tags": [
-      "remote",
-      "support"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "support",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
