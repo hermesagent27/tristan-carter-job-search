@@ -14,7 +14,12 @@
     "status": "new",
     "role_type": "frontend",
     "description": "",
-    "description_short": ""
+    "description_short": "",
+    "application_data": {
+      "cover_letter": "Dear Aretum Team,\n\nI'm writing to express my interest in the front-end developer position. I use Vue/Nuxt for all of my projects, have experience with UI frameworks like tailwind, Daisy UI, NuxtUI, and have experience maintaining backend code. I also bring a strong general web development foundation, self-starter mentality, and a quick adaptability from being self-taught.\n\nManaging a Sonic Drive-In at a young age sharpened my skills to have clear communication, composure under pressure, and the ability to keep multiple priorities moving without losing attention to detail. All of which has made me the detail-oriented, deadline-driven developer I am today!\n\nSince 2023, I've been building polished, responsive websites using Vue, Nuxt, and Tailwind CSS, balancing aesthetics with practicality across every project. I like making slick designs while focusing on accessibility and progressive web enhancements so that every user gets a great experience.\n\nI enjoy fast-paced, collaborative environments where interruptions are welcomed and the feedback loop is quick, but I can also thrive when left alone. Thank you for your time and consideration for this opportunity. I hope to talk more soon!\n\nBest Regards,\nTristan Carter",
+      "questions": [],
+      "notes": ""
+    }
   },
   {
     "id": "linkedin-25307327",
