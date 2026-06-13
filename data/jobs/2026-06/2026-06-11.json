@@ -33,40 +33,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "remoteok-a32d3911c5ec",
-    "title": "Applied AI Analyst",
-    "company": "NYMBUS",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "ABOUT NYMBUS: Nymbus (https://nymbus.com/) isn't just a leader in fintech; we're a community of innovators passionate about reimagining banking. Our award-winning modern core platform and cloud-based technology serve as the backbone for financial institutions eager to modernize and excel. Here, you won't just be part of a tech revolution. You'll be at the helm, driving change. You'll fit right in if you're a creative thinker who's eager to reduce technical debt and increase agility for banks and credit unions. Our culture thrives on collaboration, integrity, and a client-first approach. We operate with an AI-first mindset across all aspects of our business, continuously improving our efficiency and increasing the value we deliver to clients. We're looking for individuals who are intensely curious about emerging technologies and passionate about innovation. Your journey with us won't simply advance your career; it will offer the chance to help shape an industry alongside like-minded professionals. We're excited to consider you a key player in this transformative chapter. Thank you for considering a role with Nymbus. WORK ENVIRONMENT: We are primarily a remote-first company, but you may need to travel to visit client sites or attend meetings at designated locations with your team members. ROLE OVERVIEW: The Applied AI Analyst operates at the intersection of business, data, and AI to solve complex problems and drive measurable outcomes. This role partners with functional leaders to bring analytical rigor, structure, and AI-enabled solutions to high-impact decisions, workflows, and strategic initiatives. Applied AI Analysts do not operate in theory alone—they are hands-on builders and problem solvers who design, prototype, and deploy AI-driven approaches that improve efficiency, decision-making, and business performance. CORE RESPONSIBILITIES: Problem Structuring & Analysis Break down ambiguous business problems into clear analytical frameworks Develop insights that inform decisions across product, engineering, operations, and go-to-market functions AI-Driven Solutions Design and prototype AI-enabled workflows, tools, and use cases Apply AI to improve efficiency, quality, and scalability of work Identify and prioritize opportunities for automation and augmentation Workflow & Process Optimization Analyze existing workflows to identify inefficiencies, gaps, and bottlenecks Redesign processes to improve speed, consistency, and outcomes Implement repeatable, scalable solutions Data & Insight Generation Build models, dashboards, and frameworks that drive visibility into performance</",
-    "description_short": "ABOUT NYMBUS: Nymbus (https://nymbus.com/) isn't just a leader in fintech; we're a community of innovators passionate about reimagining banking. Our award-winning modern core platform and cloud-based technology serve as the backbone for financial institutions eager to modernize and excel. Here, you won't just be part of a tech revolution. You'll be at the helm, driving change. You'll fit right in if you're a creative thinker who's eager to reduce technical debt and",
-    "url": "https://remoteOK.com/remote-jobs/remote-applied-ai-analyst-nymbus-1133103",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-10T03:08:08+00:00",
-    "date_scraped": "2026-06-11",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "senior",
-    "role_type": "devops",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
