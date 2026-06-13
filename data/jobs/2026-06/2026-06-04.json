@@ -277,47 +277,6 @@
     "application_id": null
   },
   {
-    "id": "10up-lead-js-engineer-013",
-    "title": "Lead JavaScript Engineer",
-    "company": "10up",
-    "location": "Remote (Global)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Lead JavaScript Engineer at 10up. Distributed web development agency. WordPress and modern JS focus.",
-    "description_short": "Lead JavaScript Engineer at 10up. Remote global.",
-    "url": "https://10up.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "javascript",
-      "lead",
-      "remote",
-      "agency",
-      "wordpress"
-    ],
-    "required_skills": [
-      "JavaScript",
-      "React",
-      "WordPress"
-    ],
-    "experience_level": "senior",
-    "role_type": "frontend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": true,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 85
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "thoughtbot-general-014",
     "title": "General Application",
     "company": "thoughtbot",
