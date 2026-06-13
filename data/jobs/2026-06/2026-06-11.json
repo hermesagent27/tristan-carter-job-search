@@ -68,40 +68,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "remoteok-f2591d190360",
-    "title": "Digital Support Specialist",
-    "company": "Unknown",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Nymbus helps banks and global financial services organizations transform their capabilities and drive value in today's digital marketplace. At Nymbus, we believe when you set off on the path to innovation you should feel excitement and confidence, not fear and dread. With Nymbus, we are bringing delight back into the banking process. We want our partners to be thrilled about the possibilities we are creating together and the lasting impact our collaboration will bring to the industry and consumers. The journey to growth begins with doing something different. And that journey starts with the great people that make Nymbus. WORK ENVIRONMENT: We are a remote first company. This role, as most of our positions, is remote. You may be required at times to visit client sites or attend meetings at designated locations. POSITION SUMMARY: The Digital Support Specialist supplies a multi-faceted approach to providing support for our Launch clients. Digital Support Specialists will be responsible for monitoring, reviewing and approving customer applications submitted through our retail account onboarding platforms. A Digital Support Specialist will demonstrate good decision making abilities, mitigate risk and ensure contractual Service Level Agreements are adhered to. This role also serves a part of the Digital Support Team by fielding all incoming customer phone calls and various forms of digital communication from Nymbus Launch clients. This position is responsible for solving customer issues, performing various account maintenance requests and providing additional support as necessary to create a seamless one touch resolution for each customer. This role also requires a high level of dedication to providing excellent customer service both over the phone and through various digital channels. Schedule flexibility is required to meet the needs of a 7 day a week Contact Center. ESSENTIAL JOB FUNCTIONS/RESPONSIBILITIES: Efficiently answer inbound calls, secure messages and other communications from digital bank clients. Accurately manage communication for new digital bank customers related to new account onboarding. Solve problems and answer questions; listen to and anticipate clients' needs in order to completely and accurately resolve their issue on first contact, reporting problems in systems and identifying client impacting situations proactively. Utilize numerous programs and systems to investigate, troubleshoot and resolve client tickets and inquiries. Actively participate in testing of bank environments, validation of data and use of systems to adequately verify new code and enhancements are fully vetted. Monitor Digital Bank applications and decision based on structured account onboarding procedures while adhering to respective regulations and policies. Comple",
-    "description_short": "Nymbus helps banks and global financial services organizations transform their capabilities and drive value in today's digital marketplace. At Nymbus, we believe when you set off on the path to innovation you should feel excitement and confidence, not fear and dread. With Nymbus, we are bringing delight back into the banking process. We want our partners to be thrilled about the possibilities we are creating together and the lasting impact our collaboration will bring to the industry and",
-    "url": "https://remoteOK.com/remote-jobs/remote-digital-support-specialist-nymbus-1133235",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-10T03:08:04+00:00",
-    "date_scraped": "2026-06-11",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "devops",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
