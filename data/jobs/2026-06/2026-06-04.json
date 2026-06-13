@@ -277,46 +277,6 @@
     "application_id": null
   },
   {
-    "id": "bighuman-product-design-lead-012",
-    "title": "Product Design Lead",
-    "company": "Big Human",
-    "location": "Remote (US)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Product Design Lead at Big Human design agency. Remote position.",
-    "description_short": "Product Design Lead at Big Human. Remote US.",
-    "url": "https://www.bighuman.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "design",
-      "product-design",
-      "remote",
-      "agency"
-    ],
-    "required_skills": [
-      "Product Design",
-      "UX/UI",
-      "Design Systems"
-    ],
-    "experience_level": "senior",
-    "role_type": "design",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": true,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 65
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "10up-lead-js-engineer-013",
     "title": "Lead JavaScript Engineer",
     "company": "10up",
