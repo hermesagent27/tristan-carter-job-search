@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "id": "linkedin-04436981",
+    "title": "Aretum hiring Frontend Vue.js Developer in McLean, VA",
+    "company": "Unknown",
+    "location": "Unknown",
+    "is_remote": true,
+    "url": "https://www.linkedin.com/jobs/view/4404436981/",
+    "source": "linkedin",
+    "date_posted": "2026-06-13",
+    "date_scraped": "2026-06-13T12:54:22.173Z",
+    "tags": [],
+    "is_favorite": false,
+    "status": "new",
+    "role_type": "frontend",
+    "description": "",
+    "description_short": ""
+  }
+]
