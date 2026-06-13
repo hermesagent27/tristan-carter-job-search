@@ -33,40 +33,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "remoteok-645cdc9dceac",
-    "title": "Data Analyst",
-    "company": "Diptyque Paris",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Job Title : Data Analyst Location : Remote About Us : At Diptyque Paris, we believe that behind every number and dataset lies a story—one that can inspire smarter decisions and drive meaningful change. We’re passionate about turning complex data into clear insights that help our team and clients succeed. The Role: We’re looking for someone who loves digging into data, uncovering patterns, and translating numbers into stories that everyone can understand. As a Data Analyst, you’ll be a vital part of our team, helping us make informed decisions that shape our future. What You'll Do: - Dive into our data to find trends, opportunities, and areas for improvement - Collaborate with different teams to understand their needs and provide relevant insights - Develop reports and dashboards that make complex information easy to grasp - Ensure data quality and integrity through careful analysis and validation - Present your findings in a way that’s engaging and accessible to all levels of the organization - Continuously look for ways to improve our data collection and analysis processes What We’re Looking For: - A curious mind with a knack for problem-solving - Strong skills in Excel, SQL, or other data analysis tools - Experience with data visualization platforms like Tableau, Power BI, or similar - Excellent communication skills—you can tell a story with data - An eye for detail and a passion for accuracy - A collaborative spirit who enjoys working with diverse teams Why Join Us: - Be part of a supportive and innovative environment - Make a real impact with your work - Grow your skills with ongoing learning opportunities - Enjoy a flexible work environment that values your well-being If you’re excited about turning data into insights and making a difference, we’d love to hear from you. Join us and help shape the future with your skills and curiosity!",
-    "description_short": "Job Title : Data Analyst Location : Remote About Us : At Diptyque Paris, we believe that behind every number and dataset lies a story—one that can inspire smarter decisions and drive meaningful change. We’re passionate about turning complex data into clear insights that help our team and clients succeed. The Role: We’re looking for someone who loves digging int",
-    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-diptyque-paris-1132688",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-02T05:48:09+00:00",
-    "date_scraped": "2026-06-03",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "mobile",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
