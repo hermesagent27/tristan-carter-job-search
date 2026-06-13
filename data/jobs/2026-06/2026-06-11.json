@@ -103,40 +103,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "remoteok-2991c9fa2068",
-    "title": "Data Analyst Private Lessons &amp; Tutoring",
-    "company": "Unknown",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Do you have experience as a Data Analyst and work with data on a daily basis? At FindTutors , we are looking for professionals who would like to share their skills by offering private lessons and personalised tutoring to students and professionals. The role involves supporting people who want to improve their analytical skills through 1-to-1 lessons, either online or in person, with full flexibility. What You’ll Do Deliver personalised private lessons on: Excel / Google Sheets, from beginner to advanced level Data analysis and interpretation SQL and databases, beginner to intermediate level Data visualisation tools such as Power BI, Tableau or similar Support students, junior analysts and career switchers Adapt the content to each student’s needs Who we’re looking for Data Analysts, Business Analysts or similar profiles Practical experience with data analysis tools Ability to explain complex concepts clearly Reliability and strong communication skills No certifications required Teaching experience is not necessary What We Offer Full flexibility over your schedule and working format The possibility to work remotely An activity that can fit around another job Extra income by teaching what you already know Access to a platform that connects you with students Why apply More and more people want to enter the world of data. If you already work as a Data Analyst, you can monetise your experience by helping others grow professionally.",
-    "description_short": "Do you have experience as a Data Analyst and work with data on a daily basis? At FindTutors , we are looking for professionals who would like to share their skills by offering private lessons and personalised tutoring to students and professionals. The role involves supporting people who want to improve their analytical skills through 1-to-1 lessons, either online or in person, with full flexibility. What You’ll Do Deliver personalis",
-    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-private-lessons-amp-tutoring-findtutors-1133199",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-10T01:34:58+00:00",
-    "date_scraped": "2026-06-11",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "junior",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
