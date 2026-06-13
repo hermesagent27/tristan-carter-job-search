@@ -1,39 +1,5 @@
 [
   {
-    "id": "remoteok-6e06c5cc70ed",
-    "title": "Supply Chain Data Analyst",
-    "company": "Unknown",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": 80000,
-    "salary_max": 800000,
-    "salary_text": "800-321",
-    "description": "At Nestlé Health Science, we believe that nutrition, science, and wellness must merge, not collide. Here, we embrace the intrinsic connections of these three pillars, harnessing their collective strength to empower healthier lives. Our broad product portfolio includes renowned brands like Garden of Life®, Nature's Bounty®, Vital Proteins®, Orgain®, Nuun®, BOOST®, Carnation Breakfast Essentials®, Peptamen®, Compleat Organic Blends®, and more. We also have extensive pharmaceutical expertise, offering innovative medicines that aim to prevent, manage, and treat gastrointestinal and metabolic-related diseases. At Nestlé Health Science, we bring our best for better lives. Our people are challenged to bring fresh, diverse views and make bold moves to empower healthier lives through nutrition. We know brilliant ideas can come from anyone, anywhere. Here we embrace the entrepreneurial spirit and collaborate with teams that champion focused and forward thinking. We are committed to fostering professional growth and celebrating the achievements of our people along the way. We offer dynamic career paths, robust development, opportunities to learn from talented colleagues around the globe, and benefits that support physical, financial, and emotional wellbeing. Join us to innovate for impact and reimagine the future of health and nutrition for patients and consumers. Position Summary: The Order-to-Cash (O2C) Reference Data Analyst is responsible for analyzing, coordinating, and managing data that supports O2C processes outside of the standard Master Data scope. This role ensures data accuracy, supports operational efficiency, and drives data-driven decision-making across O2C functions while partnering with cross-functional teams to meet business and customer need Key Responsibilities: Coordinate, analyze, and manage reference data across O2C processes including demand capture, customer shelf life, order filtering, resolution cockpit, claims & deductions, and returns/refusals Maintain and support Customer Material Info Record (CMIR) data and related systems Own and manage key systems and tools, including the Hybris B2B Customer Portal (training and catalog management), Sample Order Team room (training, approvals, and product setup), and Notice Distribution System (NDS) for data quality, analysis, and cleansing initiatives Develop custom reports and dashboards using tools such as Power BI, Excel, and Power Query to support business insights and decision-making Lead and support continuous improvement initiatives focused on operational efficiency and process optimization Manage communication regarding critical incidents and business impacts Collaborate with cross-functional teams (Sales, Logistics, Quality, Customer Service, etc.) to ensure alignment with business and customer needs Identify issues, anal",
-    "description_short": "At Nestlé Health Science, we believe that nutrition, science, and wellness must merge, not collide. Here, we embrace the intrinsic connections of these three pillars, harnessing their collective strength to empower healthier lives. Our broad product portfolio includes renowned brands like Garden of Life®, Nature's Bounty®, Vital Proteins®, Orgain®, Nuun®, BOOST®, Carnation Breakfast Essentials®, Peptamen®, Compleat Organic Blends®, and more. We also have extensive pharmaceutical expert",
-    "url": "https://remoteOK.com/remote-jobs/remote-supply-chain-data-analyst-nestle-health-science-1132788",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-03T23:27:59+00:00",
-    "date_scraped": "2026-06-05",
-    "tags": [
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "remoteok-b99e19626bab",
     "title": "Supply Chain Data Analyst",
     "company": "Unknown",
