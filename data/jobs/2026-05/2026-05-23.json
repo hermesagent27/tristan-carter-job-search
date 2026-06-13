@@ -33,40 +33,5 @@
     },
     "status": "new",
     "application_id": null
-  },
-  {
-    "id": "remoteok-3eb387897080",
-    "title": "Operations Analyst",
-    "company": "how fast and easy Tremendous is to use",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": 95000,
-    "salary_max": 105000,
-    "salary_text": "$95k - $105k",
-    "description": "Tremendous is the global platform built for businesses to send thousands of payouts to anyone, anywhere, for free. We're trusted by 20,000 organizations like Atlassian, MIT, and United Way to deliver gift cards and money to millions of recipients worldwide. Our customers (researchers, marketers, HR teams, nonprofits, and platform businesses) rave about how fast and easy Tremendous is to use. Check out our ratings on G2. Tremendous is profitable and growing without outside investors. We're a fully remote, high-documentation, low-meeting culture, which means more time for what matters in both your professional and personal life. The team agrees– our employee NPS is in the high 80s. We're looking for an Operations Analyst to join our small-but-mighty operations team. As the third person on the team, you'll shape how we handle day-to-day compliance operations and have real autonomy to drive impact. This role sits at the intersection of security, user experience, and sound judgment, requiring someone who doesn't just follow rules but thoughtfully balances risk, customer needs, and operational excellence. What You'll Do Review account activity and make informed decisions using AI-assisted analysis. You'll investigate payment approval requests, flag anomalies through pattern recognition tools, and make sound judgment calls on approval or escalation, combining human judgment with AI insights. Identify suspicious activity and fraud patterns. Learn about regulatory requirements as they come up and help implement them in your day-to-day work. Use AI tools to rapidly surface anomalies and patterns, freeing you to focus on the judgment calls that matter most. Suggest process improvements that could make things more efficient or reduce risk. Document what you learn and share it with the team. Balance compliance with user experience by using AI to process large datasets, draft communications, and analyze trade-offs at scale. Work cross-functionally with product, support, and business teams to make decisions that reduce risk and support scalable growth. What You'll Bring Strong analytical and problem-solving skills with exceptional attention to detail. You can take a messy situation, break it down, and see the pattern. Familiarity with AI tools and a willingness to experiment with them for productivity. You don't need deep AI expertise, but you're comfortable learning to use LLMs, data analysis tools, or automation platforms to augment your work. Clear communication and genuine collaboration. You work well across teams, explain complex topics simply, and aren't afraid to ask for context. Comfort with multitasking, prioritization, and staying organized amid competing demands. An ownership mindset and genuine curiosity. You take responsibility for outcomes, seek continuous improvement, and th",
-    "description_short": "Tremendous is the global platform built for businesses to send thousands of payouts to anyone, anywhere, for free. We're trusted by 20,000 organizations like Atlassian, MIT, and United Way to deliver gift cards and money to millions of recipients worldwide. Our customers (researchers, marketers, HR teams, nonprofits, and platform businesses) rave about how fast and easy Tremendous is to use. Check out our ratings on G2. Tremendous is profitable and growing without outside investors",
-    "url": "https://remoteOK.com/remote-jobs/remote-operations-analyst-tremendous-1131696",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-05-22T01:57:03+00:00",
-    "date_scraped": "2026-05-23",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
