@@ -72,7 +72,7 @@ async function listFiles(path: string): Promise<GitHubContent[]> {
 }
 
 // Get file content via GitHub API (handles large files)
-async function getFile(path: string): Promise<any | null> {
+export async function getFile(path: string): Promise<any | null> {
   if (!TOKEN) {
     console.error('[GitHub] GITHUB_TOKEN not set')
     return null
