@@ -239,44 +239,6 @@
     "application_id": null
   },
   {
-    "id": "vercel-swe-backend-008",
-    "title": "Software Engineer, Backend",
-    "company": "Vercel",
-    "location": "United States (Remote)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Software Engineer, Backend at Vercel. Remote US position.",
-    "description_short": "Software Engineer, Backend at Vercel. Remote US.",
-    "url": "https://vercel.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "backend",
-      "vercel",
-      "remote"
-    ],
-    "required_skills": [
-      "Backend",
-      "Software Engineering"
-    ],
-    "experience_level": "any",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 70
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "vercel-swe-dashboard-009",
     "title": "Software Engineer, Dashboard",
     "company": "Vercel",
