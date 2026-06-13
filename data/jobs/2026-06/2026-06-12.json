@@ -8,8 +8,8 @@
     "salary_min": null,
     "salary_max": null,
     "salary_text": null,
-    "description": "Make a global impact\u2014join Repligen. We're united by a mission to inspire advances in bioprocessing as a preferred partner in the production of biologic drugs that improve human health worldwide. As a Full Stack Web Developer, you will help build and enhance Repligen's global digital experiences across corporate, product, and eCommerce platforms. This role is hands-on and delivery-focused, centered on a Symfony-based digital experience architecture, primarily implemented through Pimcore DXP and integrated with Shopify and other enterprise systems. This is an ideal opportunity for a developer with strong PHP/Symfony fundamentals and experience in modern CMS/DXP or structured content platforms who is interested in expanding their expertise into Pimcore and enterprise digital platforms. Prior Pimcore experience is a plus, but it is not required for candidates with the right transferable skills. You will collaborate with Digital Marketing, Commercial, IT, and external partners in an Agile environment to develop and optimize customer-facing experiences that improve usability, scalability, performance, and future AI-driven capabilities.",
-    "description_short": "Make a global impact\u2014join Repligen. As a Full Stack Web Developer, you will help build and enhance Repligen's global digital experiences across corporate, product, and eCommerce platforms. Symfony/Pimcore DXP, Shopify integration, Vue.js frontend.",
+    "description": "Make a global impact—join Repligen. We're united by a mission to inspire advances in bioprocessing as a preferred partner in the production of biologic drugs that improve human health worldwide. As a Full Stack Web Developer, you will help build and enhance Repligen's global digital experiences across corporate, product, and eCommerce platforms. This role is hands-on and delivery-focused, centered on a Symfony-based digital experience architecture, primarily implemented through Pimcore DXP and integrated with Shopify and other enterprise systems. This is an ideal opportunity for a developer with strong PHP/Symfony fundamentals and experience in modern CMS/DXP or structured content platforms who is interested in expanding their expertise into Pimcore and enterprise digital platforms. Prior Pimcore experience is a plus, but it is not required for candidates with the right transferable skills. You will collaborate with Digital Marketing, Commercial, IT, and external partners in an Agile environment to develop and optimize customer-facing experiences that improve usability, scalability, performance, and future AI-driven capabilities.",
+    "description_short": "Make a global impact—join Repligen. As a Full Stack Web Developer, you will help build and enhance Repligen's global digital experiences across corporate, product, and eCommerce platforms. Symfony/Pimcore DXP, Shopify integration, Vue.js frontend.",
     "url": "https://repligen.wd108.myworkdayjobs.com/Repligen_Careers/job/Waltham-MA/Full-Stack-Web-Developer_R-409?source=LinkedIn",
     "source": "LinkedIn",
     "source_id": "R-409",
@@ -52,41 +52,6 @@
       "questions": [],
       "notes": ""
     }
-  },
-  {
-    "id": "remoteok-ffd67b79724f",
-    "title": "Service Desk Analyst 11am 8pm",
-    "company": "Unknown",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Introduction At Slipstream LS we work to streamline IT Support and provide managed solutions with a strategic consulting and global leadership management approach. Our solutions are designed exclusively for emerging pharma and biotech organizations. Slipstream\u2019s industry-leading solutions free clients from the demands of internal IT and allow them to rapidly advance their mission. Led by a leadership team that has been together for over 10 years, you will join a proven team, culture, and strategy to drive innovation within the IT outsourcing industry while developing your skillset with the opportunities for internal growth. Responsibilities Provide white-glove, End User Service Desk Support via phone, email, and chat. Manage incidents and requests within the ServiceNow, Freshservice or Zendesk ticketing systems Perform and document daily ticket follow-ups with end users within respective ticketing system Resolve username and password problems. Perform uninstall/reinstall of approved software applications to devices. Provide Multifactor Authentication, Single Sign-On and VPN Support. Perform software and application support. Provide remote hardware support for laptops, tablets, mobile devices, monitors, docking stations, printers and accessories. Provides support for general \u201chow-to\u201d inquiries. Required Skills CompTIA A+ certification. Experience supporting Microsoft 365, Windows 10, and Active Directory. 1+ year Mac OS experience. Experience with the ServiceNow ticketing system. Experience with Freshservice and/or Zendesk ticketing systems a plus. Experience with remote access tools such as LogMeIn, TeamViewer, and Take Control. Experience Remotely troubleshooting windows hardware and software break/fix issues. 2-3 years of progressive experience in a Technical Support role with and MSP or call center IT support environment. Technical proficiency with common hardware, software, and technologies: Windows, Office, iOS, laptops, tablets, Mobile Device Management (MDM), VPN, & WiFi). Knowledge of Active Directory, Azure, O365, MFA, SSO, networking and server concepts. Understanding of call center metrics and KPIs. College or technology school degree preferred. Ability to multi-task and experience working in a fast-paced environment. Strong technical troubleshooting and customer service skills. Strong verbal and written communication skills. LinkedIn Profile with active job history Slipstream LS is an equal opportunity employer that is committed to diversity and inclusion in the workplace. We prohibit discrimination and harassment of any kind based on race, color, sex, religion, sexual orientation or identity, national orig",
-    "description_short": "Introduction At Slipstream LS we work to streamline IT Support and provide managed solutions with a strategic consulting and global leadership management approach. Our solutions are designed exclusively for emerging pharma and biotech organizations. Slipstream\u2019s industry-leading solutions free clients from the demands of internal IT and allow them to rapidly advance their mission. Led by a leadership team that has been together for over 10 years, you will join a",
-    "url": "https://remoteOK.com/remote-jobs/remote-service-desk-analyst-11am-8pm-slipstream-life-sciences-1133289",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-11T06:00:00+00:00",
-    "date_scraped": "2026-06-12",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "any",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   },
   {
     "id": "remoteok-f4b4d02b6749",
@@ -139,8 +104,20 @@
     "source_id": "4415292473",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -175,8 +152,20 @@
     "source_id": "4402391537",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -211,8 +200,20 @@
     "source_id": "4427582028",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -247,8 +248,20 @@
     "source_id": "4406620110",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -283,8 +296,20 @@
     "source_id": "4406406589",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -319,8 +344,20 @@
     "source_id": "4424058478",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
@@ -355,8 +392,20 @@
     "source_id": "lkOLqcN4",
     "date_posted": "2026-06-12",
     "date_scraped": "2026-06-12T22:54:13.550859",
-    "tags": ["javascript", "html", "css", "web", "frontend", "fullstack"],
-    "required_skills": ["JavaScript", "HTML", "CSS", "React"],
+    "tags": [
+      "javascript",
+      "html",
+      "css",
+      "web",
+      "frontend",
+      "fullstack"
+    ],
+    "required_skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "React"
+    ],
     "experience_level": "mid",
     "role_type": "frontend",
     "employment_type": "full-time",
