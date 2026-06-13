@@ -46,40 +46,5 @@
       "questions": [],
       "notes": ""
     }
-  },
-  {
-    "id": "remoteok-13b3cfd23a66",
-    "title": "Junior Market Specialist Analyst",
-    "company": "team members from anywhere in the world",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Shumba Capital Ltd is an international company focused on digital assets, market research, and data-driven trading. We work with crypto markets and help our team grow from the ground up. We are fully remote and welcome team members from anywhere in the world. We are looking for a Junior Market Specialist / Analyst with at least 1 year of experience in crypto or trading. You will support daily market operations, monitor trading activity, and help improve our strategies. This is a hands-on role where you will learn and contribute at the same time. Key Responsibilities Monitor crypto market movements, prices, and liquidity. Support trading operations on exchanges (Spot, Futures, Options). Help with rebalancing assets across multiple exchanges (CEX and DEX). Track and report technical or financial issues to the development team. Work with internal data and charts to find market signals. Ensure trading bots follow risk rules and performance targets. Assist with treasury records and coordinate with the finance team. Communicate with the commercial team about client trading results. What We Offer Fully remote work — no location restrictions. Flexible hours (suitable for different time zones). Work with real market data and professional tools. Opportunity to grow within an international team. Supportive environment with feedback and collaboration. Requirements Basic understanding of spot, futures, and options markets. Analytical mindset and attention to detail. Ability to work under pressure and make quick decisions. Good communication skills in English (written and spoken). Team player, adaptable, and self-organized.",
-    "description_short": "Shumba Capital Ltd is an international company focused on digital assets, market research, and data-driven trading. We work with crypto markets and help our team grow from the ground up. We are fully remote and welcome team members from anywhere in the world. We are looking for a Junior Market Specialist / Analyst with at least 1 year of experience in crypto or trading. You will support daily market operation",
-    "url": "https://remoteOK.com/remote-jobs/remote-junior-market-specialist-analyst-shumba-1133023",
-    "source": "RemoteOK",
-    "source_id": null,
-    "date_posted": "2026-06-08T21:03:02+00:00",
-    "date_scraped": "2026-06-10",
-    "tags": [
-      "remote",
-      "support",
-      "typescript"
-    ],
-    "required_skills": [],
-    "experience_level": "junior",
-    "role_type": "backend",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 0
-    },
-    "status": "new",
-    "application_id": null
   }
 ]
