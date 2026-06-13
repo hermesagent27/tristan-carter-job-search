@@ -239,48 +239,6 @@
     "application_id": null
   },
   {
-    "id": "vercel-design-engineer-007",
-    "title": "Design Engineer",
-    "company": "Vercel",
-    "location": "United States (Remote)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Design Engineer at Vercel. Working on the Vue/Nuxt ecosystem. Remote-first company.",
-    "description_short": "Design Engineer at Vercel. Remote US.",
-    "url": "https://vercel.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "design",
-      "engineering",
-      "vercel",
-      "nuxt",
-      "remote"
-    ],
-    "required_skills": [
-      "Design",
-      "Engineering",
-      "Vue",
-      "Nuxt"
-    ],
-    "experience_level": "any",
-    "role_type": "design",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 95
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "vercel-swe-backend-008",
     "title": "Software Engineer, Backend",
     "company": "Vercel",
