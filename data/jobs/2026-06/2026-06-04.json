@@ -330,47 +330,6 @@
     "application_id": null
   },
   {
-    "id": "viget-contractor-designer-017",
-    "title": "Contractor – Lead Product Designer",
-    "company": "Viget",
-    "location": "Remote / Multi-office",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Contractor position for Lead Product Designer at Viget design agency. Remote-friendly with offices in Boulder, Carrboro, Chattanooga.",
-    "description_short": "Contractor – Lead Product Designer at Viget. Remote.",
-    "url": "https://www.viget.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "design",
-      "product-design",
-      "contractor",
-      "remote",
-      "agency"
-    ],
-    "required_skills": [
-      "Product Design",
-      "UX",
-      "Leadership"
-    ],
-    "experience_level": "senior",
-    "role_type": "design",
-    "employment_type": "contract",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": true,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 60
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "viget-design-manager-018",
     "title": "Design Manager, Contractor Network",
     "company": "Viget",
