@@ -1,0 +1,71 @@
+[
+  {
+    "id": "remoteok-6f66bd68092d",
+    "title": "Data Analyst",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "We're looking for a detail-oriented and strategic Data Analyst to join our data-driven team. You'll transform complex datasets into clear, actionable insights that drive performance improvements across the business. This role requires strong analytical capabilities, technical proficiency in data tools, and the ability to clearly communicate insights to both technical and non-technical audiences. Key Responsibilities: Design, Develop, and Maintain BI Dashboards & Templates: Design, develop, and optimize dashboards using Power BI, Looker Studio, Tableau, or similar tools Create interactive reports that translate productivity data into operational insights for ActivTrak customers Support data integration with third-party systems to enhance reporting capabilities Data Quality Control: Partner with engineers to validate data accuracy, integrity, and consistency Implement data validation processes to maintain high-quality analytical outputs Perform Advanced Analytics Conduct deep analysis of workforce and productivity trends using SQL and Python Deliver data-driven recommendations that empower customers to optimize performance and decision-making Facilitate Internal Ad-hoc Data Requests: Support cross-functional teams (HR, Operations, Product) by querying key datasets from Google BigQuery Ensure timely and accurate responses to ad-hoc data needs Enhance Productivity Metrics: Collaborate on the development and refinement of productivity measurement frameworks Align metrics with evolving business goals and customer needs Requirements Skills & Experience: Bachelor's degree in a quantitative field such as Data Analytics, Business Analytics, Statistics, Mathematics, Economics, Computer Science, or a related discipline Minimum 3 years of experience in: SQL (advanced queries and optimization) BI tools (Tableau, Power BI w/ DAX & PowerQuery, Looker Studio, or Qlik) Python API Integrations Data analysis, metrics development, and cross-functional reporting ETL and Data Warehousing AppScripts & PowerShell Hands-on experience with Google BigQuery and Google Cloud Platform Strong storytelling and communication skills to influence stakeholders at all levels Self-starter with a growth mindset and attention to detail Excellent communication skills with both technical and non-technical audiences Ability to deal with ambiguity and collaborate with different teams towards mutual goals Motivated by an interest in developing the best possible solutions Preferred Experience in Workforce Analytics Benefits Wo",
+    "description_short": "We're looking for a detail-oriented and strategic Data Analyst to join our data-driven team. You'll transform complex datasets into clear, actionable insights that drive performance improvements across the business. This role requires strong analytical capabilities, technical proficiency in data tools, and the ability to clearly communicate insights to both technical and non-technical audiences. Key Responsibilities: Design, Develop, and Maintain BI Dashboards & Templat",
+    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-activtrak-1133346",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-12T20:34:23+00:00",
+    "date_scraped": "2026-06-14",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "remotive-b8252180e6d4",
+    "title": "iOS Developer",
+    "company": "nooro",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "WHO ARE WE? At nooro, we're revolutionizing pain management for seniors. Our platform is transforming how older adults engage with pain management at home. We're on a mission to make wellness more accessible and effective through technology. Check our website here: https://nooro-us.com/ We're a fast-moving startup that works on quick iteration and bold decisions. Our team is lean, agile, and empowered to make meaningful impacts daily. If you enjoy a dynamic environment where ideas become a reality at lightning speed and you're not afraid to wear multiple hats, you'll fit rig",
+    "description_short": "<span style=\"box-sizing: inherit; margin: var(--artdeco-reset-base-margin-zero); padding: var(--artdeco-reset-base-padding-zero); border: var(--artdeco-reset-base-border-zero); vertical-align: var(--artdeco-reset-",
+    "url": "https://remotive.com/remote-jobs/software-development/ios-developer-1956455",
+    "source": "Remotive",
+    "source_id": null,
+    "date_posted": "2026-06-09T21:15:39",
+    "date_scraped": "2026-06-14",
+    "tags": [
+      "remote",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "senior",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
