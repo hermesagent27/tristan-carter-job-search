@@ -8,8 +8,21 @@ const loading = ref(true)
 const error = ref<string | null>(null)
 const job = ref<Job | null>(null)
 const isEditing = ref(false)
+const isEditingCompany = ref(false)
 const saving = ref(false)
+const savingCompany = ref(false)
 const downloadingCoverLetter = ref(false)
+
+// Company details form (editable fields)
+const companyForm = ref({
+  title: '',
+  company: '',
+  location: '',
+  salary_min: null as number | null,
+  salary_max: null as number | null,
+  tags: [] as string[],
+  is_remote: false
+})
 
 // Application data structure
 const application = ref({
@@ -220,6 +233,75 @@ const statusClass = computed(() => {
   return map[job.value?.status || 'new'] || 'badge-ghost'
 })
 
+// Load company data into editable form
+const startEditingCompany = () => {
+  if (!job.value) return
+  companyForm.value = {
+    title: job.value.title || '',
+    company: job.value.company || '',
+    location: job.value.location || '',
+    salary_min: job.value.salary_min || null,
+    salary_max: job.value.salary_max || null,
+    tags: job.value.tags ? [...job.value.tags] : [],
+    is_remote: job.value.is_remote || false
+  }
+  isEditingCompany.value = true
+}
+
+// Cancel company editing
+const cancelEditingCompany = () => {
+  isEditingCompany.value = false
+}
+
+// Save company details
+const saveCompanyDetails = async () => {
+  if (!job.value) return
+  
+  savingCompany.value = true
+  try {
+    await $fetch(`/api/jobs/${jobId}`, {
+      method: 'PATCH',
+      body: {
+        title: companyForm.value.title,
+        company: companyForm.value.company,
+        location: companyForm.value.location,
+        salary_min: companyForm.value.salary_min,
+        salary_max: companyForm.value.salary_max,
+        tags: companyForm.value.tags,
+        is_remote: companyForm.value.is_remote
+      }
+    })
+    
+    // Update local job data
+    job.value.title = companyForm.value.title
+    job.value.company = companyForm.value.company
+    job.value.location = companyForm.value.location
+    job.value.salary_min = companyForm.value.salary_min
+    job.value.salary_max = companyForm.value.salary_max
+    job.value.tags = companyForm.value.tags
+    job.value.is_remote = companyForm.value.is_remote
+    
+    isEditingCompany.value = false
+  } catch (e) {
+    console.error('Failed to save company details:', e)
+    alert('Failed to save. Please try again.')
+  } finally {
+    savingCompany.value = false
+  }
+}
+
+// Helper to add/remove tags
+const addTag = () => {
+  const tag = prompt('Enter tag name:')
+  if (tag && tag.trim() && !companyForm.value.tags.includes(tag.trim())) {
+    companyForm.value.tags.push(tag.trim())
+  }
+}
+
+const removeTag = (tag: string) => {
+  companyForm.value.tags = companyForm.value.tags.filter(t => t !== tag)
+}
+
 // Delete job and redirect to home
 const deleteJob = async () => {
   if (!job.value) return
@@ -287,30 +369,139 @@ onMounted(() => {
         <div class="lg:col-span-1">
           <div class="card bg-base-100 shadow-sm border border-base-300">
             <div class="card-body">
-              <h2 class="card-title text-xl">{{ job.title }}</h2>
-              <p class="text-muted">{{ job.company }}</p>
-              <p class="text-sm">{{ job.location }}</p>
-              
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span v-for="tag in job.tags" :key="tag" class="badge badge-sm badge-ghost">{{ tag }}</span>
-                <span v-if="job.is_remote" class="badge badge-sm badge-success">Remote</span>
-              </div>
+              <!-- View Mode -->
+              <template v-if="!isEditingCompany">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h2 class="card-title text-xl">{{ job.title }}</h2>
+                    <p class="text-muted">{{ job.company }}</p>
+                    <p class="text-sm">{{ job.location }}</p>
+                  </div>
+                  <button 
+                    @click="startEditingCompany"
+                    class="btn btn-ghost btn-xs"
+                    title="Edit company details"
+                  >
+                    ✏️ Edit
+                  </button>
+                </div>
+                
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span v-for="tag in job.tags" :key="tag" class="badge badge-sm badge-ghost">{{ tag }}</span>
+                  <span v-if="job.is_remote" class="badge badge-sm badge-success">Remote</span>
+                </div>
 
-              <div class="divider"></div>
+                <div class="divider"></div>
 
-              <div class="space-y-2">
-                <p v-if="job.salary_min || job.salary_max" class="text-sm">
-                  <span class="font-medium">Salary:</span> 
-                  ${{ formatSalary(job.salary_min) }} - ${{ formatSalary(job.salary_max) }}
-                </p>
-                <p class="text-sm">
-                  <span class="font-medium">Status:</span>
-                  <span class="badge badge-sm ml-2" :class="statusClass">{{ job.status }}</span>
-                </p>
-                <p class="text-sm text-muted">
-                  Scraped: {{ formatDate(job.date_scraped) }}
-                </p>
-              </div>
+                <div class="space-y-2">
+                  <p v-if="job.salary_min || job.salary_max" class="text-sm">
+                    <span class="font-medium">Salary:</span> 
+                    ${{ formatSalary(job.salary_min) }} - ${{ formatSalary(job.salary_max) }}
+                  </p>
+                  <p class="text-sm">
+                    <span class="font-medium">Status:</span>
+                    <span class="badge badge-sm ml-2" :class="statusClass">{{ job.status }}</span>
+                  </p>
+                  <p class="text-sm text-muted">
+                    Scraped: {{ formatDate(job.date_scraped) }}
+                  </p>
+                </div>
+              </template>
+
+              <!-- Edit Mode -->
+              <template v-else>
+                <div class="space-y-4">
+                  <div>
+                    <label class="label text-sm font-medium">Job Title</label>
+                    <input
+                      v-model="companyForm.title"
+                      class="input input-bordered w-full"
+                      placeholder="Job title"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="label text-sm font-medium">Company</label>
+                    <input
+                      v-model="companyForm.company"
+                      class="input input-bordered w-full"
+                      placeholder="Company name"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="label text-sm font-medium">Location</label>
+                    <input
+                      v-model="companyForm.location"
+                      class="input input-bordered w-full"
+                      placeholder="e.g. Remote or Oklahoma City, OK"
+                    />
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-3">
+                    <div>
+                      <label class="label text-sm font-medium">Min Salary</label>
+                      <input
+                        v-model.number="companyForm.salary_min"
+                        type="number"
+                        class="input input-bordered w-full"
+                        placeholder="e.g. 50000"
+                      />
+                    </div>
+                    <div>
+                      <label class="label text-sm font-medium">Max Salary</label>
+                      <input
+                        v-model.number="companyForm.salary_max"
+                        type="number"
+                        class="input input-bordered w-full"
+                        placeholder="e.g. 80000"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="label text-sm font-medium">Tags</label>
+                    <div class="flex flex-wrap gap-1 mb-2">
+                      <span 
+                        v-for="tag in companyForm.tags" 
+                        :key="tag" 
+                        class="badge badge-sm badge-ghost cursor-pointer hover:bg-error"
+                        @click="removeTag(tag)"
+                        title="Click to remove"
+                      >
+                        {{ tag }} ×
+                      </span>
+                    </div>
+                    <button @click="addTag" class="btn btn-ghost btn-xs">+ Add Tag</button>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <input
+                      v-model="companyForm.is_remote"
+                      type="checkbox"
+                      class="checkbox checkbox-sm"
+                      id="is_remote"
+                    />
+                    <label for="is_remote" class="text-sm cursor-pointer">Remote Position</label>
+                  </div>
+
+                  <div class="flex gap-2 pt-2">
+                    <button 
+                      @click="saveCompanyDetails"
+                      class="btn btn-primary btn-sm flex-1"
+                      :disabled="savingCompany"
+                    >
+                      {{ savingCompany ? 'Saving...' : 'Save' }}
+                    </button>
+                    <button 
+                      @click="cancelEditingCompany"
+                      class="btn btn-ghost btn-sm"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </template>
 
               <div class="card-actions mt-4">
                 <a :href="job.url" target="_blank" class="btn btn-outline btn-sm w-full">

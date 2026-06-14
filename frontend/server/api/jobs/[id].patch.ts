@@ -26,6 +26,31 @@ export default defineEventHandler(async (event) => {
     if (body.application_data !== undefined) {
       updates.application_data = body.application_data
     }
+    
+    // Company details editable fields
+    if (body.title !== undefined) {
+      updates.title = String(body.title).trim()
+    }
+    if (body.company !== undefined) {
+      updates.company = String(body.company).trim()
+    }
+    if (body.location !== undefined) {
+      updates.location = String(body.location).trim()
+    }
+    if (body.salary_min !== undefined) {
+      const val = parseInt(body.salary_min, 10)
+      updates.salary_min = isNaN(val) ? null : val
+    }
+    if (body.salary_max !== undefined) {
+      const val = parseInt(body.salary_max, 10)
+      updates.salary_max = isNaN(val) ? null : val
+    }
+    if (body.tags !== undefined) {
+      updates.tags = Array.isArray(body.tags) ? body.tags.map((t: any) => String(t).trim()).filter(Boolean) : []
+    }
+    if (body.is_remote !== undefined) {
+      updates.is_remote = Boolean(body.is_remote)
+    }
 
     if (Object.keys(updates).length === 0) {
       throw createError({
