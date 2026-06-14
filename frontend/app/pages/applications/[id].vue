@@ -8,9 +8,7 @@ const loading = ref(true)
 const error = ref<string | null>(null)
 const job = ref<Job | null>(null)
 const isEditing = ref(false)
-const isEditingCompany = ref(false)
 const saving = ref(false)
-const savingCompany = ref(false)
 const downloadingCoverLetter = ref(false)
 
 // Company details form (editable fields)
@@ -85,20 +83,37 @@ Tristan Carter`
   }
 }
 
-// Save application data
-const saveApplication = async () => {
+// Unified save that handles both job details and application data
+const saveAll = async () => {
   if (!job.value) return
   
   saving.value = true
   try {
+    // Save both job details and application data in one request
     await $fetch(`/api/jobs/${jobId}`, {
       method: 'PATCH',
       body: {
+        title: companyForm.value.title,
+        company: companyForm.value.company,
+        location: companyForm.value.location,
+        salary_min: companyForm.value.salary_min,
+        salary_max: companyForm.value.salary_max,
+        tags: companyForm.value.tags,
+        is_remote: companyForm.value.is_remote,
         application_data: application.value
       }
     })
     
+    // Update local job data
+    job.value.title = companyForm.value.title
+    job.value.company = companyForm.value.company
+    job.value.location = companyForm.value.location
+    job.value.salary_min = companyForm.value.salary_min
+    job.value.salary_max = companyForm.value.salary_max
+    job.value.tags = companyForm.value.tags
+    job.value.is_remote = companyForm.value.is_remote
     job.value.application_data = { ...application.value }
+    
     isEditing.value = false
   } catch (e) {
     console.error('Failed to save:', e)
@@ -233,8 +248,8 @@ const statusClass = computed(() => {
   return map[job.value?.status || 'new'] || 'badge-ghost'
 })
 
-// Load company data into editable form
-const startEditingCompany = () => {
+// Load all editable data into forms
+const startEditing = () => {
   if (!job.value) return
   companyForm.value = {
     title: job.value.title || '',
@@ -245,49 +260,12 @@ const startEditingCompany = () => {
     tags: job.value.tags ? [...job.value.tags] : [],
     is_remote: job.value.is_remote || false
   }
-  isEditingCompany.value = true
+  isEditing.value = true
 }
 
-// Cancel company editing
-const cancelEditingCompany = () => {
-  isEditingCompany.value = false
-}
-
-// Save company details
-const saveCompanyDetails = async () => {
-  if (!job.value) return
-  
-  savingCompany.value = true
-  try {
-    await $fetch(`/api/jobs/${jobId}`, {
-      method: 'PATCH',
-      body: {
-        title: companyForm.value.title,
-        company: companyForm.value.company,
-        location: companyForm.value.location,
-        salary_min: companyForm.value.salary_min,
-        salary_max: companyForm.value.salary_max,
-        tags: companyForm.value.tags,
-        is_remote: companyForm.value.is_remote
-      }
-    })
-    
-    // Update local job data
-    job.value.title = companyForm.value.title
-    job.value.company = companyForm.value.company
-    job.value.location = companyForm.value.location
-    job.value.salary_min = companyForm.value.salary_min
-    job.value.salary_max = companyForm.value.salary_max
-    job.value.tags = companyForm.value.tags
-    job.value.is_remote = companyForm.value.is_remote
-    
-    isEditingCompany.value = false
-  } catch (e) {
-    console.error('Failed to save company details:', e)
-    alert('Failed to save. Please try again.')
-  } finally {
-    savingCompany.value = false
-  }
+// Cancel editing
+const cancelEditing = () => {
+  isEditing.value = false
 }
 
 // Helper to add/remove tags
@@ -335,18 +313,23 @@ onMounted(() => {
           </div>
           <div class="flex items-center gap-2">
             <button 
-              v-if="job && !isEditing && !isEditingCompany"
-              @click="isEditing = true"
+              v-if="job && !isEditing"
+              @click="startEditing"
               class="btn btn-ghost btn-sm"
-            >Edit Application</button>
+            >Edit</button>
             <button 
               v-if="isEditing"
-              @click="saveApplication"
+              @click="saveAll"
               class="btn btn-primary btn-sm"
               :disabled="saving"
             >
               {{ saving ? 'Saving...' : 'Save' }}
             </button>
+            <button 
+              v-if="isEditing"
+              @click="cancelEditing"
+              class="btn btn-ghost btn-sm"
+            >Cancel</button>
           </div>
         </div>
       </div>
@@ -370,20 +353,13 @@ onMounted(() => {
           <div class="card bg-base-100 shadow-sm border border-base-300">
             <div class="card-body">
               <!-- View Mode -->
-              <template v-if="!isEditingCompany">
+              <template v-if="!isEditing">
                 <div class="flex justify-between items-start">
                   <div>
                     <h2 class="card-title text-xl">{{ job.title }}</h2>
                     <p class="text-muted">{{ job.company }}</p>
                     <p class="text-sm">{{ job.location }}</p>
                   </div>
-                  <button 
-                    @click="startEditingCompany"
-                    class="btn btn-ghost btn-xs"
-                    title="Edit company details"
-                  >
-                    ✏️ Edit
-                  </button>
                 </div>
                 
                 <div class="flex flex-wrap gap-1 mt-3">
@@ -408,7 +384,7 @@ onMounted(() => {
                 </div>
               </template>
 
-              <!-- Edit Mode -->
+              <!-- Edit Mode (Company Details) -->
               <template v-else>
                 <div class="space-y-4">
                   <div>
@@ -485,21 +461,6 @@ onMounted(() => {
                     <label for="is_remote" class="text-sm cursor-pointer">Remote Position</label>
                   </div>
 
-                  <div class="flex gap-2 pt-2">
-                    <button 
-                      @click="saveCompanyDetails"
-                      class="btn btn-primary btn-sm flex-1"
-                      :disabled="savingCompany"
-                    >
-                      {{ savingCompany ? 'Saving...' : 'Save' }}
-                    </button>
-                    <button 
-                      @click="cancelEditingCompany"
-                      class="btn btn-ghost btn-sm"
-                    >
-                      Cancel
-                    </button>
-                  </div>
                 </div>
               </template>
 
