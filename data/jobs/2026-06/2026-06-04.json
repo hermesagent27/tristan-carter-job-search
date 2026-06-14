@@ -289,47 +289,6 @@
     }
   },
   {
-    "id": "tighten-general-015",
-    "title": "General Application",
-    "company": "Tighten",
-    "location": "Remote (US)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Tighten is a Laravel-focused web development consultancy. No specific openings listed but accepts general applications. Remote-first culture.",
-    "description_short": "General Application at Tighten. Laravel consultancy. Remote US.",
-    "url": "https://tighten.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "laravel",
-      "php",
-      "consultancy",
-      "remote",
-      "agency"
-    ],
-    "required_skills": [
-      "Laravel",
-      "PHP",
-      "Vue"
-    ],
-    "experience_level": "any",
-    "role_type": "fullstack",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 80
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "vuejobs-digicert-019",
     "title": "Software Engineer (Vue.js)",
     "company": "DigiCert",
