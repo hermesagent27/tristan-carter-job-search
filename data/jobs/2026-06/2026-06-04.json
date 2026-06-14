@@ -37,7 +37,7 @@
       "is_duplicate": false,
       "match_score": 85
     },
-    "status": "new",
+    "status": "applied",
     "application_id": null,
     "application_data": {
       "cover_letter": "Dear Security Risk Advisors Hiring Manager,\n\nI am writing to express my interest in the Senior Front-End Developer - Vue 3 (SDE III) position at Security Risk Advisors. With hands-on experience in Vue.js and Nuxt, frontend development, I am excited about the opportunity to contribute to your team.\n\nI am particularly drawn to this role because of the remote flexibility, which allows me to bring my best work while maintaining a healthy work-life balance. My background in management has taught me the value of clear communication and taking initiative—qualities I bring to every project I work on.\n\nWhat excites me about this position is the chance to grow my technical skills while contributing to meaningful work. I am a quick learner who thrives in environments where I can take ownership and solve problems independently.\n\nI would welcome the chance to discuss how my skills and experience align with your needs. Thank you for considering my application.\n\nSincerely,\nTristan Carter",
