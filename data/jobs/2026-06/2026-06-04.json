@@ -120,45 +120,6 @@
     "application_id": null
   },
   {
-    "id": "vuejobs-micro1-004",
-    "title": "Software Developer (Vue.js)",
-    "company": "micro1",
-    "location": "Remote",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Software Developer position with Vue.js focus. Remote contract, mid-level.",
-    "description_short": "Software Developer (Vue.js) at micro1. Remote contract mid-level.",
-    "url": "https://vuejobs.com/",
-    "source": "VueJobs",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "vue",
-      "remote",
-      "contract",
-      "mid-level"
-    ],
-    "required_skills": [
-      "Vue.js",
-      "JavaScript"
-    ],
-    "experience_level": "mid",
-    "role_type": "fullstack",
-    "employment_type": "contract",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 90
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "vuejobs-proxify-005",
     "title": "Senior Vue.js Developer",
     "company": "Proxify",
