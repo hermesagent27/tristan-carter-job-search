@@ -330,47 +330,6 @@
     "application_id": null
   },
   {
-    "id": "dockyard-general-016",
-    "title": "General Application",
-    "company": "DockYard",
-    "location": "Remote (Global)",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "DockYard is a custom software consultancy specializing in Elixir/Phoenix and modern web development. Check open positions link or submit general application. Remote-first.",
-    "description_short": "General Application at DockYard. Elixir/Phoenix consultancy. Remote.",
-    "url": "https://dockyard.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "elixir",
-      "phoenix",
-      "consultancy",
-      "remote",
-      "agency"
-    ],
-    "required_skills": [
-      "Elixir",
-      "Phoenix",
-      "JavaScript"
-    ],
-    "experience_level": "any",
-    "role_type": "fullstack",
-    "employment_type": "full-time",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": false,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 70
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "viget-contractor-designer-017",
     "title": "Contractor – Lead Product Designer",
     "company": "Viget",
