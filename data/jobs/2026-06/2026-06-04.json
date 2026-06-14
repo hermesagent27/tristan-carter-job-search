@@ -330,46 +330,6 @@
     "application_id": null
   },
   {
-    "id": "viget-design-manager-018",
-    "title": "Design Manager, Contractor Network",
-    "company": "Viget",
-    "location": "Remote / Multi-office",
-    "is_remote": true,
-    "salary_min": null,
-    "salary_max": null,
-    "salary_text": null,
-    "description": "Design Manager for Contractor Network at Viget. Remote-friendly.",
-    "description_short": "Design Manager, Contractor Network at Viget. Remote.",
-    "url": "https://www.viget.com/careers",
-    "source": "Agency Direct",
-    "source_id": null,
-    "date_posted": "2026-06-04",
-    "date_scraped": "2026-06-04",
-    "tags": [
-      "design",
-      "management",
-      "contractor",
-      "remote",
-      "agency"
-    ],
-    "required_skills": [
-      "Design Management",
-      "Leadership"
-    ],
-    "experience_level": "senior",
-    "role_type": "management",
-    "employment_type": "contract",
-    "flags": {
-      "has_drug_test": false,
-      "is_senior": true,
-      "is_hidden": false,
-      "is_duplicate": false,
-      "match_score": 50
-    },
-    "status": "new",
-    "application_id": null
-  },
-  {
     "id": "vuejobs-digicert-019",
     "title": "Software Engineer (Vue.js)",
     "company": "DigiCert",
