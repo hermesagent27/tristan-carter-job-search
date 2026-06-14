@@ -335,10 +335,10 @@ onMounted(() => {
           </div>
           <div class="flex items-center gap-2">
             <button 
-              v-if="job && !isEditing"
+              v-if="job && !isEditing && !isEditingCompany"
               @click="isEditing = true"
               class="btn btn-ghost btn-sm"
-            >Edit</button>
+            >Edit Application</button>
             <button 
               v-if="isEditing"
               @click="saveApplication"

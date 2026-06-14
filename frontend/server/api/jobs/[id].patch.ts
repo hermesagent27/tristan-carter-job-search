@@ -71,8 +71,10 @@ export default defineEventHandler(async (event) => {
     const result = await updateJob(id, updates)
 
     // Sync questions to global store if application_data was updated
+    // Note: This runs async - don't fail the save if questions sync fails
     if (body.application_data?.questions !== undefined) {
-      await syncQuestionsFromJob(id, currentJob.company, currentJob.title, body.application_data.questions)
+      syncQuestionsFromJob(id, currentJob.company, currentJob.title, body.application_data.questions)
+        .catch(e => console.error('[Questions] Sync failed (non-blocking):', e))
     }
 
     // Update stats file after status change
