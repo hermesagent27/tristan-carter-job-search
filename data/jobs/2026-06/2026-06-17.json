@@ -1,0 +1,38 @@
+[
+  {
+    "id": "remoteok-02e20247f8eb",
+    "title": "DevSecOps Engineer",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 90000,
+    "salary_max": 160000,
+    "salary_text": "090- $160",
+    "description": "Why TrueML? TrueML is a mission-driven financial software company that aims to create better customer experiences for distressed borrowers. Consumers today want personal, digital-first experiences that align with their lifestyles, especially when it comes to managing finances. TrueML’s approach uses machine learning to engage each customer digitally and adjust strategies in real time in response to their interactions. The TrueML team includes inspired data scientists, financial services industry experts and customer experience fanatics building technology to serve people in a way that recognizes their unique needs and preferences as human beings and endeavoring toward ensuring nobody gets locked out of the financial system. \\n What you will do Position Summary We are seeking a Sr. Security Engineer to lead the integration of security across the software development lifecycle (SDLC). This role sits at the intersection of engineering, cloud infrastructure, and application security, driving automation, scalability, and secure-by-default development practices. You will design and implement security-first CI/CD pipelines, embed automated security testing, and partner with engineering teams to ensure applications are built, deployed, and operated securely—at scale Key Responsibilities Security Automation & CI/CD Integration (Core Focus) • Embed security controls and scanners (SAST, SCA, DAST, IaC, Container Security) into CI/CD pipelines (GitHub Actions, Jenkins, GitLab CI, Azure DevOps) • Design and maintain automated security workflows across build, test, and deploy stages • Implement security gates, policy enforcement, and compliance checks within pipelines Cloud Security (AWS Focus) • Secure cloud-native architectures across AWS (IAM, VPC, ECS/EKS, Lambda, S3, API Gateway) • Integrate and operationalize CNAPP/CSPM tools (e.g., Wiz, Prisma Cloud) • Enforce least privilege access, secrets management, and runtime protections Own Cloud Security: Define and maintain security policies for our AWS environment, specifically focusing on containerized workloads (EKS/ECS) and serverless architectures (Lambda). Automate Compliance: Move beyond manual checks by building real-time monitoring and automated remediation for AWS resources, ensuring we stay \"audit-ready\" for frameworks like PCI and ISO 27001. Lead Threat Modeling: Perform deep-dive threat modeling exercises on applications and designs, turning theoretical risks into actionable engineering plans. Innovate with AI: Stay at the forefront of th",
+    "description_short": "Why TrueML? TrueML is a mission-driven financial software company that aims to create better customer experiences for distressed borrowers. Consumers today want personal, digital-first experiences that align with their lifestyles, especially when it comes to managing finances. TrueML’s approach uses machine learning to engage each customer digitally and adjust strategies in real time in response to their interactions. The TrueML team includes insp",
+    "url": "https://remoteOK.com/remote-jobs/remote-devsecops-engineer-trueml-1133456",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-16T06:00:10+00:00",
+    "date_scraped": "2026-06-17",
+    "tags": [
+      "javascript",
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "senior",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
