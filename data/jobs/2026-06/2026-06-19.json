@@ -1,0 +1,37 @@
+[
+  {
+    "id": "remoteok-30a90c0d9508",
+    "title": "Help Desk",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Help Desk Specialist Location: Remote Position Summary We are seeking a Help Desk Specialist to provide Tier 1/Tier 2 support for a Grants Management System (GMS). The selected candidate will serve as the primary point of contact for users, troubleshoot system issues, manage support tickets, assist with user access, and provide training and documentation support. Key Responsibilities Respond to and resolve user support requests via phone, email, and ticketing systems. Troubleshoot application access, user account, workflow, reporting, and system-related issues. Create, modify, and maintain user accounts and permissions. Track, prioritize, and resolve tickets in accordance with service level requirements. Escalate complex technical issues as needed. Develop and maintain user guides, FAQs, and training materials. Conduct user onboarding and training sessions. Support system testing, updates, and ongoing maintenance activities. Required Qualifications 2+ years of Help Desk, Application Support, or Customer Support experience. Experience supporting web-based applications or enterprise systems. Strong troubleshooting, communication, and customer service skills. Experience using ticketing systems and managing support requests. Ability to create documentation and train end users. Preferred Qualifications Experience supporting Grants Management Systems (GMS). Experience supporting state, local, or federal government clients. Knowledge of grants administration processes and compliance requirements. Experience with SaaS or cloud-based applications. Additional Requirement Candidates selected for consideration must be willing to provide three (3) professional references. References should be able to speak to the candidate's technical abilities, customer support experience, and professional performance on similar projects. Key Skills Help Desk Support Ticket Management User Training Troubleshooting User Access Administration Customer Service Documentation Grants Management Support (preferred) About Zenius Corporation Headquartered in Leesburg, Virginia, Zenius Corporation is a HUBZone-certified small business. Zenius specializes in providing Grants Management, IT Modernization, Acquisition Management, and Financial Management services to Federal agencies. Zenius is selected by Inc 5000 as one of the fastest-growing companies in the DC Metro Area, awarded in 2025, 2024, 2021, and 2020. Zenius is also listed by Financial Times as one of the fastest-growin",
+    "description_short": "Help Desk Specialist Location: Remote Position Summary We are seeking a Help Desk Specialist to provide Tier 1/Tier 2 support for a Grants Management System (GMS). The selected candidate will serve as the primary point of contact for users, troubleshoot system issues, manage support tickets, assist with user access, and provide training and documentation support. Key Responsibilities Re",
+    "url": "https://remoteOK.com/remote-jobs/remote-help-desk-zenius-corporation-1133680",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-18T01:15:49+00:00",
+    "date_scraped": "2026-06-19",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "support",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
