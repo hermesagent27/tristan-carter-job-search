@@ -1,0 +1,37 @@
+[
+  {
+    "id": "remoteok-3b8fc084ee52",
+    "title": "Desktop Support Technician",
+    "company": "Pathway Communications",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Desktop Support Technician Location: Remote Company: Pathway Communications Hourly pay rate - CAD$18 - $19 About Pathway Communications Pathway has been a pioneer in IT Managed Services. Starting out as one of the first ISPs in Canada in 1995, we are now a leading Canadian technology management firm with a global reach. Our clients rely on us as their sole source for high-quality IT solutions – from hybrid cloud services to service desk, telephony and security. We were the first company in Canada to construct a Tier III certified data center and maintain a complete set of certifications including SOC 2 Type II, PCI, and ISO 27001. Pathway Communications is looking for an Onsite Desktop Support Technician to join our team in our Toronto Downtown office. This person will drive customer satisfaction by fielding inquiries, addressing pain points and maintaining extensive product knowledge. The ideal candidate has a customer-first mindset and aims to deliver high-quality service in every customer interaction. Responsibilities: Technical Support: • Respond to and resolve technical issues reported by users via phone, email, or in-person. • Diagnose and troubleshoot hardware, software, and network-related issues. • Provide technical support for desktop, laptop, printers, and mobile devices. • Assist with software installations, updates, and configurations. Incident Management: • Log, track, and close tickets in the service desk system, ensuring all details are accurately documented. • Escalate unresolved issues to the appropriate teams as per service-level agreements (SLAs). • Follow up with users to ensure issues are resolved to their satisfaction. On-Site Support: • Provide hands-on support for technical problems that cannot be resolved remotely for issues relating to system (Windows-based and Mac) and related applications. • Set up and configure hardware and software for new employees. • Maintain and troubleshoot AV (Audio -visual) systems for meetings and conferences. User Training and Documentation: • Educate end-users on best practices, system functionality, and self-help tools. • Create and update documentation, including FAQs and user guides. System Maintenance: • Troubleshooting issues relating to the system (Windows-based and Mac) and related applications. • Perform routine hardware maintenance and upgrades. Technical Skills: • Knowledge of Active Directory, VPNs, remote desktop tools, and ticketing systems (e.g., ServiceNow, Jir",
+    "description_short": "Desktop Support Technician Location: Remote Company: Pathway Communications Hourly pay rate - CAD$18 - $19 About Pathway Communications Pathway has been a pioneer in IT Managed Services. Starting out as one of the first ISPs in Canada in 1995, we are now a leading Canadian technology management firm with a global reach. Our clients rely on us as their sole source for high-",
+    "url": "https://remoteOK.com/remote-jobs/remote-desktop-support-technician-pathway-communications-1133710",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-19T06:00:00+00:00",
+    "date_scraped": "2026-06-20",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "mobile",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
