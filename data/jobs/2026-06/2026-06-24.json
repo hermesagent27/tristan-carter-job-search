@@ -1,0 +1,72 @@
+[
+  {
+    "id": "remoteok-25015f196cea",
+    "title": "Business Analyst",
+    "company": "Salted",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 150000,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Join the largest delivery-first restaurant group in the United States! Who we are: At Salted, we're leading the charge to build the next generation of the restaurant industry. We focus on making better-for-you cuisine accessible while offering clean-label, plant-driven, and most importantly – delicious food. Join us in shaping the future of the restaurant industry and be part of our innovative culinary journey! Salary: $110,000 - $150,000 Benefits: Unlimited PTO Medical, Dental, & Vision Insurance 401k with up to a 4% employer match after one year Remote Work Paid Parental Leave The role: This is not a traditional FP&A role. You’ll sit at the intersection of finance and operations, using real-time data from our kitchens and markets to understand what’s happening on the ground and translate that into clear, actionable insights that drive the business forward. You’ll own core reporting and forecasting, and you’ll help shape how we use data to make decisions. That includes identifying inefficiencies, improving performance, and partnering directly with operators to solve real problems in a fast-moving environment. Your Impact: Own core reporting across locations and districts, and continuously improve and automate it so the team can focus on insights, not manual work Build and maintain a rolling forecast grounded in real operational inputs, and lead reforecasts with clear variance drivers and forward-looking scenarios Translate what’s happening in our kitchens and markets into clear financial insights, connecting day-to-day operations to P&L performance Identify inefficiencies and cost drivers through data, and partner cross-functionally, especially with operations, to implement solutions Support budgeting cycles with thoughtful analysis and actionable commentary that helps shape decisions Partner with external platforms and internal teams to generate actionable insights into the customer experience and help inform marketing decisions Help evolve how we use data as a company by improving tools, processes, and how insights are shared across teams Skills & Experience: 2 to 4 years of experience in finance, consulting, strategy, or similar analytical roles Strong Excel or Google Sheets skills, with experience working with large datasets; SQL is a plus Highly analytical with the ability to break down complex problems and identify key drivers Comfortable working in a fast-paced, ambiguous environment with evolving priorities Strong communicator who can translate data into clear insights for non-finance partners Demonstrated ownership and initiative, with an abilit",
+    "description_short": "Join the largest delivery-first restaurant group in the United States! Who we are: At Salted, we're leading the charge to build the next generation of the restaurant industry. We focus on making better-for-you cuisine accessible while offering clean-label, plant-driven, and most importantly – delicious food. Join us in shaping the future of the restaurant industry and be part of our innovative culinary journey! Salary: $110,000 -",
+    "url": "https://remoteOK.com/remote-jobs/remote-business-analyst-salted-1134003",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-23T01:46:11+00:00",
+    "date_scraped": "2026-06-24",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "remoteok-c3242c8086f8",
+    "title": "Customer Support",
+    "company": "products",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Customer Support Specialist (Arabic) | Remote We are actively seeking a detail-oriented Remote Customer Support (Arabic) Specialist to join our team. In this role, you will be responsible for delivering professional and timely support to Arabic-speaking customers through various communication channels. You will handle customer inquiries, resolve issues efficiently, and ensure a positive customer experience at every interaction. Strong communication skills in Arabic, excellent problem-solving ability, and attention to detail are essential for success in this remote position. Your contribution will play a key role in maintaining customer satisfaction and supporting the overall growth of our organization. Key Responsibilities 1) Customer Communication Respond to customer inquiries via email, chat, or phone in Arabic (and English if required) Provide accurate information about products, services, and processes Maintain clear, professional, and empathetic communication 2) Issue Resolution Assist customers with troubleshooting and resolving common issues Identify root causes and guide customers through solutions Escalate complex or sensitive cases to appropriate teams 3) Case Management Document all customer interactions in CRM or support systems Track open cases and follow up to ensure timely resolution Maintain accurate and up-to-date customer records 4) Quality and Service Standards Ensure all responses meet company quality and communication standards Handle complaints with professionalism and empathy Support continuous improvement by identifying recurring issues 5) Team Collaboration Work closely with internal teams to resolve customer concerns Participate in training sessions and team meetings Stay updated on product changes, policies, and procedures Required Skills and Qualifications Fluency in Arabic (written and spoken) and good English skills Strong communication and interpersonal abilities Customer-focused mindset with empathy and patience Ability to handle multiple tasks in a fast-paced environment Basic computer skills and familiarity with digital tools Problem-solving skills and attention to detail Ability to work independently in a remote setting Previous customer support experience is a plus Technical Requirements Reliable high-speed internet connection Personal computer or laptop with updated operating system Quiet and professional wo",
+    "description_short": "Customer Support Specialist (Arabic) | Remote We are actively seeking a detail-oriented Remote Customer Support (Arabic) Specialist to join our team. In this role, you will be responsible for delivering professional and timely support to Arabic-speaking customers through various communication channels. You will handle customer inquiries, resolve issues efficiently, and ensure a positive customer experience at every interaction. Strong",
+    "url": "https://remoteOK.com/remote-jobs/remote-customer-support-recruit-lytics-hires-1133984",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-22T12:01:00+00:00",
+    "date_scraped": "2026-06-24",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "support",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
