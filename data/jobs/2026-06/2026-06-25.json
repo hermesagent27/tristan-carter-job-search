@@ -1,0 +1,72 @@
+[
+  {
+    "id": "remoteok-0faf8241ba1e",
+    "title": "Junior Data Analyst",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Job Title: Junior Data Analyst Location: Remote / Onsite (as applicable) Employment Type: Full-Time Job Summary We are seeking a detail-oriented and analytical Junior Data Analyst to join our team. The ideal candidate will assist in collecting, analyzing, and interpreting data to help drive business decisions. This role is an excellent opportunity for individuals looking to build a career in data analytics and business intelligence. Key Responsibilities Collect, clean, validate, and organize data from multiple sources. Analyze datasets to identify trends, patterns, and actionable insights. Create and maintain dashboards, reports, and visualizations. Prepare regular and ad-hoc reports for management and stakeholders. Assist in developing KPIs and performance metrics. Perform data quality checks and troubleshoot data discrepancies. Support business teams with data-driven recommendations. Document data processes, methodologies, and findings. Collaborate with cross-functional teams including Operations, Sales, Marketing, and IT. Required Qualifications Bachelor's degree in Data Analytics, Statistics, Mathematics, Computer Science, Information Systems, Economics, or a related field. 0–2 years of experience in data analysis, reporting, or related roles. Strong analytical and problem-solving skills. Excellent attention to detail and accuracy. Good written and verbal communication skills. Required Technical Skills Must Have: SQL (Joins, Aggregations, Subqueries, Window Functions) Microsoft Excel (Pivot Tables, VLOOKUP/XLOOKUP, Power Query) Data Cleaning and Validation Data Visualization Preferred: Power BI or Tableau Python (Pandas, NumPy) Basic Statistics and Data Interpretation Experience with databases such as MySQL, PostgreSQL, or SQL Server Preferred Qualifications Knowledge of ETL concepts and data warehousing. Familiarity with business intelligence tools. Understanding of reporting automation. Exposure to cloud platforms such as AWS, Azure, or Google Cloud is a plus. Key Competencies Analytical Thinking Attention to Detail Time Management Communication Skills Problem Solving Team Collaboration Adaptability What You'll Gain Hands-on experience working with real business data. Exposure to modern analytics and reporting tools. Mentorship from experienced data professionals. Opportunities for career growth into Data Analyst, Business Analyst, or Data Engineer roles.",
+    "description_short": "Job Title: Junior Data Analyst Location: Remote / Onsite (as applicable) Employment Type: Full-Time Job Summary We are seeking a detail-oriented and analytical Junior Data Analyst to join our team. The ideal candidate will assist in collecting, analyzing, and interpreting data to help drive business decisions. This role is an excellent opportunity for individuals looking to build a career in data analytics and business intelligence.</",
+    "url": "https://remoteOK.com/remote-jobs/remote-junior-data-analyst-caterpillar-inc-1134008",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-23T20:16:58+00:00",
+    "date_scraped": "2026-06-25",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "junior",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "remoteok-363939b05324",
+    "title": "Data Analyst Excel",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Job Description Job Title: Data Analyst Excel Job Type: Contract Location: Remote Job Summary: In this role, you'll apply your expertise to help train next-generation AI systems. Your work will shape how models learn, reason, and perform through high-quality, real-world input. No prior experience in AI is required — your domain knowledge is what matters. Key Responsibilities Conduct in-depth data analysis using Microsoft Excel to extract actionable insights and support decision-making across teams. Collaborate with project stakeholders to understand data requirements and translate them into meaningful analyses. Review, clean, and validate datasets to ensure accuracy, consistency, and integrity. Develop clear, concise reports and visualizations to communicate findings to both technical and non-technical audiences. Identify trends, anomalies, and opportunities in complex datasets, contributing to strategic initiatives. Document methodologies, results, and recommendations with meticulous attention to detail. Contribute expertise to enhance data-driven decision-making processes within the customer's team. Required Skills And Qualifications Proven experience performing data analysis in a business environment using Microsoft Excel as the primary tool. Exceptional attention to detail and accuracy in data processing and reporting. Strong written and verbal communication skills, with the ability to clearly articulate analytical findings. Demonstrated ability to work collaboratively across teams to drive business outcomes. Solid understanding of Excel functions, formulas, and data visualization tools. Proficiency in identifying data inconsistencies and implementing corrective measures. Experience working in fast-paced, data-driven organizations. Preferred Qualifications Experience supporting cross-functional teams with data insights to inform business strategy. Background in presenting analytical outcomes to diverse audiences. Familiarity with additional data analysis tools or business intelligence platforms.",
+    "description_short": "Job Description Job Title: Data Analyst Excel Job Type: Contract Location: Remote Job Summary: In this role, you'll apply your expertise to help train next-generation AI systems. Your work will shape how models learn, reason, and perform through high-quality, real-world input. No prior experience in AI is required — your domain knowledge is what matters. Key Responsib",
+    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-excel-yo-it-consulting-1134019",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-23T07:44:57+00:00",
+    "date_scraped": "2026-06-25",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "devops",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
