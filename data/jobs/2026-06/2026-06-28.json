@@ -1,0 +1,36 @@
+[
+  {
+    "id": "remoteok-83ea79734104",
+    "title": "Customer Support Technician Helpdesk Offboardings &amp; Access",
+    "company": "pace",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 72000,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Who We Are Pixel Machinery is a Boston-based technology consultancy that helps organizations build efficient, flexible, and scalable IT ecosystems. We believe IT should be intelligently automated to enhance security, productivity, and cost-effectiveness—without compromising control or oversight. Achieving this requires deep technical expertise, strategic planning, and precise execution. With experience spanning software development, systems administration, and business operations, we design solutions that empower our clients to operate with confidence and agility. Summary As a Customer Support Technician on our Help Desk team, you will own the technical offboarding and access-deprovisioning lifecycle across our client organizations—nonprofits, tech startups, and small/medium businesses. When someone leaves a company, you are the person who makes sure their access is removed quickly, completely, and accurately. Technical offboardings are time-sensitive, security-critical work, and owning them end to end is the core of this role. Alongside that ownership, you'll provide tier-1 help desk support—onboardings, access and license requests, and general IT troubleshooting—and help keep our support queues moving at pace. This is a high-volume, fast-moving role built for someone who thrives on operational speed and gets satisfaction from a clean, well-run queue. Who You Are You move fast and stay accurate -- you're comfortable working through high ticket volume (think 30 tickets a day, not 5) without losing precision You have razor-sharp attention to detail, especially where access, security, and data are concerned. You understand that a single missed de-provisioning step is a real risk, not a rounding error You're process-oriented and dependable: you follow checklists and protocols carefully, and you document your work so the next person can trust it You can prioritize under pressure and keep a cool head when the queue fills up and new tickets keep landing You're empathetic, patient, and communicate clearly and gracefully across multiple channels You're early in your IT/support career, technically curious, and eager to grow What you'll own (primary responsibilities) Own the offboarding and termination process end to end: de-provision user accounts and revoke access across IAM platforms (Okta, JumpCloud, and similar) and SaaS tools, reclaim licenses, and confirm that access removal is complete and timely Treat every offboarding as a security and compliance event: meet client SLAs for de-provisioning, keep accurate and auditable records, and ensure nothing is left active behind a departing user Live coordination with client contacts during high-touch or sensitive offboardings: communicate in real time with client HR and security as needed in prepa",
+    "description_short": "Who We Are Pixel Machinery is a Boston-based technology consultancy that helps organizations build efficient, flexible, and scalable IT ecosystems. We believe IT should be intelligently automated to enhance security, productivity, and cost-effectiveness—without compromising control or oversight. Achieving this requires deep technical expertise, strategic planning, and precise execution. With experience spanning software development, systems administration, and business",
+    "url": "https://remoteOK.com/remote-jobs/remote-customer-support-technician-helpdesk-offboardings-amp-access-pixel-machinery-1134154",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-06-26T21:36:59+00:00",
+    "date_scraped": "2026-06-28",
+    "tags": [
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "devops",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
