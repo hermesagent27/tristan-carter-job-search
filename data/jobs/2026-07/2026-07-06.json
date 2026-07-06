@@ -1,0 +1,80 @@
+[
+  {
+    "id": "remoteok-105c47cfd019",
+    "title": "Junior Front End Developer",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "About PulseMedia PulseMedia is a digital marketing agency specializing in healthcare, medical, and wellness brands. We combine strategy, creativity, and technology to deliver data-driven digital solutions that help our clients grow, engage their audiences, and build stronger brands. As our global team continues to grow, we're looking for a Junior Front-End Developer based in the MENA region to join us remotely. This is an excellent opportunity for an early-career developer who is passionate about modern web development and eager to build engaging, high-performing digital experiences while working alongside experienced designers, marketers, and developers. If you're enthusiastic about clean code, responsive design, and continuous learning, we'd love to meet you. What You'll Do Front-End Development Develop and maintain responsive, user-friendly websites and landing pages for healthcare and wellness clients. Convert UI/UX designs into clean, maintainable, and reusable front-end code. Build digital marketing assets that deliver excellent user experiences across all devices. Collaboration Work closely with designers, digital marketers, and project managers to deliver high-quality projects. Support SEO, conversion optimization (CRO), and performance-focused website improvements. Participate in team discussions and contribute ideas to improve development workflows. Performance & Optimization Optimize websites for speed, accessibility, and cross-browser compatibility. Ensure responsive performance across desktop, tablet, and mobile devices. Follow front-end best practices for usability, accessibility, and maintainability. CMS & Website Management Maintain and update WordPress websites and other CMS platforms. Implement content updates, page layouts, and reusable templates. Assist with ongoing website improvements and feature enhancements. Quality Assurance Identify and resolve front-end bugs and visual inconsistencies. Test websites across browsers and devices to ensure reliable performance. Help maintain high coding standards and quality across projects. Continuous Learning Stay up to date with modern front-end technologies and industry best practices. Participate in code reviews and collaborate with senior developers. Continuously improve your technical and problem-solving skills. What We're Looking For Experience 0–2 years of front-end development experience, including internships, freelance work, personal projects, or junior roles. Experience building or contributing to live websites or web applications is an advantage. <br",
+    "description_short": "About PulseMedia PulseMedia is a digital marketing agency specializing in healthcare, medical, and wellness brands. We combine strategy, creativity, and technology to deliver data-driven digital solutions that help our clients grow, engage their audiences, and build stronger brands. As our global team continues to grow, we're looking for a Junior Front-End Developer based in the MENA region to join us remotely. This is an excellent",
+    "url": "https://remoteOK.com/remote-jobs/remote-junior-front-end-developer-pulsemedia-mena-1134518",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-07-05T06:00:00+00:00",
+    "date_scraped": "2026-07-06",
+    "tags": [
+      "css",
+      "frontend",
+      "fullstack",
+      "html",
+      "javascript",
+      "react",
+      "remote",
+      "support",
+      "tailwind",
+      "typescript",
+      "vue"
+    ],
+    "required_skills": [],
+    "experience_level": "junior",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "remoteok-c8a4063d471b",
+    "title": "Business Operations Analyst",
+    "company": "TextUs",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": 85000,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "WHY TEXTUS TextUs on a mission to revolutionize business communication by enabling seamless and impactful engagement between workers and consumers. With a focus on innovation, ease of use, and delivering measurable results, our strategy is rooted in creating tools that outperform other messaging solutions while fostering trust and value for our customers and stakeholders. At TextUs, every team member is empowered to make a difference. Our collaborative and data-driven culture, combined with the guidance of a proven leadership team, ensures you have the resources and support to excel. Together, we’re building the future of mobile-first, conversational engagement and redefining what’s possible for businesses and their stakeholders. As our Business Operations Analyst, you'll play a key role in supporting the systems and processes that keep our business running smoothly. Reporting to the Revenue Operations Manager, you'll partner with teams across Sales, Marketing, Customer Success, Finance, and Operations to improve workflows, maintain business systems, and ensure our teams have the tools and data they need to be successful. You enjoy solving operational challenges through technology, process improvement, and data. You're naturally curious, embrace new tools, and are excited to explore how automation and AI can help teams work smarter and scale more efficiently. CORE RESPONSIBILITIES Business Operations & Systems Support Partner with cross-functional teams to optimize business processes and improve operational efficiency across the organization. Support the day-to-day administration and continuous improvement of our business systems, including CRM, ERP, marketing automation, and internal tools. Troubleshoot system issues, manage enhancement requests, and recommend process improvements that improve the employee experience. Help evaluate and implement new technologies and workflows as the company grows. Leverage AI-powered tools to improve documentation, reporting, workflow automation, or operational efficiency. Reporting & Data Management Build, maintain, and improve dashboards and reporting for Sales, Marketing, Customer Success, and leadership teams. Ensure business data remains accurate, organized, and actionable through ongoing data quality initiatives. Generate recurring and ad hoc reports that support business planning and decision-making. Business Systems & Integrations Support our CRM (Salesforce), ERP (NetSuite), marketing automation platform (HubSpot), and other business applications. Assist in maintaining integrations between core business systems to ensure reliable data flow and operational efficiency. Collaborate with internal stakeholders and external vend",
+    "description_short": "WHY TEXTUS TextUs on a mission to revolutionize business communication by enabling seamless and impactful engagement between workers and consumers. With a focus on innovation, ease of use, and delivering measurable results, our strategy is rooted in creating tools that outperform other messaging solutions while fostering trust and value for our customers and stakeholders. At TextUs, every team member is empowered to make a difference. Our collaborative and data-dri",
+    "url": "https://remoteOK.com/remote-jobs/remote-business-operations-analyst-textus-1134500",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-07-03T23:12:44+00:00",
+    "date_scraped": "2026-07-06",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "backend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
