@@ -1,0 +1,39 @@
+[
+  {
+    "id": "remoteok-a854fb9e8850",
+    "title": "Data Analyst",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "About The Role We are looking for a talented Interface Designer to create intuitive, visually engaging, and user-friendly digital experiences. You will work closely with UX designers, developers, and product teams to design interfaces that enhance usability and elevate brand identity. Responsibilities Design clean, functional, and aesthetically appealing user interfaces for web and mobile applications. Collaborate with UX designers, developers, and stakeholders to create seamless digital experiences. Develop wireframes, prototypes, and high-fidelity UI designs using industry-standard tools. Ensure design consistency with brand guidelines and accessibility standards. Conduct user research and gather feedback to improve interface usability. Stay updated on UI/UX trends and best practices to enhance design quality. Requirements Proven experience as an Interface Designer or similar role. Proficiency in Figma, Sketch, Adobe XD, or other UI design tools. Strong understanding of UI/UX principles, typography, and visual hierarchy. Experience with responsive and mobile-first design. Ability to collaborate with cross-functional teams and communicate design decisions effectively. Knowledge of basic front-end development (HTML, CSS) is a plus. Benefits Competitive salary and career growth opportunities. Flexible working hours and remote work options. Collaborative and creative work environment. Opportunities to learn and improve through training and mentorship.",
+    "description_short": "About The Role We are looking for a talented Interface Designer to create intuitive, visually engaging, and user-friendly digital experiences. You will work closely with UX designers, developers, and product teams to design interfaces that enhance usability and elevate brand identity. Responsibilities Design clean, functional, and aesthetically appealing user interfaces for web and mobile applications.",
+    "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-grow-the-roses-1134778",
+    "source": "RemoteOK",
+    "source_id": null,
+    "date_posted": "2026-07-12T07:29:59+00:00",
+    "date_scraped": "2026-07-14",
+    "tags": [
+      "css",
+      "frontend",
+      "html",
+      "remote",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "frontend",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
