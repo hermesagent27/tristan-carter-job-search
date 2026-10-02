@@ -7,7 +7,7 @@ const RAW_URL = `https://raw.githubusercontent.com/${REPO}/main`
 
 // Check if we're in development (local) mode
 const IS_DEV = process.env.NODE_ENV === 'development' || !process.env.VERCEL
-const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-carter-job-search/data'
+const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/work/tristan-carter-job-search/data'
 
 interface Job {
   id: string

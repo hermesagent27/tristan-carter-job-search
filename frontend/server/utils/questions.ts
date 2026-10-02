@@ -4,7 +4,7 @@ import { randomUUID } from 'crypto'
 import type { Question } from '~/types/questions'
 
 const IS_DEV = process.env.NODE_ENV === 'development' || !process.env.VERCEL
-const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/tristan-carter-job-search/data'
+const LOCAL_DATA_PATH = process.env.LOCAL_DATA_PATH || '/home/tristan/work/tristan-carter-job-search/data'
 
 const DATA_PATH = IS_DEV 
   ? join(LOCAL_DATA_PATH, 'questions.json')

@@ -11,7 +11,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
   }
 
   try {
-    const { authenticated } = await $fetch('/api/auth/check')
+    const { authenticated } = await $fetch('/api/auth/check', { credentials: 'include' })
     if (!authenticated) {
       return navigateTo('/login')
     }

@@ -12,10 +12,20 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  // Set HTTP-only cookie with plain password (simpler matching)
+  // Set shared marketplace cookie (works across subdomains)
+  setCookie(event, 'app-auth', password, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    domain: process.env.COOKIE_DOMAIN || undefined,
+    maxAge: 60 * 60 * 24 * 7, // 7 days
+    path: '/'
+  })
+
+  // Also set app-specific cookie for backward compatibility
   setCookie(event, 'job-tracker-auth', password, {
     httpOnly: true,
-    secure: true,
+    secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
     maxAge: 60 * 60 * 24 * 7 // 7 days
   })
