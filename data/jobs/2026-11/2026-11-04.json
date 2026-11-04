@@ -1,0 +1,71 @@
+[
+  {
+    "id": "jobspresso-3fad6c1c57db",
+    "title": "Analytics Engineer, Data",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "About Tailscale Tailscale is building the new Internet by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists and start-ups to medium and large companies, teams around the world use Tailscale to solve problems in hardware and software security within their organization, remote access The post Analytics Engineer, Data appeared first on Jobspresso .",
+    "description_short": "About Tailscale Tailscale is building the new Internet by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists and start-ups to medium and large companies, teams around the world use Tailscale to solve problems in hardware and software security within their organization, remote access The post Analytics Engineer, Data appeared fir",
+    "url": "https://jobspresso.co/job/analytics-engineer-data/",
+    "source": "Jobspresso",
+    "source_id": null,
+    "date_posted": "Wed, 04 Nov 2026 06:20:07 +0000",
+    "date_scraped": "2026-11-04",
+    "tags": [
+      "remote",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "other",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  },
+  {
+    "id": "jobspresso-8f767887ab3e",
+    "title": "Client Support Technician",
+    "company": "Unknown",
+    "location": "Remote",
+    "is_remote": true,
+    "salary_min": null,
+    "salary_max": null,
+    "salary_text": null,
+    "description": "Softdocs is not your typical software company. We're a fully remote, people-first company with employees across the United States, and our mission is to remove the burden of manual processes for the institutions that power everyday life: schools, universities, and government agencies. Our platform helps more than 1,000 institutions modernize how documents are created, approved, The post Client Support Technician appeared first on Jobspresso .",
+    "description_short": "Softdocs is not your typical software company. We're a fully remote, people-first company with employees across the United States, and our mission is to remove the burden of manual processes for the institutions that power everyday life: schools, universities, and government agencies. Our platform helps more than 1,000 institutions modernize how documents are created, approved, The post Client Support T",
+    "url": "https://jobspresso.co/job/client-support-technician/",
+    "source": "Jobspresso",
+    "source_id": null,
+    "date_posted": "Wed, 04 Nov 2026 05:22:31 +0000",
+    "date_scraped": "2026-11-04",
+    "tags": [
+      "remote",
+      "support",
+      "typescript"
+    ],
+    "required_skills": [],
+    "experience_level": "any",
+    "role_type": "devops",
+    "employment_type": "full-time",
+    "flags": {
+      "has_drug_test": false,
+      "is_senior": false,
+      "is_hidden": false,
+      "is_duplicate": false,
+      "match_score": 0
+    },
+    "status": "new",
+    "application_id": null
+  }
+]
